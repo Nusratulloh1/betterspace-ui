@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Главная",
+        "path": "/",
+        "type": "tab",
+        "icon": "grades",
+        "keepAlive": false
+    },
+    {
+        "title": "Управление товарами",
+        "path": "/products",
+        "type": "tab",
+        "icon": "certificate",
+        "keepAlive": false
+    },
+    {
+        "title": "Заказы",
+        "path": "/orders",
+        "type": "tab",
+        "icon": "ranking",
+        "keepAlive": false
+    }
+]

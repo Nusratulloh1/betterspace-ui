@@ -1,0 +1,120 @@
+@import '../colors.scss';
+
+// Table
+.el-table--striped {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: justify;
+
+    th {
+        border: none !important;
+        font-weight: 500;
+        background-color: $primary !important;
+        color: #fff;
+    }
+
+    tr.el-table__row--striped td {
+        background: #f6f7f9 !important;
+        color: #282e36;
+    }
+}
+
+// Pagination
+
+.el-pagination {
+
+    li,
+    .btn-next {
+        font-weight: 500 !important;
+        font-size: 16px !important;
+        line-height: 19px !important;
+        background: rgba(93, 184, 228, 0.1) !important;
+        border-radius: 6px !important;
+        color: #5db8e4 !important;
+        width: 44px !important;
+        height: 44px !important;
+
+        &.is-active,
+        &.more {
+            background: transparent !important;
+        }
+    }
+
+    .btn-next .el-icon {
+        display: inline !important;
+        width: auto !important;
+    }
+}
+
+// Form
+.el-form {
+    .el-form-item {
+        &.is-required:not(.is-no-asterisk).asterisk-right>.el-form-item__label::after {
+            margin-left: 2px;
+            color: #181c25;
+        }
+
+        &__label {
+            color: #344054;
+            font-family: 'Inter';
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px !important;
+            margin-bottom: 5px !important;
+        }
+
+        .el-input {
+            &__wrapper {
+                border-radius: 8px;
+                // border: 1px solid #D0D5DD;
+                background: #FFF;
+                // box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+            }
+
+            &__inner {
+                color: #667085;
+                font-family: 'Inter';
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+            }
+
+            &--large {
+
+                height: 44px !important;
+            }
+        }
+    }
+}
+
+// Button
+
+.el-button {
+    &--large {
+        height: 44px !important;
+
+        &.gradient {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+
+        }
+    }
+
+    &.gradient {
+        border-radius: 8px;
+        background: linear-gradient(91deg, #B540F6 52.01%, #F18F8C 86.64%, #FB9D79 96.11%);
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        border: none;
+        color: #FFF;
+        font-family: 'Inter';
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+
+        &:hover {
+            opacity: 0.9;
+        }
+    }
+}

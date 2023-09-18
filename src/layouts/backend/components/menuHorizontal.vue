@@ -87,7 +87,7 @@ onBeforeRouteUpdate((to) => {
 .el-menu-item {
     color: #111927;
     font-family: 'Inter';
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     padding: 8px 12px;

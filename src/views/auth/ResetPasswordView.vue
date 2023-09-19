@@ -8,8 +8,9 @@
                 </h4>
             </div>
             <div>
-                <div class=" rounded-xl border border-[#EAECF0] w-14 h-14 mx-auto mb-4 shadow-sm">
-                    <Icon size="28" name="local-key" />
+                <div
+                    class=" rounded-xl border border-[#EAECF0] w-14 h-14 mx-auto mb-4 shadow-sm flex items-center justify-center">
+                    <Icon size="28" name="local-key" class=" !fill-none" />
                 </div>
                 <h5>
                     Забыли пароль?
@@ -21,22 +22,23 @@
                             autocomplete="off" placeholder="Введите номер телефона" />
                     </el-form-item>
                     <el-form-item prop="code" label="Код подтверждения" class="!mb-6">
-                        <el-input v-model.trim="ruleForm.code" v-mask="'####'" type="text" size="large" autocomplete="off"
-                            placeholder="****" />
+                        <div class="flex items-center relative w-full">
+                            <el-input v-model.trim="ruleForm.code" v-mask="'####'" type="text" size="large"
+                                autocomplete="off" placeholder="****" />
+                            <button type="button" class=" absolute  right-2 text-[#6941C6] text-xs font-medium">
+                                Отправить заново
+                            </button>
+                        </div>
                     </el-form-item>
-                    <div class="flex flex-col space-y-6 py-1">
+                    <div class="flex flex-col space-y-8 py-1">
                         <el-button class="w-full gradient" size="large" type="primary" @click="submitForm(ruleFormRef)"
                             :loading="loading">
                             Сбросить пароль
                         </el-button>
-                        <div class="flex items-center gap-2 is-registered">
-                            <p>
-                                Еще не зарегистрировались?
-                            </p>
-                            <RouterLink to="/register" class="text-sm text-primary font-semibold hover:underline">
-                                Зарегистрироваться
-                            </RouterLink>
-                        </div>
+                        <RouterLink to="/login" class="is-login">
+                            <Icon size="20" name="local-arrow-left" class=" !fill-none" />
+                            Вернуться в логин страницу
+                        </RouterLink>
                     </div>
                 </el-form>
             </div>
@@ -144,11 +146,19 @@ const submitForm = async (formEl: FormInstance | undefined) => {
         letter-spacing: -0.64px;
     }
 
-    .is-registered {
+    .is-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
         color: #475467;
         font-size: 14px;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 20px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
 }

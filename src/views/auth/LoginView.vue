@@ -2,7 +2,7 @@
     <div class=" grid grid-cols-2 h-screen relative login">
         <div class=" h-full flex items-center justify-center relative">
             <div class="flex items-center logo gap-1.5 absolute top-24">
-                <Icon size="27" name="local-logo-main" class=" fill-[#3D3D3D]" />
+                <Icon size="30" name="local-logo-main" style="fill: rgba(17, 25, 39, 1);" />
                 <h4>
                     Deal<span>me</span>
                 </h4>
@@ -17,7 +17,7 @@
                         <el-input v-model.trim="ruleForm.email" type="text" size="large" autocomplete="off"
                             placeholder="Введите номер телефона" />
                     </el-form-item>
-                    <el-form-item prop="password" label="Пароль"  class="!mb-6">
+                    <el-form-item prop="password" label="Пароль" class="!mb-6">
                         <el-input v-model.trim="ruleForm.password" type="password" size="large" :show-password="true"
                             autocomplete="off" placeholder="Your password" />
                     </el-form-item>
@@ -48,7 +48,7 @@
         </div>
         <div class="flex items-center justify-end pl-24 bg-[#F3F4F6]">
             <div class="border-[6px] rounded-2xl border-[#101828] mr-[-10px] max-w-[1024px] overflow-hidden">
-                <img class="w-full max-h-[682px]" src="../../assets/images/login.svg" alt="login">
+                <img class="w-full max-h-[682px]" src="../../assets/images/auth/login.svg" alt="login">
             </div>
         </div>
     </div>
@@ -127,7 +127,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
         h4 {
             color: #3D3D3D;
             font-family: 'Pangram';
-            font-size: 33.648px;
+            font-size: 25.648px;
             font-weight: 700;
 
             span {
@@ -136,8 +136,10 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-family: 'Pangram';
-                font-size: 33.648px;
+                font-size: 25.883px;
+                font-style: normal;
                 font-weight: 700;
+                line-height: normal;
             }
         }
     }

@@ -118,3 +118,15 @@
         }
     }
 }
+
+.el-carousel {
+    &__container {
+        height: 100% !important;
+    }
+
+    &__arrow {
+        display: none !important;
+        top: 94% !important;
+
+    }
+}

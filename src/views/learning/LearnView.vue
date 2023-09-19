@@ -1,6 +1,6 @@
 <template>
     <div>
-        Orders
+        Learning
     </div>
 </template>
 <script lang="ts" setup>

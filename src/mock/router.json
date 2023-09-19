@@ -14,8 +14,22 @@
         "keepAlive": false
     },
     {
+        "title": "Виртуальный склад",
+        "path": "/werehouse",
+        "type": "tab",
+        "icon": "certificate",
+        "keepAlive": false
+    },
+    {
         "title": "Заказы",
         "path": "/orders",
+        "type": "tab",
+        "icon": "ranking",
+        "keepAlive": false
+    },
+    {
+        "title": "Обучение",
+        "path": "/learning",
         "type": "tab",
         "icon": "ranking",
         "keepAlive": false

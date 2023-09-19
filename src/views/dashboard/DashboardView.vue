@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between mt-6">
             <h5 class="text-[#111927] font-medium text-2xl">
                 Общее
             </h5>
             <div class="flex items-center gap-2 buttons">
-                <button class="active">
+                <button class=" underline">
                     Текущее
                 </button>
                 <button>
@@ -22,8 +22,8 @@
                 </button>
             </div>
         </div>
-        <div class="card overflow-hidden my-8">
-            <div class="grid grid-cols-4 h-[182px]">
+        <div class="card overflow-hidden my-6">
+            <div class="grid grid-cols-4 h-[152px]">
                 <div class="h-full flex justify-between flex-col">
                     <h4 class=" font-semibold text-2xl">
                         Магазин №1
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class=" relative">
-                    <Icon size="239" name="local-ellipse" class=" fill-[#3D3D3D] absolute right-[-24px]" />
+                    <Icon size="180" name="local-ellipse" class=" fill-[#3D3D3D] absolute right-[-24px]" />
                 </div>
             </div>
         </div>
@@ -156,10 +156,10 @@
                 <topProductBar />
             </div>
         </div>
-        <h5 class="text-[#111927] font-medium text-2xl my-8">
+        <h5 class="text-[#111927] font-medium text-2xl my-6">
             Остатки
         </h5>
-        <div class="grid grid-cols-3 gap-10">
+        <div class="grid grid-cols-3 gap-10 mb-4">
             <div class="card" v-for="card in productTop" :key="card.id">
                 <progressBarCart :card="card"></progressBarCart>
             </div>
@@ -207,11 +207,11 @@ const productTop = ref([
         padding: 8px 12px;
         transition: 2s ease-in;
 
-        &.active {
-            color: #344054;
-            border-radius: 6px;
-            background: #F9FAFB;
-        }
+        // &.active {
+        //     color: #344054;
+        //     border-radius: 6px;
+        //     background: #F9FAFB;
+        // }
     }
 }
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        Orders
+        Virtual Werehouse
     </div>
 </template>
 <script lang="ts" setup>

@@ -24,7 +24,7 @@
                     <el-form-item>
                         <div class="flex items-center justify-between w-full">
                             <el-checkbox label="Запомнить меня" class=" !h-4 !text-[#344054] !font-medium" size="large" />
-                            <RouterLink to="/reset-password" class=" text-primary text-sm font-semibold hover:underline">
+                            <RouterLink to="/forgot-password" class=" text-primary text-sm font-semibold hover:underline">
                                 Забыли пароль?
                             </RouterLink>
                         </div>

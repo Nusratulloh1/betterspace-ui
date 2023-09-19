@@ -118,7 +118,7 @@ onBeforeRouteUpdate((to) => {
 
 @media (min-width: 1180px) {
     .menu-horizontal {
-        width: 526px;
+        width: 660px;
     }
 }
 </style>

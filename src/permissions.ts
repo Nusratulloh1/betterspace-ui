@@ -21,7 +21,7 @@ const getPageTitle = (key: string) => {
 
 NProgress.configure({ showSpinner: false })
 
-const whiteList = ['/login']
+const whiteList = ['/login', '/register', '/reset-password']
 
 router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized, next: any) => {
     const store = useUsersStore()

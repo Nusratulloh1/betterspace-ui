@@ -10,7 +10,7 @@ export const makeControlItems = (items: any): ControlItem[] => {
 
 export const convertPhone = (value: string) =>
   value.replaceAll(/\(|\)|-| /g, "");
-
+export const phonePattern = /998\s\d{2}\s\d{3}-\d{2}-\d{2}/;
 export const convertPassport = (value: string) => value.replaceAll(/\s/g, "");
 
 export const convertCardNumber = (value: string) => value.replaceAll(/\s/g, "");

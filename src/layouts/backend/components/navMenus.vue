@@ -1,9 +1,17 @@
 <template>
     <div class="nav-menus" :class="layoutConfig.layoutMode">
+        <el-button class=" !h-10 !text-sm !text-[#344054] !font-semibold ">
+            <Icon name="local-tok" class=" !fill-none !stroke-[#344054] mr-2" size="20" />
+            Улучшить до Premium
+        </el-button>
+        <button class="">
+            <Icon name="local-bell" class=" !fill-none !stroke-current" size="20" />
+        </button>
         <el-popover @show="onCurrentNavMenu(true, 'adminInfo')" @hide="onCurrentNavMenu(false, 'adminInfo')"
             placement="bottom-end" :hide-after="0" :width="230" class="!p-0" trigger="click" popper-class="!px-0">
             <template #reference>
-                <div class="admin-info " :class="state.currentNavMenu == 'adminInfo' ? 'hover' : ''">
+                <div class="admin-info text-[#111927] hover:!text-primary"
+                    :class="state.currentNavMenu == 'adminInfo' ? 'hover' : ''">
                     <svg width="24" height="24" viewBox="0 0 24 24" class=" fill-none stroke-current"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -48,6 +56,9 @@
             <Icon :color="layoutConfig.headerBarTabColor" class="nav-menu-icon" name="fa fa-cogs" size="18" />
         </div>
         <Config /> -->
+        <button>
+            <img src="/@/assets/images/avatar.svg" alt="avatar">
+        </button>
     </div>
 </template>
 
@@ -114,6 +125,7 @@ const logOut = () => {
     display: flex;
     align-items: center;
     height: 100%;
+    gap: 16px;
     // margin-left: auto;
     // background-color: #182857;
 
@@ -142,24 +154,15 @@ const logOut = () => {
         align-items: center;
         cursor: pointer;
         user-select: none;
-        color: #111927;
     }
 
     .admin-name {
-        color: #111927;
         font-family: 'Inter';
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
     }
 
-    &:hover {
-
-        .admin-info,
-        .admin-name {
-            color: #6941C6;
-        }
-    }
 }
 
 .chang-lang :deep(.el-dropdown-menu__item) {

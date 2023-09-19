@@ -41,6 +41,22 @@ const staticRoutes: Array<RouteRecordRaw> = [
                     title: 'Orders',
                 },
             },
+            {
+                path: 'learning',
+                name: 'learning',
+                component: () => import('/@/views/learning/LearnView.vue'),
+                meta: {
+                    title: 'Learning',
+                },
+            },
+            {
+                path: 'werehouse',
+                name: 'orders',
+                component: () => import('/@/views/werehouse/WereHouseView.vue'),
+                meta: {
+                    title: 'Werehouse',
+                },
+            },
         ],
     },
     {
@@ -49,6 +65,22 @@ const staticRoutes: Array<RouteRecordRaw> = [
         component: () => import('/@/views/auth/LoginView.vue'),
         meta: {
             title: 'Login',
+        },
+    },
+    {
+        path: '/register',
+        name: 'adminRegsiter',
+        component: () => import('/@/views/auth/RegisterView.vue'),
+        meta: {
+            title: 'Register',
+        },
+    },
+    {
+        path: '/reset-password',
+        name: 'adminReset',
+        component: () => import('/@/views/auth/ResetPasswordView.vue'),
+        meta: {
+            title: 'Reset Password',
         },
     },
     {

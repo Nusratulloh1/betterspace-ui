@@ -8,31 +8,26 @@
                 </h4>
             </div>
             <div>
+                <div class=" rounded-xl border border-[#EAECF0] w-14 h-14 mx-auto mb-4 shadow-sm">
+                    <Icon size="28" name="local-key" />
+                </div>
                 <h5>
-                    Войти
+                    Забыли пароль?
                 </h5>
                 <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" :hide-required-asterisk="true"
                     label-position="top" class=" mt-8 w-[360px]">
-                    <el-form-item prop="email" label="Номер телефона" class="!mb-5">
-                        <el-input v-model.trim="ruleForm.email" type="text" size="large" autocomplete="off"
-                            placeholder="Введите номер телефона" />
+                    <el-form-item prop="phone" label="Номер телефона" class="!mb-5">
+                        <el-input v-model.trim="ruleForm.phone" v-mask="'+998 ## ###-##-##'" type="text" size="large"
+                            autocomplete="off" placeholder="Введите номер телефона" />
                     </el-form-item>
-                    <el-form-item prop="password" label="Пароль"  class="!mb-6">
-                        <el-input v-model.trim="ruleForm.password" type="password" size="large" :show-password="true"
-                            autocomplete="off" placeholder="Your password" />
-                    </el-form-item>
-                    <el-form-item>
-                        <div class="flex items-center justify-between w-full">
-                            <el-checkbox label="Запомнить меня" class=" !h-4 !text-[#344054] !font-medium" size="large" />
-                            <RouterLink to="/reset-password" class=" text-primary text-sm font-semibold hover:underline">
-                                Забыли пароль?
-                            </RouterLink>
-                        </div>
+                    <el-form-item prop="code" label="Код подтверждения" class="!mb-6">
+                        <el-input v-model.trim="ruleForm.code" v-mask="'####'" type="text" size="large" autocomplete="off"
+                            placeholder="****" />
                     </el-form-item>
                     <div class="flex flex-col space-y-6 py-1">
                         <el-button class="w-full gradient" size="large" type="primary" @click="submitForm(ruleFormRef)"
                             :loading="loading">
-                            Войти
+                            Сбросить пароль
                         </el-button>
                         <div class="flex items-center gap-2 is-registered">
                             <p>
@@ -61,37 +56,40 @@ import { useUsersStore } from "../../stores/user";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import sha1 from "sha1";
+import { phonePattern } from "/@/utils/mappers";
 const i18n = useI18n();
 const store = useUsersStore();
 const router = useRouter();
 
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive({
-    email: "",
-    password: "",
+    phone: "",
+    code: "",
 });
 const rules = reactive<FormRules>({
-    email: [
+    phone: [
         {
             required: true,
             message: i18n.t("validation.fillField"),
-            trigger: "blur",
+            trigger: ["blur", "change"],
         },
         {
-            type: "email",
-            message: i18n.t("validation.inputEmail"),
-            trigger: "blur",
+            type: "string",
+            required: true,
+            pattern: phonePattern,
+            message: i18n.t("validation.pattern"),
+            trigger: ["blur", "change"],
         },
     ],
-    password: [
+    code: [
         {
             required: true,
             message: i18n.t("validation.fillField"),
             trigger: "blur",
         },
         {
-            min: 8,
-            message: i18n.t("validation.minimumLength", { value: 8 }),
+            min: 4,
+            message: i18n.t("validation.minimumLength", { value: 4 }),
             trigger: "blur",
         },
     ],
@@ -104,13 +102,8 @@ const submitForm = async (formEl: FormInstance | undefined) => {
         if (valid) {
             try {
                 loading.value = true;
-                const data = {
-                    ...ruleForm,
-                    password: sha1(ruleForm.password),
-                };
-                await store.login(data);
+                // await store.login(data);
                 loading.value = false;
-                router.push("/");
             } catch (error: any) {
                 console.log("error", error.message);
 
@@ -144,19 +137,18 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 
     h5 {
         color: #101828;
-        font-family: 'Inter';
-        font-size: 30px;
+        text-align: center;
+        font-size: 32px;
         font-weight: 600;
-        line-height: 38px;
+        line-height: 44px;
+        letter-spacing: -0.64px;
     }
 
     .is-registered {
         color: #475467;
-        font-family: Inter;
         font-size: 14px;
         font-weight: 400;
         line-height: 20px;
-        /* 142.857% */
     }
 
 }

@@ -2,7 +2,7 @@
     <div class=" grid grid-cols-2 h-screen relative login">
         <div class=" h-full flex items-center justify-center relative">
             <div class="flex items-center logo gap-1.5 absolute top-24">
-                <img src="/@/assets/images/icons/logo-main.svg" alt="logoMain">
+                <img :src="logoMain" alt="logoMain">
             </div>
             <div>
                 <template v-if="step === 1">
@@ -100,6 +100,7 @@ import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import sha1 from "sha1";
 import { phonePattern } from "/@/utils/mappers";
+import logoMain from '/@/assets/images/icons/logo-main.svg'
 const i18n = useI18n();
 const store = useUsersStore();
 const router = useRouter();

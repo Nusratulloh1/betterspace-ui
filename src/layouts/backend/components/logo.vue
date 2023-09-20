@@ -1,7 +1,7 @@
 <template>
     <div class="layout-logo">
         <div class="logo" data-v-d5556f18="">
-            <img src="/@/assets/images/icons/logo-main.svg" alt="logoMain">
+            <img :src="logo" alt="logoMain">
         </div>
     </div>
 </template>
@@ -10,6 +10,7 @@
 import { computed } from 'vue'
 import { useStore } from '/@/store'
 import { closeShade } from '/@/utils/pageShade'
+import logo from '/@/assets/images/icons/logo-main.svg'
 const store = useStore()
 const layoutConfig = computed(() => store.state.config.layout)
 

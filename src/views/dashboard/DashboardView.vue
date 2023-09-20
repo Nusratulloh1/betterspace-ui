@@ -36,11 +36,7 @@
                                 <!-- Магазин №1 -->
                             </h4>
                             <el-button type="primary" class="gradient !text-lg !h-[60px] !w-[251px]">
-                                <svg width="24" class=" mr-2" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 5V19M5 12H19" stroke="white" stroke-width="1.66667" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
+                                <Icon size="24" name="local-plus" class="mr-2 !fill-none" />
                                 Добавить товары
                             </el-button>
                         </div>

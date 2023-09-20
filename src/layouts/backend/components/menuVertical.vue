@@ -1,16 +1,9 @@
 <template>
     <el-scrollbar ref="verticalMenusRef" class="vertical-menus-scrollbar">
-        <el-menu
-            class="layouts-menu-vertical"
-            router
-            :collapse-transition="false"
-            :unique-opened="layoutConfig.menuUniqueOpened"
-            :default-active="state.defaultActive"
-            :collapse="layoutConfig.menuCollapse"
-            :background-color="layoutConfig.menuBackground"
-            :text-color="layoutConfig.menuColor"
-            :active-text-color="layoutConfig.menuActiveColor"
-        >
+        <el-menu class="layouts-menu-vertical" router :collapse-transition="false"
+            :unique-opened="layoutConfig.menuUniqueOpened" :default-active="state.defaultActive"
+            :collapse="layoutConfig.menuCollapse" :background-color="layoutConfig.menuBackground"
+            :text-color="layoutConfig.menuColor" :active-text-color="layoutConfig.menuActiveColor">
             <MenuTree :menus="menus" />
         </el-menu>
     </el-scrollbar>
@@ -73,6 +66,7 @@ onBeforeRouteUpdate((to) => {
 .vertical-menus-scrollbar {
     /* height: v-bind(verticalMenusScrollbarHeight); */
 }
+
 .layouts-menu-vertical {
     border: 0;
 }

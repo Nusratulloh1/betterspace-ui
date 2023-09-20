@@ -2,10 +2,7 @@
     <div class=" grid grid-cols-2 h-screen relative login">
         <div class=" h-full flex items-center justify-center relative">
             <div class="flex items-center logo gap-1.5 absolute top-24">
-                <Icon size="30" name="local-logo-main" style="fill: rgba(17, 25, 39, 1);" />
-                <h4>
-                    Deal<span>me</span>
-                </h4>
+                <img src="/@/assets/images/icons/logo-main.svg" alt="logoMain">
             </div>
             <div>
                 <template v-if="step === 1">
@@ -211,26 +208,6 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 
 <style scoped lang="scss">
 .login {
-    .logo {
-        h4 {
-            color: #3D3D3D;
-            font-family: 'Pangram';
-            font-size: 25.648px;
-            font-weight: 700;
-
-            span {
-                background: linear-gradient(91deg, #B540F6 52.01%, #F18F8C 86.64%, #FB9D79 96.11%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                font-family: 'Pangram';
-                font-size: 25.883px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-            }
-        }
-    }
 
     h5 {
         color: #101828;

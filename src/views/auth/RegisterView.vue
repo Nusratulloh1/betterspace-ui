@@ -2,10 +2,7 @@
     <div class=" grid grid-cols-2 h-screen relative login">
         <div class=" h-full flex items-center justify-center relative">
             <div class="flex items-center logo gap-1.5 absolute top-24">
-                <Icon size="30" name="local-logo-main" style="fill: rgba(17, 25, 39, 1);" />
-                <h4>
-                    Deal<span>me</span>
-                </h4>
+                <img src="/@/assets/images/icons/logo-main.svg" alt="logoMain">
             </div>
             <div>
                 <h5>
@@ -44,8 +41,8 @@
         </div>
         <div class="flex items-center justify-center px-8 bg-[#F3F4F6]">
             <div class="w-full">
-                <el-carousel ref="carousel" @change="changedSlider" :interval="5000" indicator-position="outside" style="transition: .5s ease-out all;"
-                    class="w-full !h-[604px]">
+                <el-carousel ref="carousel" @change="changedSlider" :pause-on-hover="false" :interval="5000"
+                    indicator-position="outside" style="transition: .5s ease-out all;" class="w-full !h-[604px]">
                     <el-carousel-item class=" !w-full !h-[704px]" arrow="never">
                         <div>
                             <img src="/@/assets/images/auth/reg-1.svg" class=" mx-auto" alt="">
@@ -96,7 +93,7 @@
                     </button>
                     <div class="flex items-center gap-4 p-3">
                         <button class=" bg-[#667085] w-[10px] h-[10px] rounded-md"
-                            :class="{ 'bg-[#0C111D]': activeSlide === i }" @click="setActiveItem(i)"
+                            :class="{ '!bg-[#0C111D]': activeSlide === i }" @click="setActiveItem(i)"
                             v-for="i in [0, 1, 2]"></button>
                     </div>
                     <button @click="next()">
@@ -210,24 +207,6 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 
 <style scoped lang="scss">
 .login {
-    .logo {
-        h4 {
-            color: #3D3D3D;
-            font-family: 'Pangram';
-            font-size: 25.648px;
-            font-weight: 700;
-
-            span {
-                background: linear-gradient(91deg, #B540F6 52.01%, #F18F8C 86.64%, #FB9D79 96.11%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                font-family: 'Pangram';
-                font-size: 25.883px;
-                font-weight: 700;
-            }
-        }
-    }
 
     h5 {
         color: #101828;

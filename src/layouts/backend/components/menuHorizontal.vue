@@ -5,11 +5,11 @@
                 <Logo @click="$router.push('/')" class="cursor-pointer" />
             </div>
             <el-scrollbar ref="horizontalMenusRef" class="horizontal-menus-scrollbar flex">
-                <el-menu class="menu-horizontal" router mode="horizontal" :default-active="state.defaultActive"
-                    background-color="#ffffff" text-color="#111927" active-text-color="#C58E15">
+                <el-menu class="menu-horizontal" router mode="horizontal"
+                    background-color="#ffffff">
                     <template v-for="menu in menus" class="flex">
-                        <el-menu-item v-if="menu.type == 'tab'" :index="menu.path" :key="menu.path">
-                            <span>{{ menu.title ? menu.title : $t('noTitle') }}</span>
+                        <el-menu-item :class="{'is-active': menu.path === route.path}" v-if="menu.type == 'tab'" :index="menu.path" :key="menu.path">
+                            <span >{{ menu.title ? menu.title : $t('noTitle') }}</span>
                         </el-menu-item>
                     </template>
                 </el-menu>
@@ -31,7 +31,7 @@ const horizontalMenusRef = ref<InstanceType<typeof ElScrollbar>>()
 
 const store = useStore()
 const route = useRoute()
-
+console.log(route.path);
 const state = reactive({
     defaultActive: '',
 })
@@ -112,6 +112,7 @@ onBeforeRouteUpdate((to) => {
 .el-menu-item.is-active {
     color: #111927 !important;
     text-decoration-line: underline;
+    font-weight: 600;
     border: none;
     opacity: 1;
 }

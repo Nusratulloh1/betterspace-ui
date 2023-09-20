@@ -22,148 +22,170 @@
                 </button>
             </div>
         </div>
-        <div class="card overflow-hidden my-6">
-            <div class="grid grid-cols-4 h-[152px]">
-                <div class="h-full flex justify-between flex-col">
-                    <h4 class=" font-semibold text-2xl">
+        <el-collapse v-model="activeCollapse">
+            <el-collapse-item name="0" class="mini my-5">
+                <template #title>
+                    <h5 class="text-[#111927] font-medium text-2xl">
                         Магазин №1
-                    </h4>
-                    <el-button icon="el-icon-Plus" type="primary" size="large"
-                        class="gradient !text-lg !h-[60px] !w-[231px]">
-                        Добавить товары
-                    </el-button>
-                </div>
-                <div class="h-full flex justify-between flex-col">
-                    <div>
-                        <h4 class="text-[#6C737F] text-lg">
-                            Общее количество SKU
-                        </h4>
-                        <p class=" font-medium text-3xl mt-1">
-                            24
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-[#6C737F] text-lg">
-                            Заказано
-                        </h4>
-                        <p class=" font-medium text-3xl mt-1">
-                            155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="h-full flex justify-between flex-col">
-                    <div>
-                        <h4 class="text-[#6C737F] text-lg">
-                            Продано
-                        </h4>
-                        <p class=" font-medium text-3xl mt-1">
-                            155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-[#6C737F] text-lg">
-                            Возвраты
-                        </h4>
-                        <p class=" font-medium text-3xl mt-1 text-[#D92D20]">
-                            -15,234,500 <span class=" text-lg">сум</span>
-                        </p>
-                    </div>
-                </div>
-                <div class=" relative">
-                    <Icon size="180" name="local-ellipse" class=" fill-[#3D3D3D] absolute right-[-24px]" />
-                </div>
-            </div>
-        </div>
-        <h5 class="text-[#111927] font-medium text-2xl">
-            Маркетплейсы и товары
-        </h5>
-        <div class="grid grid-cols-2 gap-4 mt-4">
-            <div class="card">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <img src="../../assets/images/brands/olcha.svg" alt="olcha">
-                        <h5 class="text-[#111927] font-semibold">
-                            Olcha.uz
-                        </h5>
-                    </div>
-                    <div>
-                        <h6 class="text-[#6C737F] font-medium text-base">
-                            Продано
-                        </h6>
-                        <p class=" font-medium text-base mt-1">
-                            25,000,000 сум
-                        </p>
-                    </div>
-                    <div>
-                        <h6 class="text-[#6C737F] font-medium text-base">
-                            Зарезервировано товаров
-                        </h6>
-                        <p class=" font-medium text-base mt-1">
-                            25 шт.
-                        </p>
+                    </h5>
+                </template>
+                <div class="overflow-hidden">
+                    <div class="grid grid-cols-4 h-[152px]">
+                        <div class="h-full flex justify-between flex-col">
+                            <h4 class=" font-semibold text-2xl ">
+                                <!-- Магазин №1 -->
+                            </h4>
+                            <el-button type="primary" class="gradient !text-lg !h-[60px] !w-[251px]">
+                                <svg width="24" class=" mr-2" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19M5 12H19" stroke="white" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Добавить товары
+                            </el-button>
+                        </div>
+                        <div class="h-full flex justify-between flex-col">
+                            <div>
+                                <h4 class="text-[#6C737F] text-lg">
+                                    Общее количество SKU
+                                </h4>
+                                <p class=" font-medium text-3xl mt-1">
+                                    24
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-[#6C737F] text-lg">
+                                    Заказано
+                                </h4>
+                                <p class=" font-medium text-3xl mt-1">
+                                    155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="h-full flex justify-between flex-col">
+                            <div>
+                                <h4 class="text-[#6C737F] text-lg">
+                                    Продано
+                                </h4>
+                                <p class=" font-medium text-3xl mt-1">
+                                    155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="text-[#6C737F] text-lg">
+                                    Возвраты
+                                </h4>
+                                <p class=" font-medium text-3xl mt-1 text-[#D92D20]">
+                                    -15,234,500 <span class=" text-lg">сум</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="">
+                            <Icon size="180" name="local-ellipse" class="  absolute right-0"
+                                style="fill: rgba(157, 164, 174, 1);" />
+                        </div>
                     </div>
                 </div>
-                <div class="flex items-center justify-between my-8">
-                    <div class="flex items-center gap-2">
-                        <img src="../../assets/images/brands/zoodmall.svg" alt="zoodmall">
-                        <h5 class="text-[#111927] font-semibold">
-                            Zoodmal
-                        </h5>
+            </el-collapse-item>
+            <el-collapse-item name="1">
+                <template #title>
+                    <h5 class="text-[#111927] font-medium text-2xl">
+                        Маркетплейсы и товары
+                    </h5>
+                </template>
+                <div class="grid grid-cols-2 gap-4 mt-2">
+                    <div class="card">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="../../assets/images/brands/olcha.svg" alt="olcha">
+                                <h5 class="text-[#111927] font-semibold">
+                                    Olcha.uz
+                                </h5>
+                            </div>
+                            <div>
+                                <h6 class="text-[#6C737F] font-medium text-base">
+                                    Продано
+                                </h6>
+                                <p class=" font-medium text-base mt-1">
+                                    25,000,000 сум
+                                </p>
+                            </div>
+                            <div>
+                                <h6 class="text-[#6C737F] font-medium text-base">
+                                    Зарезервировано товаров
+                                </h6>
+                                <p class=" font-medium text-base mt-1">
+                                    25 шт.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between my-8">
+                            <div class="flex items-center gap-2">
+                                <img src="../../assets/images/brands/zoodmall.svg" alt="zoodmall">
+                                <h5 class="text-[#111927] font-semibold">
+                                    Zoodmal
+                                </h5>
+                            </div>
+                            <div>
+                                <h6 class="text-[#6C737F] font-medium text-base">
+                                    Продано
+                                </h6>
+                                <p class=" font-medium text-base mt-1">
+                                    15,152,1250 сум
+                                </p>
+                            </div>
+                            <div>
+                                <h6 class="text-[#6C737F] font-medium text-base">
+                                    Зарезервировано товаров
+                                </h6>
+                                <p class=" font-medium text-base mt-1">
+                                    25 шт.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <img src="../../assets/images/brands/sello.svg" alt="sello">
+                                <h5 class="text-[#111927] font-semibold">
+                                    Sello.uz
+                                </h5>
+                            </div>
+                            <div>
+                                <h6 class="text-[#6C737F] font-medium text-base">
+                                    Продано
+                                </h6>
+                                <p class=" font-medium text-base mt-1">
+                                    25,000,000 сум
+                                </p>
+                            </div>
+                            <div>
+                                <h6 class="text-[#6C737F] font-medium text-base">
+                                    Зарезервировано товаров
+                                </h6>
+                                <p class=" font-medium text-base mt-1">
+                                    25 шт.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h6 class="text-[#6C737F] font-medium text-base">
-                            Продано
-                        </h6>
-                        <p class=" font-medium text-base mt-1">
-                            15,152,1250 сум
-                        </p>
-                    </div>
-                    <div>
-                        <h6 class="text-[#6C737F] font-medium text-base">
-                            Зарезервировано товаров
-                        </h6>
-                        <p class=" font-medium text-base mt-1">
-                            25 шт.
-                        </p>
+                    <div class="card">
+                        <topProductBar />
                     </div>
                 </div>
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-2">
-                        <img src="../../assets/images/brands/sello.svg" alt="sello">
-                        <h5 class="text-[#111927] font-semibold">
-                            Sello.uz
-                        </h5>
-                    </div>
-                    <div>
-                        <h6 class="text-[#6C737F] font-medium text-base">
-                            Продано
-                        </h6>
-                        <p class=" font-medium text-base mt-1">
-                            25,000,000 сум
-                        </p>
-                    </div>
-                    <div>
-                        <h6 class="text-[#6C737F] font-medium text-base">
-                            Зарезервировано товаров
-                        </h6>
-                        <p class=" font-medium text-base mt-1">
-                            25 шт.
-                        </p>
+            </el-collapse-item>
+            <el-collapse-item name="2">
+                <template #title>
+                    <h5 class="text-[#111927] font-medium text-2xl">
+                        Остатки
+                    </h5>
+                </template>
+                <div class="grid grid-cols-3 gap-10 mb-4 mt-2">
+                    <div class="card" v-for="card in productTop" :key="card.id">
+                        <progressBarCart :card="card"></progressBarCart>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <topProductBar />
-            </div>
-        </div>
-        <h5 class="text-[#111927] font-medium text-2xl my-6">
-            Остатки
-        </h5>
-        <div class="grid grid-cols-3 gap-10 mb-4">
-            <div class="card" v-for="card in productTop" :key="card.id">
-                <progressBarCart :card="card"></progressBarCart>
-            </div>
-        </div>
+            </el-collapse-item>
+        </el-collapse>
     </div>
 </template>
 
@@ -171,6 +193,7 @@
 import { ref } from 'vue';
 import topProductBar from './components/topProductBar.vue'
 import progressBarCart from './components/progressBarCart.vue';
+const activeCollapse = ref(['0', '1', '2'])
 const productTop = ref([
     {
         id: 1,

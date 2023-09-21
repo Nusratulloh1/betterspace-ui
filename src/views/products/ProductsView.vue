@@ -18,34 +18,62 @@
                     <Icon size="19" name="local-plus" class="mr-2 !fill-none" />
                     Добавить товары
                 </el-button>
-                <el-popover placement="bottom-start" :width="296" trigger="click" style=" padding: 4px 6px !important;">
-                    <ul>
-                        <li>
-                            <button class="flex items-center justify-between w-full text-sm font-medium text-[#344054] hover:bg-slate-300 p-[9px]">
-                                <div class="flex items-center gap-2">
-                                    <Icon size="16" name="local-export" class="!fill-none" />
-                                    Выгрузить данные
+                <el-dropdown size="large">
+                    <el-button class=" !border-none mb-2">
+                        <Icon size="19" name="local-burger-menu" class="!fill-none" />
+                    </el-button>
+                    <template #dropdown>
+                        <el-dropdown-menu class=" w-[284px]">
+                            <el-dropdown-item command="export">
+                                <div class="flex items-center justify-between w-full text-sm font-medium text-[#344054]">
+                                    <div class="flex items-center gap-2">
+                                        <Icon size="16" name="local-export" class="!fill-none" />
+                                        Выгрузить данные
+                                    </div>
+                                    <span class="text-[#667085] font-normal text-xs">
+                                        Shift+D+E
+                                    </span>
                                 </div>
-                                <span class="text-[#667085] font-normal text-xs">
-                                    Shift+D+E
-                                </span>
-                            </button>
-                        </li>
-                    </ul>
-                    <template #reference>
-                        <el-button class=" !border-none mb-2">
-                            <Icon size="19" name="local-burger-menu" class="!fill-none" />
-                        </el-button>
-                    </template>
+                            </el-dropdown-item>
 
-                </el-popover>
+                            <el-dropdown-item command="import">
+                                <div class="flex items-center justify-between w-full text-sm font-medium text-[#344054]">
+                                    <div class="flex items-center gap-2">
+                                        <Icon size="16" name="local-import" class="!fill-none" />
+                                        Импортировать данные
+                                    </div>
+                                    <span class="text-[#667085] font-normal text-xs">
+                                        Shift+D+I
+                                    </span>
+                                </div>
+                            </el-dropdown-item>
+                            <el-dropdown-item command="student">
+                                <div class="flex items-center justify-between w-full text-sm font-medium text-[#344054]">
+                                    <div class="flex items-center gap-2">
+                                        <Icon size="16" name="local-doc" class="!fill-none" />
+                                        Акт и накладная
+                                    </div>
+                                    <span class="text-[#667085] font-normal text-xs">
+                                        Shift+D+R
+                                    </span>
+                                </div>
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </template>
+                </el-dropdown>
+            </div>
+        </div>
+        <div class="flex items-center justify-between mt-8">
+            <div class="flex items-center gap-4">
+                <el-input class="!w-[374px] m-2" size="large" placeholder="Введите товар, артикул или штрихкод"
+                    :suffix-icon="Search" />
             </div>
         </div>
     </div>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';
-
+import { Search } from '@element-plus/icons-vue'
 
 
 

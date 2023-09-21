@@ -28,9 +28,9 @@
         <el-popover @show="onCurrentNavMenu(true, 'adminInfo')" @hide="onCurrentNavMenu(false, 'adminInfo')"
             placement="bottom-end" :hide-after="0" :width="230" class="!p-0" trigger="click" popper-class="!px-0">
             <template #reference>
-                <div class=" bg-[#F2F4F7] border opacity-90 rounded-full p-2 hover:opacity-100 cursor-pointer"
+                <div class="  border opacity-90 rounded-full p-2 hover:opacity-100 cursor-pointer"
                     :class="state.currentNavMenu == 'adminInfo' ? 'hover' : ''">
-                    <Icon name="local-user" class=" !fill-none !stroke-[#475467]" size="20" />
+                    <Icon name="local-user" class=" !fill-none !stroke-black" size="20" />
                 </div>
             </template>
             <div>

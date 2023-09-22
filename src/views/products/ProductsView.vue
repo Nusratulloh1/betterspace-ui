@@ -14,7 +14,7 @@
                 <button class=" text-sm font-semibold py-4 px-1 text-[#6C737F] border-b-[3px] border-transparent mx-4">
                     Архив
                 </button>
-                <el-button type="primary" class="gradient !h-11 !w-[184px] mb-2">
+                <el-button type="primary" class="gradient !h-11 !w-[184px] mb-2" @click="showForm = true">
                     <Icon size="19" name="local-plus" class="mr-2 !fill-none" />
                     Добавить товары
                 </el-button>
@@ -242,7 +242,7 @@
                 <el-pagination layout="prev, pager, next" :total="50" />
             </div>
         </div>
-        <productForm></productForm>
+        <productForm :visible="showForm" @close="showForm = false"></productForm>
     </div>
 </template>
 <script lang="ts" setup>
@@ -254,6 +254,7 @@ import asaxiy from '/@/assets/images/brands/asaxiy.svg'
 import olcha from '/@/assets/images/brands/olcha.svg'
 import productForm from "./components/productForm.vue"
 const isEdit = ref(false)
+const showForm = ref(false)
 const visibleFilter = ref(false)
 const selects1 = ref([])
 const selects2 = ref([])

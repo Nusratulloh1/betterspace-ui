@@ -1,16 +1,20 @@
 <template>
-    <el-drawer v-model="visible" title="I have a nested table inside!" direction="rtl" size="50%">
-        <el-table :data="gridData">
-            <el-table-column property="date" label="Date" width="150" />
-            <el-table-column property="name" label="Name" width="200" />
-            <el-table-column property="address" label="Address" />
-        </el-table>
+    <el-drawer v-model="props.visible" direction="rtl" size="40%">
+
     </el-drawer>
 </template>
   
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { ElDrawer, ElMessageBox } from 'element-plus'
+
+const props = defineProps({
+    visible: {
+        type: Boolean,
+        required: true,
+        default: false
+    }
+})
 const table = ref(false)
 const dialog = ref(false)
 const loading = ref(false)
@@ -29,4 +33,9 @@ const form = reactive({
 
 
 
+
+
+
+
 </script>
+  

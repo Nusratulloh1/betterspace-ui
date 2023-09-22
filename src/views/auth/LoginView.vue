@@ -45,7 +45,7 @@
         </div>
         <div class="flex items-center justify-end pl-24 bg-[#F3F4F6]">
             <div class="border-[6px] rounded-2xl border-[#101828] mr-[-10px] max-w-[1024px] overflow-hidden">
-                <img class="w-full max-h-[682px]" src="../../assets/images/auth/login.svg" alt="login">
+                <img class="w-full max-h-[682px]" src="../../assets/images/auth/login.jpeg" alt="login">
             </div>
         </div>
     </div>

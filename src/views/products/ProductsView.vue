@@ -77,13 +77,68 @@
                         </button>
                     </div>
                     <div class=" mt-6">
-                        <div class="flex gap-11 items-center">
+                        <div class="flex gap-11 items-center justify-between">
                             <label class=" font-medium text-[#344054]">Категория</label>
-                            <el-select v-model="selects1" multiple collapse-tags placeholder="Select" style="width: 447px">
+                            <el-select v-model="selects1" multiple collapse-tags placeholder="Select" style="width: 447px"
+                                size="large">
                                 <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда']" :key="item"
                                     :label="item" :value="item" />
                             </el-select>
                         </div>
+                        <div class="flex gap-11 items-center justify-between mt-6">
+                            <label class=" font-medium text-[#344054]">Статус</label>
+                            <el-select v-model="selects2" multiple collapse-tags class="checkboxable" placeholder="Select"
+                                style="width: 447px" size="large">
+                                <el-option class="none" :key="5" label="Все статусы" value="">
+                                    <label class="flex items-center justify-between" :for="`${33}`">
+                                        Все статусы
+                                        <el-checkbox class="gradiented" :id="`${33}`" size="large" />
+                                    </label>
+                                </el-option>
+                                <hr class=" mx-1.5" />
+                                <el-option class="none"
+                                    v-for="(item, i) in ['Готов к отправлению', 'В пути', 'Отменен', 'Ожидает возврата', 'Возвращен']"
+                                    :key="item" :value="item">
+                                    <label class="flex items-center justify-between" :for="`${i}`">
+                                        {{ item }}
+                                        <el-checkbox class="gradiented" :id="`${i}`" size="large" />
+                                    </label>
+                                </el-option>
+                            </el-select>
+                        </div>
+                        <div class="flex gap-8 items-center justify-between mt-6">
+                            <label class=" font-medium text-[#344054]">Маркетплейс</label>
+                            <el-select v-model="selects3" multiple collapse-tags class="checkboxable" placeholder="Select"
+                                style="width: 447px" size="large">
+                                <el-option class="none" :key="5" label="Все маркетплейсы" value="">
+                                    <label class="flex items-center justify-between" :for="`${313}`">
+                                        Все маркетплейсы
+                                        <el-checkbox class="gradiented with-bg" :id="`${313}`" size="large" />
+                                    </label>
+                                </el-option>
+                                <el-option class="none" :key="44" value="Olcha.uz">
+                                    <label class="flex items-center justify-between" :for="`${44}`">
+                                        <div class="flex items-center gap-2">
+                                            <img :src="olcha" alt="olcha" width="24" height="24">
+                                            Olcha.uz
+                                        </div>
+                                        <el-checkbox class="gradiented with-bg" :id="`${44}`" size="large" />
+                                    </label>
+                                </el-option>
+                                <el-option class="none" :key="434" value="Sello.uz">
+                                    <label class="flex items-center justify-between" :for="`${434}`">
+                                        <div class="flex items-center gap-2">
+                                            <img :src="sello" alt="sello" width="24" height="24">
+                                            Sello.uz
+                                        </div>
+                                        <el-checkbox class="gradiented with-bg" :id="`${434}`" size="large" />
+                                    </label>
+                                </el-option>
+                            </el-select>
+                        </div>
+                        <el-button @click="visibleFilter = false" class="w-full mt-6 !bg-[#000] !text-white !rounded">
+                            Сохранить
+                        </el-button>
                     </div>
                     <template #reference>
                         <el-button @click="visibleFilter = !visibleFilter" class=" !text-[#344054]" size="large">
@@ -187,6 +242,7 @@
                 <el-pagination layout="prev, pager, next" :total="50" />
             </div>
         </div>
+        <productForm></productForm>
     </div>
 </template>
 <script lang="ts" setup>
@@ -196,9 +252,12 @@ import dena from '/@/assets/images/products/dena.svg'
 import sello from '/@/assets/images/brands/sello.svg'
 import asaxiy from '/@/assets/images/brands/asaxiy.svg'
 import olcha from '/@/assets/images/brands/olcha.svg'
+import productForm from "./components/productForm.vue"
 const isEdit = ref(false)
 const visibleFilter = ref(false)
 const selects1 = ref([])
+const selects2 = ref([])
+const selects3 = ref([])
 const tableData = [
     {
         name: 'Olma sharbat',

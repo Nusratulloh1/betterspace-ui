@@ -45,7 +45,7 @@
                     indicator-position="outside" style="transition: .5s ease-out all;" class="w-full !h-[604px]">
                     <el-carousel-item class=" !w-full !h-[704px]" arrow="never">
                         <div>
-                            <img src="/@/assets/images/auth/reg-1.svg" class=" mx-auto" alt="">
+                            <img src="/@/assets/images/auth/reg-1.png" class=" mx-auto max-w-[650px]" alt="">
                             <div class=" mt-20 max-w-[476px] mx-auto text-center">
                                 <h6 class=" font-semibold text-2xl">
                                     Удобная аналитика
@@ -59,7 +59,7 @@
                         </div>
                     </el-carousel-item>
                     <el-carousel-item>
-                        <img src="/@/assets/images/auth/reg-2.svg" class=" mx-auto" alt="">
+                        <img src="/@/assets/images/auth/reg-2.png" class=" mx-auto max-w-[620px]" alt="">
                         <div class=" mt-20 max-w-[476px] mx-auto text-center">
                             <h6 class=" font-semibold text-2xl">
                                 Мониторинг маркетплейсов
@@ -71,7 +71,7 @@
                         </div>
                     </el-carousel-item>
                     <el-carousel-item>
-                        <img src="/@/assets/images/auth/reg-3.svg" class=" mx-auto" alt="">
+                        <img src="/@/assets/images/auth/reg-3.png" class=" mx-auto max-w-[607px]" alt="">
                         <div class=" mt-10 max-w-[476px] mx-auto text-center">
                             <h6 class=" font-semibold text-2xl">
                                 Контроль остатков

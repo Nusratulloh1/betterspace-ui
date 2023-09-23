@@ -174,8 +174,13 @@
                 </el-button>
             </div>
         </div>
-        <el-table :class="{ 'opened': isEdit }" :data="tableData" style="width: 100%">
-            <el-table-column v-if="isEdit" type="selection" align="center" width="55" />
+        <el-table :class="{ 'opened': isEdit }" @row-click="handleRowClick" row-class-name=" cursor-pointer"
+            :data="tableData" style="width: 100%">
+            <el-table-column v-if="isEdit" type="selection" align="center" width="55">
+                <template #default="{ row }">
+                    <el-checkbox :checked="product?.id == row?.id" size="large" />
+                </template>
+            </el-table-column>
             <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="180">
                 <template #default="{ row }">
                     <div class="flex gap-2">
@@ -242,7 +247,7 @@
                 <el-pagination layout="prev, pager, next" :total="50" />
             </div>
         </div>
-        <productForm :visible="showForm" @close="showForm = false"></productForm>
+        <productForm :visible="showForm" :product="product" @close="closed"></productForm>
     </div>
 </template>
 <script lang="ts" setup>
@@ -253,14 +258,24 @@ import sello from '/@/assets/images/brands/sello.svg'
 import asaxiy from '/@/assets/images/brands/asaxiy.svg'
 import olcha from '/@/assets/images/brands/olcha.svg'
 import productForm from "./components/productForm.vue"
+import { log } from 'console';
 const isEdit = ref(false)
 const showForm = ref(false)
 const visibleFilter = ref(false)
 const selects1 = ref([])
 const selects2 = ref([])
 const selects3 = ref([])
+const product: any = ref()
+const handleRowClick = (row: any) => {
+    if (isEdit.value) {
+        product.value = row
+        showForm.value = true
+    }
+
+}
 const tableData = [
     {
+        id: 1,
         name: 'Olma sharbat',
         image: dena,
         status: 1,
@@ -295,6 +310,7 @@ const tableData = [
         ],
     },
     {
+        id: 2,
         name: 'Sleepy podguznik',
         image: dena,
         status: 2,
@@ -321,6 +337,7 @@ const tableData = [
         ],
     },
     {
+        id: 3,
         name: 'Splat zubi',
         image: dena,
         status: 3,
@@ -347,6 +364,12 @@ const tableData = [
         ],
     },
 ]
+const closed = () => {
+    console.log('vzczcbsbdfs');
+
+    product.value = null
+    showForm.value = false
+}
 
 </script>
 <style lang="scss" scoped></style>

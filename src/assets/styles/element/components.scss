@@ -46,6 +46,7 @@
         background: #FFF !important;
     }
 
+
     &.gradiented {
         .el-checkbox__inner {
             height: 20px !important;
@@ -69,7 +70,14 @@
                 left: 5px;
             }
         }
-
+        &.noned {
+            .el-checkbox__inner {
+                border-color: #D2D6DB  !important;
+                &::after {
+                    display: none;
+                }
+            }
+        }
         &.with-bg {
             .el-checkbox__inner {
                 background-color: #F9F5FF !important;
@@ -101,6 +109,7 @@
     .btn-next {
         border-radius: 10px;
         border: 1.25px solid #E2E2EA;
+
         &.is-active,
         &.more {
 

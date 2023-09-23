@@ -1,12 +1,14 @@
 <template>
     <el-drawer v-model="props.visible" @closed="closed" direction="rtl" size="678" :withHeader="false">
+
+
         <button class=" float-right" @click="$emit('close')">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="#6C737F" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
             </svg>
         </button>
-        <div class="inner mt-11">
+        <div class="inner mt-11 pb-4">
             <div class="flex items-center justify-between">
                 <h6 class="text-[#111927] text-xl font-semibold">
                     {{ props.product ? 'Редактировать товар' : 'Добавить товар' }}
@@ -21,7 +23,7 @@
                         </svg>
                         Импорт товаров
                     </el-button>
-                    <el-button class="!text-[#4D5761] !bg-[#F2F4F7] !border-[#F2F4F7]">
+                    <el-button v-if="props.product" class="!text-[#4D5761] !bg-[#F2F4F7] !border-[#F2F4F7]">
                         <svg width="21" class="mr-2" height="20" viewBox="0 0 21 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -33,84 +35,86 @@
                     </el-button>
                 </div>
             </div>
-            <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" :hide-required-asterisk="true" label-position="top">
-                <el-form-item>
-                    <fileUpload></fileUpload>
-                </el-form-item>
-                <el-form-item label="Выберите маркетплейс">
-                    <div class="flex items-center gap-4 mt-2">
-                        <button class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
-                            v-for="(img, i) in [olcha, sello, asaxiy]" :key="i"
-                            style="box-shadow: 0px 1.07895px 2.15789px 0px rgba(16, 24, 40, 0.05)">
-                            <img :src="img" width="32" height="32" alt="img">
-                        </button>
-                    </div>
-                </el-form-item>
-                <el-form-item label="Название продукта">
-                    <el-input size="large" placeholder="Напишите наименование товара" />
-                </el-form-item>
-                <el-form-item label="Категория продукта">
-                    <el-select v-model="selects1" multiple collapse-tags size="large" placeholder="Select" class=" !w-full">
-                        <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда']" :key="item" :label="item"
-                            :value="item" />
-                    </el-select>
-                </el-form-item>
-                <div class="grid grid-cols-2 gap-x-6">
-                    <el-form-item label="Энергетический класс">
-                        <el-input size="large" />
-                    </el-form-item>
-                    <el-form-item label="Бренд">
-                        <el-input size="large" />
-                    </el-form-item>
-                    <el-form-item label="Артикул">
-                        <el-input size="large" placeholder="Например: 3D1235123" />
-                    </el-form-item>
-                    <el-form-item label="Штрихкод">
-                        <el-input size="large" placeholder="Например: #134214" />
-                        <span class=" text-primary font-semibold text-sm underline mt-2 cursor-pointer">
-                            Сгенерировать штрихкод
-                        </span>
-                    </el-form-item>
-                </div>
-                <div class="flex items-center gap-x-6">
-                    <el-form-item label="Остаток" class=" w-[40%]">
-                        <el-input size="large" placeholder="Общий. остаток, шт" />
-                    </el-form-item>
-                    <el-form-item label="*" class=" w-[60%]">
-                        <el-input size="large" class=" relative" placeholder="Общий. остаток, шт" />
-                        <div class="flex items-center">
-
-                        </div>
-                    </el-form-item>
-                </div>
-                <el-form-item label="Описание продукта">
-                    <el-input type="textarea" size="large"
-                        placeholder="Напишите подробное описание товара включая его цвет, размеры и т.д" />
-                </el-form-item>
-                <div class="grid grid-cols-3 gap-x-6">
-                    <el-form-item label="Габариты упаковки">
-                        <el-input size="large" placeholder="Высота, мм" />
-                    </el-form-item>
-                    <el-form-item label="*">
-                        <el-input size="large" placeholder="Длина, мм" />
-                    </el-form-item>
-                    <el-form-item label="*">
-                        <el-input size="large" placeholder="Ширина, мм" />
-                    </el-form-item>
-                </div>
-                <el-form-item label="Вес">
-                    <el-input size="large" placeholder="Вес товара, г" />
-                </el-form-item>
-                <el-form-item label="Локация ★">
-                    <el-input size="large" :prefix-icon="Search" placeholder="Поиск локации" />
-                </el-form-item>
-                <el-button type="primary" class="gradient !h-11 !w-full mb-2">
-                    <Icon size="19" name="local-plus" class="mr-2 !fill-none" />
-                    Добавить товар
-                </el-button>
-            </el-form>
 
         </div>
+
+        <el-form ref="ruleFormRef" :hide-required-asterisk="true" label-position="top"
+            class=" overflow-y-auto h-[90%] scrollbar">
+            <el-form-item>
+                <fileUpload></fileUpload>
+            </el-form-item>
+            <el-form-item label="Выберите маркетплейс">
+                <div class="flex items-center gap-4 mt-2">
+                    <button class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
+                        v-for="(img, i) in [olcha, sello, asaxiy]" :key="i"
+                        style="box-shadow: 0px 1.07895px 2.15789px 0px rgba(16, 24, 40, 0.05)">
+                        <img :src="img" width="32" height="32" alt="img">
+                    </button>
+                </div>
+            </el-form-item>
+            <el-form-item label="Название продукта">
+                <el-input size="large" placeholder="Напишите наименование товара" />
+            </el-form-item>
+            <el-form-item label="Категория продукта">
+                <el-select v-model="selects1" multiple collapse-tags size="large" placeholder="Select" class=" !w-full">
+                    <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда']" :key="item" :label="item"
+                        :value="item" />
+                </el-select>
+            </el-form-item>
+            <div class="grid grid-cols-2 gap-x-6">
+                <el-form-item label="Энергетический класс">
+                    <el-input size="large" />
+                </el-form-item>
+                <el-form-item label="Бренд">
+                    <el-input size="large" />
+                </el-form-item>
+                <el-form-item label="Артикул">
+                    <el-input size="large" placeholder="Например: 3D1235123" />
+                </el-form-item>
+                <el-form-item label="Штрихкод">
+                    <el-input size="large" placeholder="Например: #134214" />
+                    <span class=" text-primary font-semibold text-sm underline mt-2 cursor-pointer">
+                        Сгенерировать штрихкод
+                    </span>
+                </el-form-item>
+            </div>
+            <div class="flex items-center gap-x-6">
+                <el-form-item label="Остаток" class=" w-[40%]">
+                    <el-input size="large" placeholder="Общий. остаток, шт" />
+                </el-form-item>
+                <el-form-item label="*" class=" w-[60%]">
+                    <el-input size="large" class=" relative" placeholder="Общий. остаток, шт" />
+                    <div class="flex items-center">
+
+                    </div>
+                </el-form-item>
+            </div>
+            <el-form-item label="Описание продукта">
+                <el-input type="textarea" size="large"
+                    placeholder="Напишите подробное описание товара включая его цвет, размеры и т.д" />
+            </el-form-item>
+            <div class="grid grid-cols-3 gap-x-6">
+                <el-form-item label="Габариты упаковки">
+                    <el-input size="large" placeholder="Высота, мм" />
+                </el-form-item>
+                <el-form-item label="*">
+                    <el-input size="large" placeholder="Длина, мм" />
+                </el-form-item>
+                <el-form-item label="*">
+                    <el-input size="large" placeholder="Ширина, мм" />
+                </el-form-item>
+            </div>
+            <el-form-item label="Вес">
+                <el-input size="large" placeholder="Вес товара, г" />
+            </el-form-item>
+            <el-form-item label="Локация ★">
+                <el-input size="large" :prefix-icon="Search" placeholder="Поиск локации" />
+            </el-form-item>
+        </el-form>
+        <el-button type="primary" class="gradient !h-11 !w-full mb-2">
+            <Icon size="19" name="local-plus" class="mr-2 !fill-none" />
+            Добавить товар
+        </el-button>
     </el-drawer>
 </template>
   
@@ -160,4 +164,23 @@ const closed = () => {
 
 
 </script>
+<style lang="scss" scoped>
+.scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+    &::-webkit-scrollbar {
+        width: 0;
+        /* Remove scrollbar space */
+        background: transparent;
+        /* Optional: just make scrollbar invisible */
+    }
+
+    /* Optional: show position indicator in red */
+    &::-webkit-scrollbar-thumb {
+        background: #FF0000;
+    }
+}</style>
   

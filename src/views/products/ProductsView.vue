@@ -1,5 +1,5 @@
 <template>
-    <div class=" mt-6">
+    <div class="mt-6">
         <div class="flex items-center justify-between border-b">
             <div class="flex items-center gap-2 mb-4 cursor-pointer">
                 <h5 class="text-[#111927] font-medium text-2xl">
@@ -174,22 +174,22 @@
                 </el-button>
             </div>
         </div>
-        <el-table :class="{ 'opened': isEdit }" @row-click="handleRowClick" row-class-name=" cursor-pointer"
+        <el-table :class="{ 'opened': isEdit }" @row-click="handleRowClick"  row-class-name=" cursor-pointer"
             :data="tableData" style="width: 100%">
             <el-table-column v-if="isEdit" type="selection" align="center" width="55">
                 <template #default="{ row }">
-                    <el-checkbox :checked="product?.id == row?.id" size="large" />
+                    <el-checkbox :class="{'noned': row?.id !== product?.id}" v-model="tableData.selected" size="large" />
                 </template>
             </el-table-column>
-            <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="180">
+            <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="200">
                 <template #default="{ row }">
-                    <div class="flex gap-2">
+                    <div class="flex gap-2 rounded-3xl p-2" :class="{' !bg-white z-40' : row?.id == product?.id}">
                         <img :src="row.image" alt="dena">
                         <div>
                             <span class="spaned">
                                 {{ row.name }}
                             </span>
-                            <p>
+                            <p class="text-sm">
                                 Арт. 12315421 · 125283194523
                             </p>
                         </div>
@@ -251,14 +251,13 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { Search, Close } from '@element-plus/icons-vue'
 import dena from '/@/assets/images/products/dena.svg'
 import sello from '/@/assets/images/brands/sello.svg'
 import asaxiy from '/@/assets/images/brands/asaxiy.svg'
 import olcha from '/@/assets/images/brands/olcha.svg'
 import productForm from "./components/productForm.vue"
-import { log } from 'console';
 const isEdit = ref(false)
 const showForm = ref(false)
 const visibleFilter = ref(false)
@@ -269,105 +268,112 @@ const product: any = ref()
 const handleRowClick = (row: any) => {
     if (isEdit.value) {
         product.value = row
+        tableData.value.selected = true
+        // product.value.selected = true
         showForm.value = true
     }
 
 }
-const tableData = [
-    {
-        id: 1,
-        name: 'Olma sharbat',
-        image: dena,
-        status: 1,
-        prices: [
-            {
-                image: olcha,
-                price: '100 тыс'
-            },
-            {
-                image: asaxiy,
-                price: '500 тыс'
-            },
-            {
-                image: sello,
-                price: '300 тыс'
-            }
-        ],
-        size: 30,
-        werehouse: [
-            {
-                image: olcha,
-                price: '9 шт'
-            },
-            {
-                image: asaxiy,
-                price: '9 шт'
-            },
-            {
-                image: sello,
-                price: '9 шт'
-            }
-        ],
-    },
-    {
-        id: 2,
-        name: 'Sleepy podguznik',
-        image: dena,
-        status: 2,
-        prices: [
-            {
-                image: olcha,
-                price: '100 тыс'
-            },
-            {
-                image: asaxiy,
-                price: '500 тыс'
-            },
-            {
-                image: sello,
-                price: '300 тыс'
-            }
-        ],
-        size: 1,
-        werehouse: [
-            {
-                image: olcha,
-                price: '9 шт'
-            },
-        ],
-    },
-    {
-        id: 3,
-        name: 'Splat zubi',
-        image: dena,
-        status: 3,
-        prices: [
-            {
-                image: olcha,
-                price: '100 тыс'
-            },
-            {
-                image: asaxiy,
-                price: '500 тыс'
-            },
-        ],
-        size: 4,
-        werehouse: [
-            {
-                image: olcha,
-                price: '9 шт'
-            },
-            {
-                image: asaxiy,
-                price: '9 шт'
-            },
-        ],
-    },
-]
+const tableData: any = ref(
+    [
+        {
+            id: 1,
+            name: 'Olma sharbat',
+            image: dena,
+            status: 1,
+            selected: false,
+            prices: [
+                {
+                    image: olcha,
+                    price: '100 тыс'
+                },
+                {
+                    image: asaxiy,
+                    price: '500 тыс'
+                },
+                {
+                    image: sello,
+                    price: '300 тыс'
+                }
+            ],
+            size: 30,
+            werehouse: [
+                {
+                    image: olcha,
+                    price: '9 шт'
+                },
+                {
+                    image: asaxiy,
+                    price: '9 шт'
+                },
+                {
+                    image: sello,
+                    price: '9 шт'
+                }
+            ],
+        },
+        {
+            id: 2,
+            name: 'Sleepy podguznik',
+            image: dena,
+            status: 2,
+            selected: false,
+            prices: [
+                {
+                    image: olcha,
+                    price: '100 тыс'
+                },
+                {
+                    image: asaxiy,
+                    price: '500 тыс'
+                },
+                {
+                    image: sello,
+                    price: '300 тыс'
+                }
+            ],
+            size: 1,
+            werehouse: [
+                {
+                    image: olcha,
+                    price: '9 шт'
+                },
+            ],
+        },
+        {
+            id: 3,
+            selected: false,
+            name: 'Splat zubi',
+            image: dena,
+            status: 3,
+            prices: [
+                {
+                    image: olcha,
+                    price: '100 тыс'
+                },
+                {
+                    image: asaxiy,
+                    price: '500 тыс'
+                },
+            ],
+            size: 4,
+            werehouse: [
+                {
+                    image: olcha,
+                    price: '9 шт'
+                },
+                {
+                    image: asaxiy,
+                    price: '9 шт'
+                },
+            ],
+        },
+    ]
+)
+const computedData = computed(() => tableData.value)
 const closed = () => {
-    console.log('vzczcbsbdfs');
-
     product.value = null
+    tableData.value.selected = false
     showForm.value = false
 }
 

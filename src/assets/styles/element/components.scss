@@ -6,6 +6,14 @@
     line-height: 17px;
     text-align: justify;
 
+    tbody {
+        position: relative;
+    }
+
+    &__body-wrapper {
+        overflow-y: auto !important;
+    }
+
     th {
         border: none !important;
         color: #0D121C;
@@ -70,14 +78,17 @@
                 left: 5px;
             }
         }
+
         &.noned {
             .el-checkbox__inner {
-                border-color: #D2D6DB  !important;
+                border-color: #D2D6DB !important;
+
                 &::after {
                     display: none;
                 }
             }
         }
+
         &.with-bg {
             .el-checkbox__inner {
                 background-color: #F9F5FF !important;

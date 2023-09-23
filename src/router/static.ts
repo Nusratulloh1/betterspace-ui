@@ -34,14 +34,6 @@ const staticRoutes: Array<RouteRecordRaw> = [
                 },
             },
             {
-                path: 'orders',
-                name: 'orders',
-                component: () => import('/@/views/orders/OrdersView.vue'),
-                meta: {
-                    title: 'Orders',
-                },
-            },
-            {
                 path: 'learning',
                 name: 'learning',
                 component: () => import('/@/views/learning/LearnView.vue'),
@@ -51,10 +43,18 @@ const staticRoutes: Array<RouteRecordRaw> = [
             },
             {
                 path: 'werehouse',
-                name: 'orders',
+                name: 'werehouse',
                 component: () => import('/@/views/werehouse/WereHouseView.vue'),
                 meta: {
                     title: 'Werehouse',
+                },
+            },
+            {
+                path: 'orders',
+                name: 'orders',
+                component: () => import('/@/views/orders/OrdersView.vue'),
+                meta: {
+                    title: 'Orders',
                 },
             },
         ],

@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import type { FormInstance, FormRules } from "element-plus";
+import { ElMessage, FormInstance, FormRules } from "element-plus";
 import { useUsersStore } from "../../stores/user";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
@@ -111,7 +111,11 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 router.push("/");
             } catch (error: any) {
                 console.log("error", error.message);
-
+                ElMessage({
+                    message: error.message,
+                    type: 'error',
+                    duration: 5 * 1000,
+                })
                 loading.value = false;
             }
         }

@@ -36,10 +36,10 @@
             <div>
                 <div class="admin-info-base">
                     <p class="text-lg font-semibold text-[#171725]">
-                        {{ fullName }}
+                        Islam Akramov
                     </p>
                     <p class="text-sm font-semibold text-[#92929D]">
-                        {{ userStore.user?.email }}
+                        islamakramov.b@gmail.com
                     </p>
                 </div>
                 <ul class="font-semibold mt-3">

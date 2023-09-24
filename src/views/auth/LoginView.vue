@@ -104,7 +104,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 loading.value = true;
                 const data = {
                     ...ruleForm,
-                    password: sha1(ruleForm.password),
+                    password: ruleForm.password,
                 };
                 await store.login(data);
                 loading.value = false;

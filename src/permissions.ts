@@ -38,25 +38,27 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
             // If is logged in, redirect to the home page
             next({ path: '/dashboard' })
             NProgress.done()
-        } else {
+        } 
+        else {
             // Check whether the user has obtained his permission roles
-            if (!store.getUser) {
-                try {
-                    await store.getUserInfo()
-                    next({ ...to, replace: true })
-                } catch (err: any) {
-                    store.resetToken()
-                    ElMessage({
-                        message: err?.message || 'Has Error',
-                        type: 'error',
-                        duration: 5 * 1000,
-                    })
-                    next(`/login?redirect=${to.path}`)
-                    NProgress.done()
-                }
-            } else {
+            // if (!store.getUser) {
+            //     try {
+            //         await store.getUserInfo()
+            //         next({ ...to, replace: true })
+            //     } catch (err: any) {
+            //         store.resetToken()
+            //         ElMessage({
+            //             message: err?.message || 'Has Error',
+            //             type: 'error',
+            //             duration: 5 * 1000,
+            //         })
+            //         next(`/login?redirect=${to.path}`)
+            //         NProgress.done()
+            //     }
+            // } 
+            // else {
                 next()
-            }
+            // }
         }
     } else {
         // Has no token

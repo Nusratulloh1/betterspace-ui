@@ -44,15 +44,20 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import Chart from 'chart.js/auto'
+const label = (context: any) => {
+
+    let lbl = ' ' + context.formattedValue + '.000 ' + 'сум'
+    return lbl
+}
 onMounted(() => {
     const ctx = document.getElementById('myChart');
     new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+            labels: ['Samsung Galaxy S23', 'AirPods max', 'iPhone 13 Pro max', 'Nothing Phone', 'Чехол для Samsung S23'],
             datasets: [{
-                label: 'Топ-5',
-                data: [20, 37, 13, 19, 27],
+                label: 'Price',
+                data: [2000, 3700, 1300, 1900, 2700],
                 backgroundColor: ["#AB24F5", "#C056FB", "#FFA281", "#FFB499", "#FDC7B3"],
                 borderWidth: 0
             }]
@@ -64,10 +69,14 @@ onMounted(() => {
                     display: false
                 },
                 tooltip: {
-                    enabled: false
+                    callbacks: {
+                        label: label,
+                    },
                 }
+
             },
-        }
+
+        },
     });
 
 })

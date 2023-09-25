@@ -2,13 +2,15 @@
     <div class="layouts-menu-horizontal px-5 md:px-8 py-6">
         <div class="flex">
             <div class="menu-horizontal-logo hidden md:block" v-if="layoutConfig.menuShowTopBar">
-                <Logo @click="$router.push('/')" class="cursor-pointer" />
+                <router-link to="/dashboard">
+                    <Logo class="cursor-pointer" />
+                </router-link>
             </div>
             <el-scrollbar ref="horizontalMenusRef" class="horizontal-menus-scrollbar flex">
                 <el-menu class="menu-horizontal" router mode="horizontal"
                     background-color="#ffffff">
-                    <template v-for="menu in menus" class="flex">
-                        <el-menu-item :class="{'is-active': menu.path === route.path}" v-if="menu.type == 'tab'" :index="menu.path" :key="menu.path">
+                    <template v-for="menu in menus">
+                        <el-menu-item :class="{'is-active': menu.path === route.path, ' !no-underline !opacity-50 !font-normal': menu.path !== route.path}" v-if="menu.type == 'tab'" :index="menu.path" :key="menu.icon">
                             <span >{{ menu.title ? menu.title : $t('noTitle') }}</span>
                         </el-menu-item>
                     </template>
@@ -35,7 +37,6 @@ console.log(route.path);
 const state = reactive({
     defaultActive: '',
 })
-
 const menus = computed(() => store.state.navTabs.tabsViewRoutes)
 const layoutConfig = computed(() => store.state.config.layout)
 

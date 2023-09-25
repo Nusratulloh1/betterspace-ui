@@ -23,66 +23,74 @@
             </div>
         </div>
         <el-collapse v-model="activeCollapse">
-            <el-collapse-item name="0" class="mini my-5">
-                <template #title>
-                    <h5 class="text-[#111927] font-medium text-2xl">
-                        Магазин №1
-                    </h5>
-                </template>
-                <div class="overflow-hidden">
-                    <div class="grid grid-cols-4 h-[152px]">
-                        <div class="h-full flex justify-between flex-col">
-                            <h4 class=" font-semibold text-2xl ">
-                                <!-- Магазин №1 -->
+            <div class="card overflow-hidden my-5">
+                <div class="grid grid-cols-4 h-[152px]">
+                    <div class="h-full flex justify-between flex-col">
+                        <el-dropdown size="large" hide-on-click>
+                            <button class="flex items-center gap-1">
+                                <h4 class=" font-semibold text-2xl text-[#000000]">
+                                    {{ activeMag.name }}
+                                </h4>
+                                <Icon size="20" name="local-arrow" class=" !fill-none !stroke-[#0D121C]" />
+                            </button>
+                            <template #dropdown>
+                                <el-dropdown-menu class=" w-[124px]">
+                                    <el-dropdown-item v-for="item in mags.filter(x => x.id !== activeMag.id)"
+                                        :key="item.id">
+                                        <div class="w-full h-full" @click="activeMag = item">
+                                            {{ item.name }}
+                                        </div>
+                                    </el-dropdown-item>
+                                </el-dropdown-menu>
+                            </template>
+                        </el-dropdown>
+                        <el-button @click="showForm = true" type="primary" class="gradient !text-lg !h-[60px] !w-[251px]">
+                            <Icon size="24" name="local-plus" class="mr-2 !fill-none" />
+                            Добавить товары
+                        </el-button>
+                    </div>
+                    <div class="h-full flex justify-between flex-col">
+                        <div>
+                            <h4 class="text-[#6C737F] text-lg">
+                                Общее количество SKU
                             </h4>
-                            <el-button type="primary" class="gradient !text-lg !h-[60px] !w-[251px]">
-                                <Icon size="24" name="local-plus" class="mr-2 !fill-none" />
-                                Добавить товары
-                            </el-button>
+                            <p class=" font-medium text-3xl mt-1">
+                                24
+                            </p>
                         </div>
-                        <div class="h-full flex justify-between flex-col">
-                            <div>
-                                <h4 class="text-[#6C737F] text-lg">
-                                    Общее количество SKU
-                                </h4>
-                                <p class=" font-medium text-3xl mt-1">
-                                    24
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="text-[#6C737F] text-lg">
-                                    Заказано
-                                </h4>
-                                <p class=" font-medium text-3xl mt-1">
-                                    155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="h-full flex justify-between flex-col">
-                            <div>
-                                <h4 class="text-[#6C737F] text-lg">
-                                    Продано
-                                </h4>
-                                <p class=" font-medium text-3xl mt-1">
-                                    155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
-                                </p>
-                            </div>
-                            <div>
-                                <h4 class="text-[#6C737F] text-lg">
-                                    Возвраты
-                                </h4>
-                                <p class=" font-medium text-3xl mt-1 text-[#D92D20]">
-                                    -15,234,500 <span class=" text-lg">сум</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="">
-                            <Icon size="180" name="local-ellipse" class="  absolute right-0"
-                                style="fill: rgba(157, 164, 174, 1);" />
+                        <div>
+                            <h4 class="text-[#6C737F] text-lg">
+                                Заказано
+                            </h4>
+                            <p class=" font-medium text-3xl mt-1">
+                                155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
+                            </p>
                         </div>
                     </div>
+                    <div class="h-full flex justify-between flex-col">
+                        <div>
+                            <h4 class="text-[#6C737F] text-lg">
+                                Продано
+                            </h4>
+                            <p class=" font-medium text-3xl mt-1">
+                                155,000,000 <span class="text-[#6C737F] text-lg">сум</span>
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-[#6C737F] text-lg">
+                                Возвраты
+                            </h4>
+                            <p class=" font-medium text-3xl mt-1 text-[#D92D20]">
+                                -15,234,500 <span class=" text-lg">сум</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <!-- <Icon size="180" name="local-ellipse" class="  absolute right-0"
+                                style="fill: rgba(157, 164, 174, 1);" /> -->
+                    </div>
                 </div>
-            </el-collapse-item>
+            </div>
             <el-collapse-item name="1">
                 <template #title>
                     <h5 class="text-[#111927] font-medium text-2xl">
@@ -182,6 +190,7 @@
                 </div>
             </el-collapse-item>
         </el-collapse>
+        <productForm :visible="showForm" :product="null" @close="closed"></productForm>
     </div>
 </template>
 
@@ -189,7 +198,24 @@
 import { ref } from 'vue';
 import topProductBar from './components/topProductBar.vue'
 import progressBarCart from './components/progressBarCart.vue';
+import productForm from "../products/components/productForm.vue"
 const activeCollapse = ref(['0', '1', '2'])
+const showForm = ref(false)
+const mags = ref([
+    {
+        id: 1,
+        name: 'Магазин №1'
+    },
+    {
+        id: 2,
+        name: 'Магазин №2',
+    },
+    {
+        id: 3,
+        name: 'Магазин №3'
+    }
+])
+const activeMag: any = ref(mags.value[0])
 const productTop = ref([
     {
         id: 1,
@@ -213,6 +239,9 @@ const productTop = ref([
         color: '#D2D6DB'
     }
 ])
+const closed = () => {
+    showForm.value = false
+}
 </script>
 
 <style lang="scss" scoped>

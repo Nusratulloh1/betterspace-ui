@@ -292,11 +292,11 @@ const mags = ref([
         name: 'Магазин №3'
     }
 ])
+const activeMag: any = ref(mags.value[0])
 const tableData: any = ref([...mockData])
 const getImage = (imagePath: string) => {
     return new URL(imagePath, import.meta.url).href
 }
-const activeMag: any = ref(mags.value[0])
 const handleRowClick = (row: any) => {
     if (isEdit.value) {
         row.selected = true

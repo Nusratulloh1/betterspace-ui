@@ -60,6 +60,20 @@ const staticRoutes: Array<RouteRecordRaw> = [
         ],
     },
     {
+        path: '/profile',
+        component: () => import('/@/layouts/backend/index.vue'),
+        children: [
+            {
+                path: '',
+                name: 'profile',
+                component: () => import('/@/views/profile/ProfileView.vue'),
+                meta: {
+                    title: 'Profile',
+                },
+            },
+        ],
+    },
+    {
         path: '/login',
         name: 'adminLogin',
         component: () => import('/@/views/auth/LoginView.vue'),

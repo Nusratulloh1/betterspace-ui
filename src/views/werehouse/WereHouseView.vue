@@ -41,7 +41,7 @@
         </div>
         <template v-if="isList">
             <div class="grid grid-cols-1 gap-8">
-                <button class="add-button h-[88px]">
+                <button class="add-button h-[88px]" @click="showForm = true">
                     <svg width="40" class=" mx-auto" height="40" viewBox="0 0 40 40" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M20.0007 8.33398V31.6674M8.33398 20.0007H31.6674" stroke="url(#paint0_linear_659_11562)"
@@ -86,7 +86,7 @@
                                 {{ shts.price }}
                             </button>
                         </div>
-                        <button>
+                        <button @click="handleRowClick(prod)">
                             <Edit class=" w-5 h-5" color="#98A2B3" />
                         </button>
                     </div>
@@ -95,7 +95,7 @@
         </template>
         <template v-else>
             <div class="grid grid-cols-5 gap-8">
-                <button class="add-button h-[343px] 2xl:h-[443px]">
+                <button class="add-button h-[343px] 2xl:h-[443px]" @click="showForm = true">
                     <svg width="80" height="81" class=" mx-auto" viewBox="0 0 80 81" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M39.9993 17.166V63.8327M16.666 40.4993H63.3327" stroke="url(#paint0_linear_798_6122)"
@@ -116,11 +116,13 @@
                             class=" rounded-2xl border px-2 p-0.5 border-[#EAECF0] bg-[#F9FAFB] font-medium text-xs text-[#344054]">
                             Всего: {{ prod.size + ' ' + 'штук' }}
                         </button>
-                        <Edit class=" w-4 " color="#98A2B3" />
+                        <button @click="handleRowClick(prod)">
+                            <Edit class=" w-4 " color="#98A2B3" />
+                        </button>
                     </div>
                     <div>
-                        <img class="w-full h-[182px] 2xl:h-[282px] my-4 object-cover object-center"
-                            :src="prod.image" alt="produ">
+                        <img class="w-full h-[182px] 2xl:h-[282px] my-4 object-cover object-center" :src="prod.image"
+                            alt="produ">
                     </div>
                     <h6 class=" font-medium text-[#111927] text-sm">
                         {{ prod.name }}
@@ -140,13 +142,18 @@
                 </div>
             </div>
         </template>
+        <werehouseForm :visible="showForm" :readonly="readonly" :product="werehouse" @close="closed"></werehouseForm>
     </div>
 </template>
 <script lang="ts" setup>
 import { Search, Close, Edit } from '@element-plus/icons-vue'
 import mockData from "/@/mock/products.js"
+import werehouseForm from "./components/werehouseForm.vue"
 import { ref } from 'vue'
 const isList = ref(false)
+const showForm = ref(false)
+const readonly = ref(false)
+const werehouse = ref()
 const mags = ref([
     {
         id: 1,
@@ -161,10 +168,19 @@ const mags = ref([
         name: 'Магазин №3'
     }
 ])
-const getImage = (imagePath: string, id?: string) => {
-    return new URL(imagePath, import.meta.url).href
-}
 const activeMag: any = ref(mags.value[0])
+
+const closed = () => {
+    werehouse.value = null
+    showForm.value = false
+    readonly.value = false
+}
+const handleRowClick = (row: any) => {
+    showForm.value = true
+    werehouse.value = row
+
+
+}
 </script>
 <style lang="scss" scoped>
 .add-button {

@@ -132,8 +132,8 @@
                     <div class="flex items-center gap-1">
                         <button
                             class=" border border-[#D0D5DD] rounded-md flex items-center gap-1 text-xs font-medium px-2 py-1 shadow-sm"
-                            v-for="shts in prod.werehouse" :key="shts">
-                            <!-- <img class="w-4 h-4" :src="shts.image" alt="produ"> -->
+                            v-for="(shts, i) in prod.werehouse" :key="`img${i}`">
+                            <img class="w-4 h-4" :id="`img${i}`" :src="getImage(shts.image)" alt="produ">
                             {{ shts.price }}
                         </button>
                     </div>
@@ -161,12 +161,7 @@ const mags = ref([
         name: 'Магазин №3'
     }
 ])
-const getImage = (imagePath: string) => {
-    console.log(
-        import.meta.url, 
-        new URL(imagePath, import.meta.url)
-    );
-
+const getImage = (imagePath: string, id?: string) => {
     return new URL(imagePath, import.meta.url).href
 }
 const activeMag: any = ref(mags.value[0])

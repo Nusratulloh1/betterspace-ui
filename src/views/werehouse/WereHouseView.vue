@@ -162,6 +162,11 @@ const mags = ref([
     }
 ])
 const getImage = (imagePath: string) => {
+    console.log(
+        import.meta.url, 
+        new URL(imagePath, import.meta.url)
+    );
+
     return new URL(imagePath, import.meta.url).href
 }
 const activeMag: any = ref(mags.value[0])

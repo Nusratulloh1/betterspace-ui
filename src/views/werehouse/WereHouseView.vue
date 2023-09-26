@@ -61,7 +61,7 @@
                     :key="prod.id">
                     <div class=" w-5/12 flex items-center justify-between">
                         <div class="flex gap-2">
-                            <img :src="getImage(prod.image)" class=" rounded-lg w-16 h-12 object-contain" alt="test">
+                            <img :src="prod.image" class=" rounded-lg w-16 h-12 object-contain" alt="test">
                             <div>
                                 <h6 class=" font-medium text-[#111927]">
                                     {{ prod.name }}
@@ -82,7 +82,7 @@
                             <button
                                 class=" border border-[#D0D5DD] rounded-md flex items-center gap-1.5 text-sm font-medium px-[10px] py-1 shadow-sm"
                                 v-for="shts in prod.werehouse" :key="shts">
-                                <img class="w-4 h-4" :src="getImage(shts.image)" alt="produ">
+                                <img class="w-4 h-4" :src="shts.image" alt="produ">
                                 {{ shts.price }}
                             </button>
                         </div>
@@ -120,7 +120,7 @@
                     </div>
                     <div>
                         <img class="w-full h-[182px] 2xl:h-[282px] my-4 object-cover object-center"
-                            :src="getImage(prod.image)" alt="produ">
+                            :src="prod.image" alt="produ">
                     </div>
                     <h6 class=" font-medium text-[#111927] text-sm">
                         {{ prod.name }}

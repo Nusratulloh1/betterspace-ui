@@ -195,7 +195,7 @@
             <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="210">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2">
-                        <img :src="getImage(row.image)" alt="dena">
+                        <img :src="row.image" alt="dena">
                         <div>
                             <span class="spaned">
                                 {{ row.name }}
@@ -229,7 +229,7 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="price in row.prices" :key="price">
-                            <img :src="getImage(price.image)" width="24" height="24" :alt="price.price">
+                            <img :src="price.image" width="24" height="24" :alt="price.price">
                             <span class="spaned">
                                 {{ price.price }}
                             </span>
@@ -242,7 +242,7 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="werehouse in row.werehouse" :key="werehouse" class="flex items-center gap-1">
-                            <img :src="getImage(werehouse.image)" width="24" height="24" :alt="werehouse.price">
+                            <img :src="werehouse.image" width="24" height="24" :alt="werehouse.price">
                             <span class="spaned">
                                 {{ werehouse.price }}
                             </span>
@@ -296,9 +296,6 @@ const mags = ref([
 ])
 const activeMag: any = ref(mags.value[0])
 const tableData: any = ref([...mockData])
-const getImage = (imagePath: string) => {
-    return new URL(imagePath, import.meta.url).href
-}
 const handleRowClick = (row: any) => {
     if (isEdit.value) {
         row.selected = true

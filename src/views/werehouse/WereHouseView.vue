@@ -94,8 +94,8 @@
             </div>
         </template>
         <template v-else>
-            <div class="grid grid-cols-5 gap-8">
-                <button class="add-button h-[343px] 2xl:h-[443px]" @click="showForm = true">
+            <div class="grid grid-cols-5 2xl:grid-cols-7 gap-8 ">
+                <button class="add-button h-[343px]" @click="showForm = true">
                     <svg width="80" height="81" class=" mx-auto" viewBox="0 0 80 81" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M39.9993 17.166V63.8327M16.666 40.4993H63.3327" stroke="url(#paint0_linear_798_6122)"
@@ -110,7 +110,7 @@
                         </defs>
                     </svg>
                 </button>
-                <div class="card h-[343px] 2xl:h-[443px]" v-for="prod in mockData" :key="prod.id">
+                <div class="card h-[343px]" v-for="prod in mockData" :key="prod.id">
                     <div class="flex items-center justify-between h-6">
                         <button
                             class=" rounded-2xl border px-2 p-0.5 border-[#EAECF0] bg-[#F9FAFB] font-medium text-xs text-[#344054]">
@@ -121,7 +121,7 @@
                         </button>
                     </div>
                     <div>
-                        <img class="w-full h-[182px] 2xl:h-[282px] my-4 object-cover object-center" :src="prod.image"
+                        <img class="w-full h-[182px] my-4 object-cover object-center" :src="prod.image"
                             alt="produ">
                     </div>
                     <h6 class=" font-medium text-[#111927] text-sm">

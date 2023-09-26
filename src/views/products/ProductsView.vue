@@ -19,10 +19,12 @@
                 </template>
             </el-dropdown>
             <div class="flex items-center gap-2">
-                <button @click="isArchive = false" :class="{'!border-black !text-black': !isArchive}" class=" text-sm font-semibold py-4 text-[#6C737F] px-1 border-b-[3px] border-transparent">
+                <button @click="isArchive = false" :class="{ '!border-black !text-black': !isArchive }"
+                    class=" text-sm font-semibold py-4 text-[#6C737F] px-1 border-b-[3px] border-transparent">
                     Актуальные
                 </button>
-                <button @click="isArchive = true" :class="{'!border-black !text-black': isArchive}" class=" text-sm font-semibold py-4 px-1 text-[#6C737F] border-b-[3px] border-transparent mx-4">
+                <button @click="isArchive = true" :class="{ '!border-black !text-black': isArchive }"
+                    class=" text-sm font-semibold py-4 px-1 text-[#6C737F] border-b-[3px] border-transparent mx-4">
                     Архив
                 </button>
                 <el-button type="primary" class="gradient !h-11 !w-[184px] mb-2" @click="showForm = true">
@@ -190,7 +192,7 @@
                     <el-checkbox v-model="row.selected" :value="!row.selected" size="large" />
                 </template> -->
             </el-table-column>
-            <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="200">
+            <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="210">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2">
                         <img :src="getImage(row.image)" alt="dena">
@@ -227,7 +229,7 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="price in row.prices" :key="price">
-                            <img :src="price.image" width="24" height="24" :alt="price.price">
+                            <img :src="getImage(price.image)" width="24" height="24" :alt="price.price">
                             <span class="spaned">
                                 {{ price.price }}
                             </span>
@@ -236,11 +238,11 @@
                 </template>
             </el-table-column>
             <el-table-column prop="size" label="Общее количество товаров" min-width="150" />
-            <el-table-column prop="address" label="Товары в виртуальном складе" min-width="150">
+            <el-table-column prop="address" label="Товары в виртуальном складе" min-width="180">
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="werehouse in row.werehouse" :key="werehouse" class="flex items-center gap-1">
-                            <img :src="werehouse.image" width="24" height="24" :alt="werehouse.price">
+                            <img :src="getImage(werehouse.image)" width="24" height="24" :alt="werehouse.price">
                             <span class="spaned">
                                 {{ werehouse.price }}
                             </span>

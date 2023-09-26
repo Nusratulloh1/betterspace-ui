@@ -1,6 +1,6 @@
 <template>
     <div class=" mt-10 pr-5 pb-20">
-        <!-- <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between">
             <el-dropdown size="large" hide-on-click>
                 <button class="flex items-center gap-1">
                     <h4 class=" font-semibold text-2xl text-[#000000]">
@@ -95,7 +95,7 @@
         </template>
         <template v-else>
             <div class="grid grid-cols-5 gap-8">
-                <button class="add-button h-[343px]">
+                <button class="add-button h-[343px] 2xl:h-[443px]">
                     <svg width="80" height="81" class=" mx-auto" viewBox="0 0 80 81" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M39.9993 17.166V63.8327M16.666 40.4993H63.3327" stroke="url(#paint0_linear_798_6122)"
@@ -110,7 +110,7 @@
                         </defs>
                     </svg>
                 </button>
-                <div class="card" v-for="prod in mockData" :key="prod.id">
+                <div class="card h-[343px] 2xl:h-[443px]" v-for="prod in mockData" :key="prod.id">
                     <div class="flex items-center justify-between h-6">
                         <button
                             class=" rounded-2xl border px-2 p-0.5 border-[#EAECF0] bg-[#F9FAFB] font-medium text-xs text-[#344054]">
@@ -119,8 +119,8 @@
                         <Edit class=" w-4 " color="#98A2B3" />
                     </div>
                     <div>
-                        <img class="w-full h-[182px] my-4 object-cover object-center" :src="getImage(prod.image)"
-                            alt="produ">
+                        <img class="w-full h-[182px] 2xl:h-[282px] my-4 object-cover object-center"
+                            :src="getImage(prod.image)" alt="produ">
                     </div>
                     <h6 class=" font-medium text-[#111927] text-sm">
                         {{ prod.name }}
@@ -139,7 +139,7 @@
                     </div>
                 </div>
             </div>
-        </template> -->
+        </template>
     </div>
 </template>
 <script lang="ts" setup>
@@ -179,7 +179,6 @@ const activeMag: any = ref(mags.value[0])
     border: 1px solid #EAECF0;
     background: #FFF;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    height: 343px;
     padding: 16px;
 }
 </style>

@@ -133,7 +133,7 @@
                         <button
                             class=" border border-[#D0D5DD] rounded-md flex items-center gap-1 text-xs font-medium px-2 py-1 shadow-sm"
                             v-for="(shts, i) in prod.werehouse" :key="`img${i}`">
-                            <img class="w-4 h-4" :id="`img${i}`" :src="getImage(shts.image)" alt="produ">
+                            <img class="w-4 h-4" :id="`img${i}`" :src="shts.image" alt="produ">
                             {{ shts.price }}
                         </button>
                     </div>

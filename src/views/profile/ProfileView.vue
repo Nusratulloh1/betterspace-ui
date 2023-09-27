@@ -6,7 +6,7 @@
         </h4>
         <hr />
         <div class="flex w-full mt-8">
-            <div class=" w-[10%]">
+            <div class=" w-[13%]">
                 <ul class="menues">
                     <li v-for="item in menues">
                         <router-link :to="item.path" :class="{ 'active': item.path == route.fullPath }">
@@ -18,7 +18,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="w-[90%] pl-24">
+            <div class="w-[87%] pl-24">
                 <transition name="slide-right" mode="out-in">
 
                     <profileForm v-if="route.fullPath === '/profile'" />
@@ -67,7 +67,7 @@ const menues = ref([
     },
     {
         id: 5,
-        title: "Подписка",
+        title: "Подписка и сервисы",
         path: "/profile?subsription"
     },
     {

@@ -45,7 +45,7 @@
                     indicator-position="outside" style="transition: .5s ease-out all;" class="w-full !h-[604px]">
                     <el-carousel-item class=" !w-full !h-[704px]" arrow="never">
                         <div>
-                            <img src="/@/assets/images/auth/reg-1.png" class=" mx-auto max-w-[650px]" alt="">
+                            <img src="../../assets/images/auth/reg-1.png" class=" mx-auto max-w-[650px]" alt="">
                             <div class=" mt-20 max-w-[476px] mx-auto text-center">
                                 <h6 class=" font-semibold text-2xl">
                                     Удобная аналитика
@@ -59,7 +59,7 @@
                         </div>
                     </el-carousel-item>
                     <el-carousel-item>
-                        <img src="/@/assets/images/auth/reg-2.png" class=" mx-auto max-w-[620px]" alt="">
+                        <img src="../../assets/images/auth/reg-2.png" class=" mx-auto max-w-[620px]" alt="">
                         <div class=" mt-20 max-w-[476px] mx-auto text-center">
                             <h6 class=" font-semibold text-2xl">
                                 Мониторинг маркетплейсов
@@ -71,7 +71,7 @@
                         </div>
                     </el-carousel-item>
                     <el-carousel-item>
-                        <img src="/@/assets/images/auth/reg-3.png" class=" mx-auto max-w-[607px]" alt="">
+                        <img src="../../assets/images/auth/reg-3.png" class=" mx-auto max-w-[607px]" alt="">
                         <div class=" mt-10 max-w-[476px] mx-auto text-center">
                             <h6 class=" font-semibold text-2xl">
                                 Контроль остатков
@@ -93,8 +93,8 @@
                     </button>
                     <div class="flex items-center gap-4 p-3">
                         <button class=" bg-[#667085] w-[10px] h-[10px] rounded-md"
-                            :class="{ '!bg-[#0C111D]': activeSlide === i }" @click="setActiveItem(i)"
-                            v-for="i in [0, 1, 2]"></button>
+                            :class="{ '!bg-[#0C111D]': activeSlide === i }" @click="setActiveItem(i)" v-for="i in [0, 1, 2]"
+                            :key="i"></button>
                     </div>
                     <button @click="next()">
                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">

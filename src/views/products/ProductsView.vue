@@ -19,10 +19,12 @@
                 </template>
             </el-dropdown>
             <div class="flex items-center gap-2">
-                <button @click="isArchive = false" :class="{'!border-black !text-black': !isArchive}" class=" text-sm font-semibold py-4 text-[#6C737F] px-1 border-b-[3px] border-transparent">
+                <button @click="isArchive = false" :class="{ '!border-black !text-black': !isArchive }"
+                    class=" text-sm font-semibold py-4 text-[#6C737F] px-1 border-b-[3px] border-transparent">
                     Актуальные
                 </button>
-                <button @click="isArchive = true" :class="{'!border-black !text-black': isArchive}" class=" text-sm font-semibold py-4 px-1 text-[#6C737F] border-b-[3px] border-transparent mx-4">
+                <button @click="isArchive = true" :class="{ '!border-black !text-black': isArchive }"
+                    class=" text-sm font-semibold py-4 px-1 text-[#6C737F] border-b-[3px] border-transparent mx-4">
                     Архив
                 </button>
                 <el-button type="primary" class="gradient !h-11 !w-[184px] mb-2" @click="showForm = true">
@@ -174,7 +176,7 @@
                 </template>
                 <template v-else>
                     <el-button @click="isEdit = true" class=" !text-[#344054]" size="large">
-                        <Icon size="18" name="local-edit-pen" class=" !fill-none mr-2" />
+                        <Icon size="18" name="local-edit-pen" class=" !fill-none mr-2 !stroke-[#0D121C]" />
                         Изменить
                     </el-button>
                 </template>
@@ -190,10 +192,10 @@
                     <el-checkbox v-model="row.selected" :value="!row.selected" size="large" />
                 </template> -->
             </el-table-column>
-            <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="200">
+            <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="210">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2">
-                        <img :src="getImage(row.image)" alt="dena">
+                        <img :src="row.image" alt="dena">
                         <div>
                             <span class="spaned">
                                 {{ row.name }}
@@ -236,7 +238,7 @@
                 </template>
             </el-table-column>
             <el-table-column prop="size" label="Общее количество товаров" min-width="150" />
-            <el-table-column prop="address" label="Товары в виртуальном складе" min-width="150">
+            <el-table-column prop="address" label="Товары в виртуальном складе" min-width="180">
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="werehouse in row.werehouse" :key="werehouse" class="flex items-center gap-1">
@@ -294,9 +296,6 @@ const mags = ref([
 ])
 const activeMag: any = ref(mags.value[0])
 const tableData: any = ref([...mockData])
-const getImage = (imagePath: string) => {
-    return new URL(imagePath, import.meta.url).href
-}
 const handleRowClick = (row: any) => {
     if (isEdit.value) {
         row.selected = true

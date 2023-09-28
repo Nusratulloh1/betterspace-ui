@@ -53,7 +53,7 @@
 
         </div>
         <el-form ref="ruleFormRef" :disabled="props.readonly" :hide-required-asterisk="true" label-position="top"
-            class=" overflow-y-auto h-[84%] scrollbar">
+            class=" overflow-y-auto h-[84%] 2xl:h-[88%] scrollbar">
             <el-form-item>
                 <img v-if="form.image" class=" w-full h-[120px] object-cover object-center"
                     :style="props.product.id == 1 ? 'object-position: 0px -441px' : ''" :src="getImage(form.image)"

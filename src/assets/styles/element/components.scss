@@ -79,7 +79,15 @@ tr.el-table__row td {
             border: 1.5px solid transparent !important;
         }
     }
-
+&.rounded{
+    .el-checkbox__inner{
+        border-radius: 8px !important;
+border: 1px solid  #D0D5DD !important;
+background:  white !important;
+width: 16px !important;
+height: 16px !important;
+    }
+}
     &.is-checked {
         .el-checkbox__inner {
             border-color: #000 !important;
@@ -121,6 +129,21 @@ tr.el-table__row td {
                     left: 5.5px !important;
                     border-radius: 20px !important;
                 }
+            }
+        }
+        &.rounded{
+            .el-checkbox__inner{
+        border: 1px solid  #7F56D9 !important;
+        background:  #7F56D9 !important;
+        &::after {
+            border-color: white !important;
+            width: 4px !important;
+            height: 8px !important;
+            border-radius: 1px !important;
+            border-width: 2px !important;
+            top: 1.5px !important;
+            left: 5px;
+        }
             }
         }
     }

@@ -195,7 +195,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 };
                 // await store.login(data);
                 loading.value = false;
-                router.push("/");
+                router.push("/onboarding");
             } catch (error: any) {
                 console.log("error", error.message);
 

@@ -90,6 +90,14 @@ const staticRoutes: Array<RouteRecordRaw> = [
         },
     },
     {
+        path: '/onboarding',
+        name: 'adminonboarding',
+        component: () => import('/@/views/auth/onBoardingView.vue'),
+        meta: {
+            title: 'On Boarding',
+        },
+    },
+    {
         path: '/reset-password',
         name: 'adminReset',
         component: () => import('/@/views/auth/ResetPasswordView.vue'),

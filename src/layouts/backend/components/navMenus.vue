@@ -1,6 +1,6 @@
 <template>
     <div class="nav-menus" :class="layoutConfig.layoutMode">
-        <el-button class="vip">
+        <el-button class="vip" @click="$router.push('/profile?subsription')">
             <svg width="20" height="20" class=" mr-2" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_660_4086)">
                     <path
@@ -231,4 +231,5 @@ const logOut = () => {
     100% {
         transform: scale(1);
     }
-}</style>
+}
+</style>

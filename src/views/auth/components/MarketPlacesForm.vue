@@ -11,7 +11,8 @@
                 <div class="flex items-center justify-between py-4">
                     <label :for="`${marketplace.id}`"
                         class="flex items-center gap-4 cursor-pointer text-[#344054] font-semibold">
-                        <img :src="marketplace.image" width="32" height="32" :alt="marketplace.title">
+                        <object type="image/svg+xml" :data="marketplace.image">svg-image</object>
+                        <!-- <img :src="marketplace.image" width="32" height="32" :alt="marketplace.title"> -->
                         {{ marketplace.title }}
                     </label>
                     <el-checkbox :id="`${marketplace.id}`" class=" gradiented" v-model="marketplace.selected"

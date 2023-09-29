@@ -39,7 +39,7 @@
                 </el-button>
             </div>
         </div>
-        <transition name="slide-left" mode="out-in">
+        <transition name="slide-right" mode="out-in">
             <template v-if="isList">
                 <div class="grid grid-cols-1 gap-8">
                     <button class="add-button h-[88px]" @click="showForm = true">
@@ -63,7 +63,9 @@
                         :key="prod.id">
                         <div class=" w-5/12 flex items-center justify-between">
                             <div class="flex gap-2">
-                                <img :src="prod.image" class=" rounded-lg w-16 h-12 object-contain" alt="test">
+                                <object type="image/svg+xml" class=" rounded-lg w-16 h-12 object-contain"
+                                    :data="prod.image">svg-image</object>
+                                <!-- <img :src="prod.image" class=" rounded-lg w-16 h-12 object-contain" alt="test"> -->
                                 <div>
                                     <h6 class=" font-medium text-[#111927]">
                                         {{ prod.name }}
@@ -84,7 +86,8 @@
                                 <button
                                     class=" border border-[#D0D5DD] rounded-md flex items-center gap-1.5 text-sm font-medium px-[10px] py-1 shadow-sm"
                                     v-for="shts in prod.werehouse" :key="shts">
-                                    <img class="w-4 h-4" :src="shts.image" alt="produ">
+                                    <object type="image/svg+xml" class="w-4 h-4" :data="shts.image">svg-image</object>
+                                    <!-- <img class="w-4 h-4" :src="shts.image" alt="produ"> -->
                                     {{ shts.price }}
                                 </button>
                             </div>
@@ -123,6 +126,7 @@
                             </button>
                         </div>
                         <div>
+                            <!-- <object type="image/svg+xml" width="100%" class="w-full h-[182px] my-4 object-cover object-center" :data="prod.image">svg-image</object> -->
                             <img class="w-full h-[182px] my-4 object-cover object-center" :src="prod.image" alt="produ">
                         </div>
                         <h6 class=" font-medium text-[#111927] text-sm">
@@ -136,7 +140,8 @@
                             <button
                                 class=" border border-[#D0D5DD] rounded-md flex items-center gap-1 text-xs font-medium px-2 py-1 shadow-sm"
                                 v-for="(shts, i) in prod.werehouse" :key="`img${i}`">
-                                <img class="w-4 h-4" :id="`img${i}`" :src="shts.image" alt="produ">
+                                <object type="image/svg+xml" class="w-4 h-4" :data="shts.image">svg-image</object>
+                                <!-- <img class="w-4 h-4" :id="`img${i}`" :src="shts.image" alt="produ"> -->
                                 {{ shts.price }}
                             </button>
                         </div>
@@ -144,7 +149,7 @@
                 </div>
             </template>
         </transition>
-        <werehouseForm :visible="showForm" :readonly="readonly" :product="werehouse" @close="closed"></werehouseForm>
+        <werehouseForm :visible="showForm" :readonly="readonly" :product="werehouse" @closed="closed"></werehouseForm>
     </div>
 </template>
 <script lang="ts" setup>

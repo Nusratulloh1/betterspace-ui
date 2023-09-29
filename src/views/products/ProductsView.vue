@@ -195,7 +195,7 @@
             <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="210">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2">
-                        <img :src="row.image" alt="dena">
+                        <object type="image/svg+xml" :data="row.image">svg-image</object>
                         <div>
                             <span class="spaned">
                                 {{ row.name }}
@@ -229,7 +229,7 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="price in row.prices" :key="price">
-                            <img :src="price.image" width="24" height="24" :alt="price.price">
+                            <object type="image/svg+xml" width="24" height="24" :data="price.image">svg-image</object>
                             <span class="spaned">
                                 {{ price.price }}
                             </span>
@@ -242,7 +242,7 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="werehouse in row.werehouse" :key="werehouse" class="flex items-center gap-1">
-                            <img :src="werehouse.image" width="24" height="24" :alt="werehouse.price">
+                            <object type="image/svg+xml" width="24" height="24" :data="werehouse.image">svg-image</object>
                             <span class="spaned">
                                 {{ werehouse.price }}
                             </span>

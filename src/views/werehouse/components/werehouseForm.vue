@@ -2,7 +2,7 @@
     <el-drawer v-model="props.visible" @closed="closed" direction="rtl" size="678" :withHeader="false">
 
 
-        <button class=" float-right" @click="$emit('close')">
+        <button class=" float-right" @click="$emit('closed')">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="#6C737F" stroke-width="2" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -26,10 +26,10 @@
             </el-form-item>
             <el-form-item label="Выберите маркетплейс">
                 <div class="flex items-center gap-4 mt-2">
-                    <button class=" rounded-lg border border-[#E5E7EB] p-1.5" type="button"
+                    <button class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
                         v-for="(img, i) in [olcha, sello, asaxiy]" :key="i"
                         style="box-shadow: 0px 1.07895px 2.15789px 0px rgba(16, 24, 40, 0.05)">
-                        <img :src="img" width="32" height="32" class=" rounded-lg" alt="img">
+                        <object type="image/svg+xml" width="32" height="32" :data="img">svg-image</object>
                     </button>
                 </div>
             </el-form-item>
@@ -50,7 +50,7 @@
                 <el-input size="large" v-model="form.location" :prefix-icon="Search" placeholder="Поиск локации" />
             </el-form-item>
         </el-form>
-        <el-button type="primary" class="gradient !h-11 !w-full mb-2" @click="$emit('close')">
+        <el-button type="primary" class="gradient !h-11 !w-full mb-2" @click="$emit('closed')">
             <template v-if="props.readonly">
                 Xорошо
             </template>

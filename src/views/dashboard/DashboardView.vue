@@ -101,7 +101,8 @@
                     <div class="card">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <img src="../../assets/images/brands/olcha.svg" alt="olcha">
+                                <object type="image/svg+xml" width="32" height="32"
+                                    data="/@/assets/images/brands/olcha.svg">svg-image</object>
                                 <h5 class="text-[#111927] font-semibold">
                                     Olcha.uz
                                 </h5>
@@ -125,7 +126,8 @@
                         </div>
                         <div class="flex items-center justify-between my-8">
                             <div class="flex items-center gap-2">
-                                <img src="../../assets/images/brands/zoodmall.svg" alt="zoodmall">
+                                <object type="image/svg+xml" width="32" height="32"
+                                    data="/@/assets/images/brands/zoodmall.svg">svg-image</object>
                                 <h5 class="text-[#111927] font-semibold">
                                     Zoodmal
                                 </h5>
@@ -149,7 +151,8 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <img src="../../assets/images/brands/sello.svg" alt="sello">
+                                <object type="image/svg+xml" width="32" height="32"
+                                    data="/@/assets/images/brands/sello.svg">svg-image</object>
                                 <h5 class="text-[#111927] font-semibold">
                                     Sello.uz
                                 </h5>

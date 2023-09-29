@@ -61,7 +61,8 @@
                     <el-table-column label="Имя" min-width="250">
                         <template #default="{ row }">
                             <div class="flex gap-3">
-                                <img :src="row.image" width="40" height="40" alt="dena">
+                                <object type="image/svg+xml" width="40" height="" :data="row.image">svg-image</object>
+                                <!-- <img :src="row.image" width="40" height="40" alt="dena"> -->
                                 <div>
                                     <span class=" font-medium">
                                         {{ row.name }}
@@ -106,7 +107,11 @@
 <script lang="ts" setup>
 import { Message, Plus } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
-import olcha from '/@/assets/images/brands/olcha.svg'
+import user_1 from '/@/assets/images/avatars/1.svg'
+import user_2 from '/@/assets/images/avatars/2.svg'
+import user_3 from '/@/assets/images/avatars/3.svg'
+import user_4 from '/@/assets/images/avatars/4.svg'
+import user_5 from '/@/assets/images/avatars/5.svg'
 const forms = reactive([
     {
         id: 1,
@@ -126,35 +131,35 @@ const forms = reactive([
 ])
 const users = ref([
     {
-        image: olcha,
+        image: user_1,
         id: 1,
         name: 'Оливия Рай',
         email: 'olivia@untitledui.com',
         role: 'Админ'
     },
     {
-        image: olcha,
+        image: user_2,
         id: 2,
         name: 'Феникс Бейкер',
         email: 'phoenix@untitledui.com',
         role: 'Админ'
     },
     {
-        image: olcha,
+        image: user_3,
         id: 3,
         name: 'Лана Штайнер',
         email: 'лана@untitledui.com',
         role: 'Контент менеджер'
     },
     {
-        image: olcha,
+        image: user_4,
         id: 4,
         name: 'Деми Уилкинсон',
         email: 'demi@untitledui.com',
         role: 'Контент менеджер'
     },
     {
-        image: olcha,
+        image: user_5,
         id: 5,
         name: 'Кэндис Ву',
         email: 'candice@untitledui.com',

@@ -130,7 +130,8 @@
             <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="300">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2" :class="{ ' !bg-white z-40': row?.id == product?.id }">
-                        <img :src="row.image" alt="dena">
+                        <object type="image/svg+xml" :data="row.image">svg-image</object>
+                        <!-- <img :src="row.image" alt="dena"> -->
                         <div>
                             <span class="spaned">
                                 {{ row.name }}

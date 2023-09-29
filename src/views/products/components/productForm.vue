@@ -65,7 +65,7 @@
                     <button class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
                         v-for="(img, i) in [olcha, sello, asaxiy]" :key="i"
                         style="box-shadow: 0px 1.07895px 2.15789px 0px rgba(16, 24, 40, 0.05)">
-                        <img :src="img" width="32" height="32" alt="img">
+                        <object type="image/svg+xml" width="32" height="32" :data="img">svg-image</object>
                     </button>
                 </div>
             </el-form-item>
@@ -113,19 +113,21 @@
                             <div class=" mt-6">
                                 <div class="flex gap-11 items-center justify-between">
                                     <label class=" font-medium text-[#344054] flex items-center gap-2">
-                                        <img width="24" height="24" :src="sello" alt="sello">
+                                        <object type="image/svg+xml" width="24" height="24" :data="sello">svg-image</object>
                                         Sello.uz</label>
                                     <el-input size="large" placeholder="шт" class=" !w-20" />
                                 </div>
                                 <div class="flex gap-11 items-center justify-between mt-4">
                                     <label class=" font-medium text-[#344054] flex items-center gap-2">
-                                        <img width="24" height="24" :src="olcha" alt="olcha">
+                                        <!-- <img width="24" height="24" :src="olcha" alt="olcha"> -->
+                                        <object type="image/svg+xml" width="24" height="24" :data="olcha">svg-image</object>
                                         Olcha.uz</label>
                                     <el-input size="large" placeholder="шт" class=" !w-20" />
                                 </div>
                                 <div class="flex gap-11 items-center justify-between mt-4">
                                     <label class=" font-medium text-[#344054] flex items-center gap-2">
-                                        <img width="24" height="24" :src="uzum" alt="uzum">
+                                        <!-- <img width="24" height="24" :src="uzum" alt="uzum"> -->
+                                        <object type="image/svg+xml" width="24" height="24" :data="uzum">svg-image</object>
                                         Uzum market</label>
                                     <el-input size="large" placeholder="шт" class=" !w-20" />
                                 </div>
@@ -138,7 +140,7 @@
                                     class=" relative w-full" placeholder="Зарезервировано, шт">
                                     <template #prefix>
                                         <div class="flex items-center gap-2">
-                                            <img src="../../../assets/images/brands/triple.svg" alt="triple">
+                                            <object type="image/svg+xml" data="/@/assets/images/brands/triple.svg">svg-image</object>
                                             <Icon size="19" name="local-arrow" class="!fill-none !stroke-[#6C737F]" />
                                         </div>
                                     </template>

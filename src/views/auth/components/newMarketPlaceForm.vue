@@ -12,8 +12,8 @@
                     Подключенные маркетплейсы
                 </h4>
                 <div class="flex items-center gap-2 mt-4">
-                    <img v-for="marketplace in marketplaces.slice(0, 4)" width="32" height="32" :src="marketplace.image"
-                        alt="img">
+                    <object type="image/svg+xml" v-for="marketplace in marketplaces.slice(0, 4)" width="32" height="32"
+                        :data="marketplace.image">svg-image</object>
                 </div>
             </div>
             <el-button class="!text-sm !text-[#344054] !font-semibold" @click="$router.push('/onboarding')">
@@ -35,7 +35,7 @@
                 <div class="flex items-center justify-between py-4">
                     <label :for="`${marketplace.id}`"
                         class="flex items-center gap-4 cursor-pointer text-[#344054] font-semibold">
-                        <img :src="marketplace.image" width="32" height="32" :alt="marketplace.title">
+                        <object type="image/svg+xml" width="32" height="32" :data="marketplace.image">svg-image</object>
                         {{ marketplace.title }}
                     </label>
                     <el-checkbox :id="`${marketplace.id}`" class=" gradiented" v-model="marketplace.selected"

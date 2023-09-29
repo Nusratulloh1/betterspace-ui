@@ -40,6 +40,10 @@ body,
     height: 100% !important;
 }
 
+svg {
+    transform: unset !important;
+}
+
 .bd-center {
     display: flex;
     align-items: center;

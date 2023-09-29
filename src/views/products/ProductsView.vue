@@ -176,7 +176,7 @@
                 </template>
                 <template v-else>
                     <el-button @click="isEdit = true" class=" !text-[#344054]" size="large">
-                        <Icon size="18" name="local-edit-pen" class=" !fill-none mr-2" />
+                        <Icon size="18" name="local-edit-pen" class=" !fill-none mr-2 !stroke-[#0D121C]" />
                         Изменить
                     </el-button>
                 </template>

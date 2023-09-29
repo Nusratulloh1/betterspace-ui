@@ -12,7 +12,7 @@
                 </el-button>
             </div>
             <p class="text-sm text-[#4D5761] text-center">
-                <span class=" text-primary font-semibold">
+                <span class=" text-primary font-semibold" :style="props.textColor ? `color:${props.textColor}` : ''">
                     Нажмите чтобы выбрать фото товара
                 </span> или перетащите сюда файл
             </p>
@@ -48,6 +48,12 @@ import { ref } from 'vue'
 
 import type { UploadFile } from 'element-plus'
 
+const props = defineProps({
+    textColor: {
+        type: String,
+        default: ''
+    }
+})
 const dialogImageUrl = ref('')
 const disabled = ref(false)
 

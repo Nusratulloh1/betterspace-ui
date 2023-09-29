@@ -140,7 +140,7 @@
                                     class=" relative w-full" placeholder="Зарезервировано, шт">
                                     <template #prefix>
                                         <div class="flex items-center gap-2">
-                                            <object type="image/svg+xml" data="/@/assets/images/brands/triple.svg">svg-image</object>
+                                            <object type="image/svg+xml" :data="triple">svg-image</object>
                                             <Icon size="19" name="local-arrow" class="!fill-none !stroke-[#6C737F]" />
                                         </div>
                                     </template>
@@ -196,6 +196,7 @@ import asaxiy from '/@/assets/images/brands/asaxiy.svg'
 import { Search, Close } from '@element-plus/icons-vue'
 import olcha from '/@/assets/images/brands/olcha.svg'
 import uzum from '/@/assets/images/brands/uzum.svg'
+import triple from "/@/assets/images/brands/triple.svg"
 const emits = defineEmits(['closed'])
 const props = defineProps({
     visible: {

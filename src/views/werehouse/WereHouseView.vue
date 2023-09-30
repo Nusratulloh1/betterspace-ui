@@ -63,9 +63,7 @@
                         :key="prod.id">
                         <div class=" w-5/12 flex items-center justify-between">
                             <div class="flex gap-2">
-                                <object type="image/svg+xml" class=" rounded-lg w-16 h-12 object-contain"
-                                    :data="prod.image">svg-image</object>
-                                <!-- <img :src="prod.image" class=" rounded-lg w-16 h-12 object-contain" alt="test"> -->
+                                <img :src="prod.image" class=" rounded-lg w-16 h-12 object-contain" alt="test">
                                 <div>
                                     <h6 class=" font-medium text-[#111927]">
                                         {{ prod.name }}
@@ -86,8 +84,8 @@
                                 <button
                                     class=" border border-[#D0D5DD] rounded-md flex items-center gap-1.5 text-sm font-medium px-[10px] py-1 shadow-sm"
                                     v-for="shts in prod.werehouse" :key="shts">
-                                    <object type="image/svg+xml" class="w-4 h-4" :data="shts.image">svg-image</object>
-                                    <!-- <img class="w-4 h-4" :src="shts.image" alt="produ"> -->
+                                    <!-- <object type="image/svg+xml" class="w-4 h-4" :data="shts.image">svg-image</object> -->
+                                    <img class="w-4 h-4" :src="shts.image" alt="produ">
                                     {{ shts.price }}
                                 </button>
                             </div>
@@ -140,8 +138,8 @@
                             <button
                                 class=" border border-[#D0D5DD] rounded-md flex items-center gap-1 text-xs font-medium px-2 py-1 shadow-sm"
                                 v-for="(shts, i) in prod.werehouse" :key="`img${i}`">
-                                <object type="image/svg+xml" class="w-4 h-4" :data="shts.image">svg-image</object>
-                                <!-- <img class="w-4 h-4" :id="`img${i}`" :src="shts.image" alt="produ"> -->
+                                <!-- <object type="image/svg+xml" class="w-4 h-4" :data="shts.image">svg-image</object> -->
+                                <img class="w-4 h-4" :id="`img${i}`" :src="shts.image" alt="produ">
                                 {{ shts.price }}
                             </button>
                         </div>

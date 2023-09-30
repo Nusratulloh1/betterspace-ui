@@ -1,7 +1,5 @@
 <template>
-    <el-drawer v-model="props.visible" @closed="closed" direction="rtl" size="678" :withHeader="false">
-
-
+    <el-drawer v-model="props.visible" @closed="closed" direction="rtl" size="598" :withHeader="false">
         <button class=" float-right" @click="$emit('closed')">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 6L6 18M6 6L18 18" stroke="#6C737F" stroke-width="2" stroke-linecap="round"
@@ -14,7 +12,6 @@
                     {{ props.product ? 'Редактировать товар в виртуальный склад' : 'Добавить товар в виртуальный склад' }}
                 </h6>
             </div>
-
         </div>
         <el-form ref="ruleFormRef" :disabled="props.readonly" :hide-required-asterisk="true" label-position="top"
             class=" overflow-y-auto h-[84%] 2xl:h-[88%] scrollbar">
@@ -26,10 +23,13 @@
             </el-form-item>
             <el-form-item label="Выберите маркетплейс">
                 <div class="flex items-center gap-4 mt-2">
-                    <button class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
+                    <button @click="marketplace = i" :class="{ ' !border-primary': marketplace === i }"
+                        class=" rounded-lg border border-[#E5E7EB] p-[10px] cursor-pointer z-10" type="button"
                         v-for="(img, i) in [olcha, sello, asaxiy]" :key="i"
                         style="box-shadow: 0px 1.07895px 2.15789px 0px rgba(16, 24, 40, 0.05)">
-                        <object type="image/svg+xml" width="32" height="32" :data="img">svg-image</object>
+                        <!-- <object @click="marketplace = i" type="image/svg+xml" width="32" height="32"
+                            :data="img">svg-image</object> -->
+                        <img :src="img" width="32" height="32" alt="img">
                     </button>
                 </div>
             </el-form-item>
@@ -37,7 +37,7 @@
                 <el-input size="large" v-model="form.product_name" placeholder="Напишите наименование товара" />
             </el-form-item>
             <el-form-item label="Категория продукта">
-                <el-select v-model="form.category" size="large" placeholder="Select" class=" !w-full">
+                <el-select v-model="form.category" size="large" placeholder="Выбрать" class=" !w-full">
                     <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда', 'Напитки']" :key="item"
                         :label="item" :value="item" />
                 </el-select>
@@ -67,13 +67,13 @@
 </template>
   
 <script lang="ts" setup>
-import { onMounted, reactive, ref, watch, watchEffect } from 'vue'
+import { reactive, ref, watch } from 'vue'
 import fileUpload from '/@/components/common/fileUpload.vue'
-import sello from '/@/assets/images/brands/sello.svg'
-import asaxiy from '/@/assets/images/brands/asaxiy.svg'
+import sello from '/@/assets/images/brands/sello.png'
+import asaxiy from '/@/assets/images/brands/asaxiy.png'
 import { Search, Close } from '@element-plus/icons-vue'
-import olcha from '/@/assets/images/brands/olcha.svg'
-import uzum from '/@/assets/images/brands/uzum.svg'
+import olcha from '/@/assets/images/brands/olcha.png'
+import uzum from '/@/assets/images/brands/uzum.png'
 const emits = defineEmits(['closed'])
 const props = defineProps({
     visible: {
@@ -92,6 +92,7 @@ const props = defineProps({
         default: false
     }
 })
+const marketplace = ref(0)
 const visibleSht = ref(false)
 const getImage = (imagePath: string) => {
     return new URL(imagePath, import.meta.url).href

@@ -101,7 +101,7 @@
                     <div class="card">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <object type="image/svg+xml" width="32" height="32" :data="olcha">svg-image</object>
+                                <img :src="olcha" width="32" height="32" alt="img">
                                 <h5 class="text-[#111927] font-semibold">
                                     Olcha.uz
                                 </h5>
@@ -125,7 +125,7 @@
                         </div>
                         <div class="flex items-center justify-between my-8">
                             <div class="flex items-center gap-2">
-                                <object type="image/svg+xml" width="32" height="32" :data="zoodmall">svg-image</object>
+                                <img :src="zoodmall" width="32" height="32" alt="img">
                                 <h5 class="text-[#111927] font-semibold">
                                     Zoodmal
                                 </h5>
@@ -149,7 +149,7 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <object type="image/svg+xml" width="32" height="32" :data="sello">svg-image</object>
+                                <img :src="sello" width="32" height="32" alt="img">
                                 <h5 class="text-[#111927] font-semibold">
                                     Sello.uz
                                 </h5>
@@ -199,9 +199,9 @@ import { ref } from 'vue';
 import topProductBar from './components/topProductBar.vue'
 import progressBarCart from './components/progressBarCart.vue';
 import productForm from "../products/components/productForm.vue"
-import olcha from "/@/assets/images/brands/olcha.svg"
-import sello from "/@/assets/images/brands/sello.svg"
-import zoodmall from "/@/assets/images/brands/zoodmall.svg"
+import olcha from "/@/assets/images/brands/olcha.png"
+import sello from "/@/assets/images/brands/sello.png"
+import zoodmall from "/@/assets/images/brands/zoodmall.png"
 const activeCollapse = ref(['0', '1', '2'])
 const showForm = ref(false)
 const mags = ref([

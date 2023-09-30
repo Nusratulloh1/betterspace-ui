@@ -16,7 +16,7 @@
                         </p>
                     </el-form-item>
                     <el-form-item label="Тип бизнеса" class="!m-0">
-                        <el-select v-model="form.company_type" placeholder="Select" size="large" class=" !w-full">
+                        <el-select v-model="form.company_type" placeholder="Выбрать" size="large" class=" !w-full">
                             <el-option v-for="item in ['Физическое лицо', 'AAA лицо', 'AUNN']" :key="item" :label="item"
                                 :value="item" />
                         </el-select>
@@ -54,7 +54,7 @@
                     </el-form-item>
                 </div>
                 <el-form-item label="Логотип компании" class=" !mt-8">
-                        <fileUpload text-color="#344054" class="!mt-3" />
+                        <fileUpload text-color="#344054" title="Нажмите чтобы загрузить логотип магазина" class="!mt-3" />
                     </el-form-item>
             </el-form>
         </div>

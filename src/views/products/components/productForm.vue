@@ -1,5 +1,5 @@
 <template>
-    <el-drawer v-model="props.visible" @closed="closed" direction="rtl" size="678" :withHeader="false">
+    <el-drawer v-model="props.visible" @closed="closed" direction="rtl" size="598" :withHeader="false">
 
 
         <button class=" float-right" @click="$emit('close')">
@@ -11,9 +11,10 @@
         <div class="inner mt-11 pb-4">
             <div class="flex items-center justify-between">
                 <h6 class="text-[#111927] text-xl font-semibold">
-                    {{ props.product ? 'Редактировать товар' : 'Добавить товар' }}
+                    {{ props.product ? `${props.readonly ? 'Обзор карточки товара' : 'Редактировать товар'}` : `Добавить
+                    товар` }}
                 </h6>
-                <div class="flex gap-2 mt-3">
+                <div class="flex gap-2 mt-3" v-if="!props.readonly">
                     <el-upload ref="uploadRef" class="upload-demo" :show-file-list="false"
                         action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15" :auto-upload="false">
                         <template #trigger>
@@ -56,27 +57,28 @@
             class=" overflow-y-auto h-[84%] 2xl:h-[88%] scrollbar">
             <el-form-item>
                 <img v-if="form.image" class=" w-full h-[120px] object-cover object-center"
-                    :style="props.product.id == 1 ? 'object-position: 0px -441px' : ''" :src="getImage(form.image)"
-                    alt="prodcut">
+                    :src="form.image" alt="prodcut">
                 <fileUpload v-else></fileUpload>
             </el-form-item>
             <el-form-item label="Выберите маркетплейс">
                 <div class="flex items-center gap-4 mt-2">
-                    <button class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
+                    <button @click="marketplace = i" :class="{ ' !border-primary': marketplace === i }"
+                        class=" rounded-lg border border-[#E5E7EB] p-[10px]" type="button"
                         v-for="(img, i) in [olcha, sello, asaxiy]" :key="i"
                         style="box-shadow: 0px 1.07895px 2.15789px 0px rgba(16, 24, 40, 0.05)">
-                        <object type="image/svg+xml" width="32" height="32" :data="img">svg-image</object>
+                        <!-- <object type="image/svg+xml" width="32" height="32" :data="img"></object> -->
+                        <img width="32" height="32" :src="img" alt="img">
                     </button>
                 </div>
             </el-form-item>
-            <el-form-item label="Название продукта">
-                <el-input size="large" v-model="form.product_name" placeholder="Напишите наименование товара" />
-            </el-form-item>
             <el-form-item label="Категория продукта">
-                <el-select v-model="form.category" size="large" placeholder="Select" class=" !w-full">
+                <el-select v-model="form.category" size="large" placeholder="Выбрать" class=" !w-full">
                     <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда', 'Напитки']" :key="item"
                         :label="item" :value="item" />
                 </el-select>
+            </el-form-item>
+            <el-form-item label="Название продукта">
+                <el-input size="large" v-model="form.product_name" placeholder="Напишите наименование товара" />
             </el-form-item>
             <div class="grid grid-cols-2 gap-x-6">
                 <el-form-item label="Энергетический класс">
@@ -113,21 +115,22 @@
                             <div class=" mt-6">
                                 <div class="flex gap-11 items-center justify-between">
                                     <label class=" font-medium text-[#344054] flex items-center gap-2">
-                                        <object type="image/svg+xml" width="24" height="24" :data="sello">svg-image</object>
+                                        <!-- <object type="image/svg+xml" width="24" height="24" :data="sello">svg-image</object> -->
+                                        <img width="24" height="24" :src="sello" alt="uzum">
                                         Sello.uz</label>
                                     <el-input size="large" placeholder="шт" class=" !w-20" />
                                 </div>
                                 <div class="flex gap-11 items-center justify-between mt-4">
                                     <label class=" font-medium text-[#344054] flex items-center gap-2">
-                                        <!-- <img width="24" height="24" :src="olcha" alt="olcha"> -->
-                                        <object type="image/svg+xml" width="24" height="24" :data="olcha">svg-image</object>
+                                        <img width="24" height="24" :src="olcha" alt="olcha">
+                                        <!-- <object type="image/svg+xml" width="24" height="24" :data="olcha">svg-image</object> -->
                                         Olcha.uz</label>
                                     <el-input size="large" placeholder="шт" class=" !w-20" />
                                 </div>
                                 <div class="flex gap-11 items-center justify-between mt-4">
                                     <label class=" font-medium text-[#344054] flex items-center gap-2">
-                                        <!-- <img width="24" height="24" :src="uzum" alt="uzum"> -->
-                                        <object type="image/svg+xml" width="24" height="24" :data="uzum">svg-image</object>
+                                        <img width="24" height="24" :src="uzum" alt="uzum">
+                                        <!-- <object type="image/svg+xml" width="24" height="24" :data="uzum">svg-image</object> -->
                                         Uzum market</label>
                                     <el-input size="large" placeholder="шт" class=" !w-20" />
                                 </div>
@@ -140,7 +143,7 @@
                                     class=" relative w-full" placeholder="Зарезервировано, шт">
                                     <template #prefix>
                                         <div class="flex items-center gap-2">
-                                            <object type="image/svg+xml" :data="triple">svg-image</object>
+                                            <img width="42" height="24" :src="triple" alt="triple">
                                             <Icon size="19" name="local-arrow" class="!fill-none !stroke-[#6C737F]" />
                                         </div>
                                     </template>
@@ -191,12 +194,12 @@
 <script lang="ts" setup>
 import { onMounted, reactive, ref, watch, watchEffect } from 'vue'
 import fileUpload from '/@/components/common/fileUpload.vue'
-import sello from '/@/assets/images/brands/sello.svg'
-import asaxiy from '/@/assets/images/brands/asaxiy.svg'
+import sello from '/@/assets/images/brands/sello.png'
+import asaxiy from '/@/assets/images/brands/asaxiy.png'
 import { Search, Close } from '@element-plus/icons-vue'
-import olcha from '/@/assets/images/brands/olcha.svg'
-import uzum from '/@/assets/images/brands/uzum.svg'
-import triple from "/@/assets/images/brands/triple.svg"
+import olcha from '/@/assets/images/brands/olcha.png'
+import uzum from '/@/assets/images/brands/uzum.png'
+import triple from "/@/assets/images/brands/triple.png"
 const emits = defineEmits(['closed'])
 const props = defineProps({
     visible: {
@@ -215,6 +218,7 @@ const props = defineProps({
         default: false
     }
 })
+const marketplace = ref(0)
 const visibleSht = ref(false)
 const getImage = (imagePath: string) => {
     return new URL(imagePath, import.meta.url).href

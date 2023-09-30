@@ -1,6 +1,6 @@
 <template>
     <div class=" flex h-screen relative login">
-        <div class=" w-[65%]">
+        <div class=" w-[70%]">
             <el-scrollbar class="layout-main-scrollbar" :style="layoutMainScrollbarStyle()" ref="mainScrollbarRef">
                 <div class=" h-full flex justify-center relative  pt-32 pb-12">
                     <div class="flex items-center logo gap-1.5 absolute top-14">
@@ -19,10 +19,11 @@
                 </div>
             </el-scrollbar>
         </div>
-        <div class="flex items-center justify-center px-8 bg-[#F3F4F6] w-[35%] relative">
+        <div class="flex items-center justify-center px-8 bg-[#F3F4F6] w-[30%] relative">
             <div class=" space-y-2">
-                <div class="flex items-start gap-4" :class="{ ' opacity-60': current > menu.id }" v-for="menu in wizardMenu"
-                    :key="menu.id">
+
+                <div class="flex items-start gap-4 opacity-60" :class="{ ' !opacity-100': menu.actives.includes(current) }"
+                    v-for="menu in wizardMenu" :key="menu.id">
                     <div>
                         <div class=" bg-white p-3 rounded-xl w-12 h-12">
                             <Icon size="24" :name="current > menu.id ? 'local-checked-arrow' : menu.icon"
@@ -68,25 +69,28 @@ import { mainHeight as layoutMainScrollbarStyle } from '/@/utils/layout'
 const wizardMenu = ref([
     {
         icon: "local-shopping-cart",
-        id: 3,
+        id: 4,
+        actives: [1, 2, 3, 4],
         title: "Подключение к маркетплейсам",
         desc: "Подключите свои аккаунты на маркетплейсах"
     },
     {
         icon: "local-office-building",
         id: 5,
+        actives: [5],
         title: "Данные о компании",
-        desc: "Проверьте внимательно верны ли ваши данные "
+        desc: "Проверьте внимательно верны ли ваши данные"
     },
     {
         icon: "local-doc-checked",
         id: 6,
+        actives: [6],
         title: "Завершение",
         desc: "Вы готовы начать!",
         last: true
     }
 ])
-const current = computed(() => parseInt(route.query.step as string))
+const current = computed(() => parseInt(route.query.step as string) || 1)
 const route = useRoute()
 
 </script>

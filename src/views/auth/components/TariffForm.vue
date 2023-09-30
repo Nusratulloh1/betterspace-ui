@@ -7,19 +7,20 @@
             Начните управлять и продавать уже сегодня с нашим специальным премиум-предложением.
         </p>
         <div class="card !p-6 !mt-12 space-y-6">
-            <div class="tariff transition-all duration-200" :class="{ 'active': tariff.selected }" v-for="tariff in tariffs"
-                :key="tariff.id">
+            <div class="tariff transition-all duration-200" :class="{ 'active': tariff.selected }"
+                v-for="(tariff, i) in tariffs" :key="tariff.id">
                 <div class="flex items-center justify-between p-4 transition-all duration-200"
-                    :class="{ ' !bg-[#F9F5FF]': tariff.selected }">
+                    :class="{ '!bg-[#F9F5FF]': tariff.selected }">
                     <label class="flex items-center gap-4 cursor-pointer" :for="'box' + tariff.id">
-                        <img :src="tariff.image" alt="Начинающий">
+                        <img width="28" height="28" :src="tariff.image" alt="Начинающий">
                         <h6 class="text-[#344054] font-semibold text-base">
                             {{ tariff.title }}
                         </h6>
                     </label>
-                    <el-checkbox :id="'box' + tariff.id" v-model="tariff.selected" type="primary" class=" rounded" />
+                    <el-checkbox :id="'box' + tariff.id" @input="changed()" v-model="tariff.selected" type="primary"
+                        class="rounded" />
                 </div>
-                <hr class="transition-all duration-200 border-[1.5px]" :class="{ ' !border-primary': tariff.selected }" />
+                <hr class="transition-all duration-200 border-[1.5px]" :class="{ '!border-primary': tariff.selected }" />
                 <div class="p-4">
                     <p class="text-[#475467] text-sm">
                         {{ tariff.desc }}
@@ -74,21 +75,17 @@ const tariffs = ref([
         selected: false,
     },
 ])
+const selectted = ref(false)
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive({
-    email: "islamakramov.b@gmail.com",
+    phone: "+998 90 123-12-31",
     password: "Ai3003008",
 });
 const rules = reactive<FormRules>({
-    email: [
+    phone: [
         {
             required: true,
             message: i18n.t("validation.fillField"),
-            trigger: "blur",
-        },
-        {
-            type: "email",
-            message: i18n.t("validation.inputEmail"),
             trigger: "blur",
         },
     ],
@@ -105,6 +102,12 @@ const rules = reactive<FormRules>({
         },
     ],
 });
+const changed = () => {
+    tariffs.value.forEach((acc, curr) => {
+        acc.selected = false
+    })
+
+}
 const loading = ref(false);
 const submitForm = async () => {
 

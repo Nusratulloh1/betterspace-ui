@@ -51,7 +51,7 @@
                 </div>
                 <div class="grid grid-cols-3 gap-x-6 gap-y-8">
                     <el-form-item class="!m-0" label="Выбор юридической формы">
-                        <el-select v-model="form.company_type" placeholder="Select" size="large" class=" !w-full">
+                        <el-select v-model="form.company_type" placeholder="Выбрать" size="large" class=" !w-full">
                             <el-option v-for="item in ['AAA', 'AUYTT', 'AUNN']" :key="item" :label="item" :value="item" />
                         </el-select>
                     </el-form-item>
@@ -66,7 +66,7 @@
                         </el-input>
                     </el-form-item>
                     <el-form-item class="!m-0" label="№ расчетного счета">
-                        <el-select v-model="form.billing" placeholder="Select" size="large" class=" !w-full">
+                        <el-select v-model="form.billing" placeholder="Выбрать" size="large" class=" !w-full">
                             <el-option v-for="item in ['16341B123', '123AC1А12', '12341BA123']" :key="item" :label="item"
                                 :value="item" />
                         </el-select>

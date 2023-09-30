@@ -92,14 +92,14 @@
                     <div class=" mt-6">
                         <div class="flex gap-11 items-center justify-between">
                             <label class=" font-medium text-[#344054]">Категория</label>
-                            <el-select v-model="selects1" multiple placeholder="Select" style="width: 447px" size="large">
+                            <el-select v-model="selects1" multiple placeholder="Выбрать" style="width: 447px" size="large">
                                 <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда']" :key="item"
                                     :label="item" :value="item" />
                             </el-select>
                         </div>
                         <div class="flex gap-11 items-center justify-between mt-6">
                             <label class=" font-medium text-[#344054]">Статус</label>
-                            <el-select v-model="selects2" multiple class="checkboxable" placeholder="Select"
+                            <el-select v-model="selects2" multiple class="checkboxable" placeholder="Выбрать"
                                 style="width: 447px" size="large">
                                 <el-option class="none" :key="5" label="Все статусы" value="">
                                     <label class="flex items-center justify-between" :for="`${33}`">
@@ -119,7 +119,7 @@
                         </div>
                         <div class="flex gap-8 items-center justify-between mt-6">
                             <label class=" font-medium text-[#344054]">Маркетплейс</label>
-                            <el-select v-model="selects3" multiple class="checkboxable" placeholder="Select"
+                            <el-select v-model="selects3" multiple class="checkboxable" placeholder="Выбрать"
                                 style="width: 447px" size="large">
                                 <el-option class="none" :key="5" label="Все маркетплейсы" value="">
                                     <label class="flex items-center justify-between" :for="`${313}`">
@@ -195,7 +195,8 @@
             <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="210">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2">
-                        <object type="image/svg+xml" :data="row.image">svg-image</object>
+                        <!-- <object type="image/svg+xml" :data="row.image">svg-image</object> -->
+                        <img :src="row.image" width="40" height="47" alt="img">
                         <div>
                             <span class="spaned">
                                 {{ row.name }}
@@ -229,7 +230,8 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="price in row.prices" :key="price">
-                            <object type="image/svg+xml" width="24" height="24" :data="price.image">svg-image</object>
+                            <!-- <object type="image/svg+xml" width="24" height="24" :data="price.image">svg-image</object> -->
+                            <img width="24" height="24"  :src="price.image" alt="img">
                             <span class="spaned">
                                 {{ price.price }}
                             </span>
@@ -242,7 +244,8 @@
                 <template #default="{ row }">
                     <div class="flex gap-3 items-center">
                         <div v-for="werehouse in row.werehouse" :key="werehouse" class="flex items-center gap-1">
-                            <object type="image/svg+xml" width="24" height="24" :data="werehouse.image">svg-image</object>
+                            <!-- <object type="image/svg+xml" width="24" height="24" :data="werehouse.image">svg-image</object> -->
+                            <img width="24" height="24"  :src="werehouse.image" alt="img">
                             <span class="spaned">
                                 {{ werehouse.price }}
                             </span>

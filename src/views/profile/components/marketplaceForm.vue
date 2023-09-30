@@ -16,8 +16,7 @@
                 <div class="flex items-center justify-between py-4">
                     <label :for="`${marketplace.id}`"
                         class="flex items-center gap-4 font-semibold text-[#344054] cursor-pointer">
-                        <object type="image/svg+xml" width="32" height="32" :data="marketplace.image">svg-image</object>
-                        <!-- <img :src="marketplace.image" :alt="marketplace.title" width="32" height="32"> -->
+                        <img :src="marketplace.image" :alt="marketplace.title" width="32" height="32">
                         {{ marketplace.title }}
                     </label>
                     <button v-if="marketplace.notOpened" class=" text-[#667085] text-sm font-semibold underline">

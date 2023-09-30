@@ -44,14 +44,14 @@
                     <div class=" mt-6">
                         <div class="flex gap-11 items-center justify-between">
                             <label class=" font-medium text-[#344054]">Категория</label>
-                            <el-select v-model="selects1" multiple placeholder="Select" style="width: 447px" size="large">
+                            <el-select v-model="selects1" multiple placeholder="Выбрать" style="width: 447px" size="large">
                                 <el-option v-for="item in ['Электроника', 'Бытовая техника', 'Одежда']" :key="item"
                                     :label="item" :value="item" />
                             </el-select>
                         </div>
                         <div class="flex gap-11 items-center justify-between mt-6">
                             <label class=" font-medium text-[#344054]">Статус</label>
-                            <el-select v-model="selects2" multiple class="checkboxable" placeholder="Select"
+                            <el-select v-model="selects2" multiple class="checkboxable" placeholder="Выбрать"
                                 style="width: 447px" size="large">
                                 <el-option class="none" :key="5" label="Все статусы" value="">
                                     <label class="flex items-center justify-between" :for="`${33}`">
@@ -72,7 +72,7 @@
                         </div>
                         <div class="flex gap-8 items-center justify-between mt-6">
                             <label class=" font-medium text-[#344054]">Маркетплейс</label>
-                            <el-select v-model="selects3" multiple class="checkboxable" placeholder="Select"
+                            <el-select v-model="selects3" multiple class="checkboxable" placeholder="Выбрать"
                                 style="width: 447px" size="large">
                                 <el-option class="none" :key="5" label="Все маркетплейсы" value="">
                                     <label class="flex items-center justify-between" :for="`${313}`">
@@ -130,8 +130,8 @@
             <el-table-column prop="date" label="Товар, артикул, штрихкод" min-width="300">
                 <template #default="{ row }">
                     <div class="flex gap-2 rounded-3xl p-2" :class="{ ' !bg-white z-40': row?.id == product?.id }">
-                        <object type="image/svg+xml" :data="row.image">svg-image</object>
-                        <!-- <img :src="row.image" alt="dena"> -->
+                        <!-- <object type="image/svg+xml" :data="row.image">svg-image</object> -->
+                        <img width="40" height="48" :src="row.image" alt="dena">
                         <div>
                             <span class="spaned">
                                 {{ row.name }}

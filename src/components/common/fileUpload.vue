@@ -13,7 +13,7 @@
             </div>
             <p class="text-sm text-[#4D5761] text-center">
                 <span class=" text-primary font-semibold" :style="props.textColor ? `color:${props.textColor}` : ''">
-                    Нажмите чтобы выбрать фото товара
+                    {{ props.title }}
                 </span> или перетащите сюда файл
             </p>
             <p class="text-xs text-[#4D5761] text-center">
@@ -52,6 +52,10 @@ const props = defineProps({
     textColor: {
         type: String,
         default: ''
+    },
+    title: {
+        type: String,
+        default: 'Нажмите чтобы выбрать фото товара'
     }
 })
 const dialogImageUrl = ref('')

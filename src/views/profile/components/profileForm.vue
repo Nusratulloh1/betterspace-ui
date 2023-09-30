@@ -76,7 +76,7 @@
                     Роль
                 </label>
                 <el-form-item class="!m-0 w-[66%]">
-                    <el-select v-model="form.role" placeholder="Select" size="large" class=" !w-full">
+                    <el-select v-model="form.role" placeholder="Выбрать" size="large" class=" !w-full">
                         <el-option v-for="item in ['Админ', 'Контент менеджер']" :key="item" :label="item" :value="item" />
                     </el-select>
                 </el-form-item>
@@ -87,7 +87,7 @@
                     Страна
                 </label>
                 <el-form-item class="!m-0 w-[66%]">
-                    <el-select v-model="form.region" placeholder="Select" size="large" class=" !w-full">
+                    <el-select v-model="form.region" placeholder="Выбрать" size="large" class=" !w-full">
                         <el-option v-for="item in ['Россия', 'США', 'Казахстан']" :key="item" :label="item" :value="item" />
                     </el-select>
                 </el-form-item>
@@ -98,7 +98,7 @@
                     Время
                 </label>
                 <el-form-item class="!m-0 w-[66%]">
-                    <el-select v-model="form.utc" placeholder="Select" size="large" class=" !w-full">
+                    <el-select v-model="form.utc" placeholder="Выбрать" size="large" class=" !w-full">
                         <template #prefix>
                             <Clock class=" w-5 h-5" color="rgba(102, 112, 133, 1)" />
                         </template>

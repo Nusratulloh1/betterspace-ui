@@ -136,8 +136,8 @@ const rules = reactive<FormRules>({
             trigger: "blur",
         },
         {
-            min: 8,
-            message: i18n.t("validation.minimumLength", { value: 8 }),
+            min: 4,
+            message: i18n.t("validation.minimumLength", { value: 4 }),
             trigger: "blur",
         },
     ],

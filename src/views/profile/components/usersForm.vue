@@ -30,7 +30,7 @@
                             <Message color="#667085" class="w-5 h-5" />
                         </template>
                     </el-input>
-                    <el-select v-model="form.role" size="large" placeholder="Select" class=" !w-[40%]">
+                    <el-select v-model="form.role" size="large" placeholder="Выбрать" class=" !w-[40%]">
                         <el-option v-for="item in ['Админ', 'Контент менеджер', 'Только чтение']" :key="item" :label="item"
                             :value="item" />
                     </el-select>
@@ -61,8 +61,8 @@
                     <el-table-column label="Имя" min-width="250">
                         <template #default="{ row }">
                             <div class="flex gap-3">
-                                <object type="image/svg+xml" width="40" height="" :data="row.image">svg-image</object>
-                                <!-- <img :src="row.image" width="40" height="40" alt="dena"> -->
+                                <!-- <object type="image/svg+xml" width="40" height="" :data="row.image">svg-image</object> -->
+                                <img :src="row.image" width="45" height="20" alt="dena">
                                 <div>
                                     <span class=" font-medium">
                                         {{ row.name }}
@@ -107,11 +107,11 @@
 <script lang="ts" setup>
 import { Message, Plus } from '@element-plus/icons-vue'
 import { reactive, ref } from 'vue'
-import user_1 from '/@/assets/images/avatars/1.svg'
-import user_2 from '/@/assets/images/avatars/2.svg'
-import user_3 from '/@/assets/images/avatars/3.svg'
-import user_4 from '/@/assets/images/avatars/4.svg'
-import user_5 from '/@/assets/images/avatars/5.svg'
+import user_1 from '/@/assets/images/avatars/1.png'
+import user_2 from '/@/assets/images/avatars/2.png'
+import user_3 from '/@/assets/images/avatars/3.png'
+import user_4 from '/@/assets/images/avatars/4.png'
+import user_5 from '/@/assets/images/avatars/5.png'
 const forms = reactive([
     {
         id: 1,

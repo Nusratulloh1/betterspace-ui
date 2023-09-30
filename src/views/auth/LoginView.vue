@@ -10,13 +10,13 @@
                 </h5>
                 <el-form ref="ruleFormRef" :model="ruleForm" :rules="rules" :hide-required-asterisk="true"
                     label-position="top" class=" mt-8 w-[360px]">
-                    <el-form-item prop="email" label="Номер телефона" class="!mb-5">
-                        <el-input v-model.trim="ruleForm.email" type="text" size="large" autocomplete="off"
+                    <el-form-item prop="phone" label="Номер телефона" class="!mb-5">
+                        <el-input v-model.trim="ruleForm.phone" v-mask="'+998 ## ###-##-##'" type="text" size="large" autocomplete="off"
                             placeholder="Введите номер телефона" />
                     </el-form-item>
                     <el-form-item prop="password" label="Пароль" class="!mb-6">
                         <el-input v-model.trim="ruleForm.password" type="password" size="large" :show-password="true"
-                            autocomplete="off" placeholder="Your password" />
+                            autocomplete="off" placeholder="Ваш пароль" />
                     </el-form-item>
                     <el-form-item>
                         <div class="flex items-center justify-between w-full">
@@ -57,6 +57,7 @@ import { ElMessage, FormInstance, FormRules } from "element-plus";
 import { useUsersStore } from "../../stores/user";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
+import { phonePattern } from "/@/utils/mappers";
 import sha1 from "sha1";
 import logoMain from '/@/assets/images/icons/logo-main.svg'
 const i18n = useI18n();
@@ -65,21 +66,23 @@ const router = useRouter();
 
 const ruleFormRef = ref<FormInstance>();
 const ruleForm = reactive({
-    email: "",
+    phone: "",
     password: "",
 });
 const rules = reactive<FormRules>({
-    email: [
+    phone: [
         {
             required: true,
             message: i18n.t("validation.fillField"),
             trigger: "blur",
         },
         {
-            type: "email",
-            message: i18n.t("validation.inputEmail"),
-            trigger: "blur",
-        },
+            type: "string",
+            required: true,
+            pattern: phonePattern,
+            message: i18n.t("validation.pattern"),
+            trigger: ["blur", "change"],
+        }
     ],
     password: [
         {

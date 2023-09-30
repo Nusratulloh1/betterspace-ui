@@ -1,13 +1,13 @@
-import dena from '/@/assets/images/products/dena.svg'
-import sleepy from '/@/assets/images/products/sleepy.svg'
-import poroshok from '/@/assets/images/products/poroshok.svg'
-import splat from '/@/assets/images/products/splat.svg'
-import kazan from '/@/assets/images/products/kazan.svg'
-import ariel from '/@/assets/images/products/ariel.svg'
-import polaris from '/@/assets/images/products/polaris.svg'
-import sello from '/@/assets/images/brands/sello.svg'
-import asaxiy from '/@/assets/images/brands/asaxiy.svg'
-import olcha from '/@/assets/images/brands/olcha.svg'
+import dena from '/@/assets/images/products/dena.png'
+import sleepy from '/@/assets/images/products/sleepy.png'
+import poroshok from '/@/assets/images/products/poroshok.png'
+import splat from '/@/assets/images/products/splat.png'
+import kazan from '/@/assets/images/products/kazan.png'
+import ariel from '/@/assets/images/products/ariel.png'
+import polaris from '/@/assets/images/products/polaris.png'
+import sello from '/@/assets/images/brands/sello.png'
+import asaxiy from '/@/assets/images/brands/asaxiy.png'
+import olcha from '/@/assets/images/brands/olcha.png'
 
 const products = [
     {

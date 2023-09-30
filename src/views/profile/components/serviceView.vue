@@ -265,7 +265,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import addic from "/@/assets/images/brands/addic.svg"
+import addic from "/@/assets/images/brands/addic.png"
 </script>
 <style lang="scss" scoped>
 .price {

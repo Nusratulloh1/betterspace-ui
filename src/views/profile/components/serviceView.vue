@@ -197,7 +197,7 @@
                 </h6>
                 <div class="inner">
                     <div class="flex items-center gap-4 px-5 py-4">
-                        <img :src="addic" alt="addic">
+                        <img :src="addic" width="32" height="32" alt="addic">
                         <h5>
                             Маркетинговая стратегия, веб-сайт, сопровождение
                         </h5>
@@ -232,7 +232,7 @@
                 </h6>
                 <div class="inner">
                     <div class="flex items-center gap-4 px-5 py-4">
-                        <img :src="addic" alt="addic">
+                        <img :src="addic" width="32" height="32" alt="addic">
                         <h5>
                             Реализация и постоянная настройка SEO
                         </h5>

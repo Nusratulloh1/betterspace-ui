@@ -268,10 +268,10 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue';
 import { Search, Close } from '@element-plus/icons-vue'
-import dena from '/@/assets/images/products/dena.svg'
-import sello from '/@/assets/images/brands/sello.svg'
-import asaxiy from '/@/assets/images/brands/asaxiy.svg'
-import olcha from '/@/assets/images/brands/olcha.svg'
+import dena from '/@/assets/images/products/dena.png'
+import sello from '/@/assets/images/brands/sello.png'
+import asaxiy from '/@/assets/images/brands/asaxiy.png'
+import olcha from '/@/assets/images/brands/olcha.png'
 import productForm from "./components/productForm.vue"
 import mockData from "/@/mock/products.js"
 const isEdit = ref(false)

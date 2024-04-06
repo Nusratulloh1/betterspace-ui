@@ -14,8 +14,6 @@ module.exports = {
     extends: ['plugin:vue/vue3-essential', 'plugin:vue/essential', 'eslint:recommended'],
     plugins: ['vue', '@typescript-eslint'],
     rules: {
-        // http://eslint.cn/docs/rules/
-        // https://eslint.vuejs.org/rules/
         '@type-eslint/ban-ts-ignore': 'off',
         '@type-eslint/explicit-function-return-type': 'off',
         '@type-eslint/no-explicit-any': 'off',

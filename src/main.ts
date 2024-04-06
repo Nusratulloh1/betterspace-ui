@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import { store, key } from './store'
 import { createPinia } from 'pinia'
 import { registerIcons } from '/@/utils/common'
 import ElementPlus from 'element-plus'
@@ -21,7 +20,6 @@ async function start() {
     // const i18n = await loadLang(app)
 
     app.use(router)
-    app.use(store, key)
     app.use(i18n)
     app.use(ElementPlus, {
         // locale: elementEnLocale,

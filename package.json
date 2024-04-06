@@ -1,5 +1,5 @@
 {
-    "name": "build-admin",
+    "name": "build-opus",
     "version": "0.0.1",
     "scripts": {
         "dev": "vite --force",

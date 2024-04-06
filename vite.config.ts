@@ -11,14 +11,11 @@ const { VITE_OUT_DIR } = loadEnv()
 const pathResolve = (dir: string): any => {
     return resolve(__dirname, '.', dir)
 }
-
 const alias: Record<string, string> = {
     '/@': pathResolve('./src/'),
     assets: pathResolve('./src/assets'),
     'vue-i18n': isProd(process.env.NODE_ENV) ? 'vue-i18n/dist/vue-i18n.cjs.prod.js' : 'vue-i18n/dist/vue-i18n.cjs.js',
 }
-
-// https://vitejs.cn/config/
 const viteConfig: UserConfig = {
     plugins: [
         vue(),

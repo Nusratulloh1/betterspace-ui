@@ -3,7 +3,6 @@ import type { App } from 'vue'
 import * as elIcons from '@element-plus/icons-vue'
 import router from '/@/router/index'
 import Icon from '/@/components/icon/index.vue'
-import { store } from '/@/store'
 
 export function registerIcons(app: App) {
     app.component('Icon', Icon)
@@ -27,19 +26,6 @@ export function loadJs(url: string): void {
     link.src = url
     document.body.appendChild(link)
 }
-
-export function setTitle(t: any = null) {
-    nextTick(() => {
-        var webTitle: string = ''
-        if (store.state.navTabs.activeRoute) {
-            webTitle = store.state.navTabs.activeRoute.title
-        } else {
-            webTitle = t ? t(router.currentRoute.value.meta.title) : (router.currentRoute.value.meta.title as string)
-        }
-        document.title = `${webTitle} - AU`
-    })
-}
-
 /**
  * @param {string} path
  * @return {Boolean}

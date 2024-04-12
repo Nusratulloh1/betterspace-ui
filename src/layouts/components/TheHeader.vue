@@ -4,7 +4,6 @@
             <div class="flex items-center justify-between w-full lg:w-auto gap-5 sm:gap-14">
                 <div
                     class="menu-horizontal-logo"
-                    @click="$router.push(`${usersStore.user?.role === 'teacher' ? '/teacher/dashboard' : '/student/dashboard'}`)"
                 >
                     <Logo class="cursor-pointer" />
                     <h4 class="font-poppins font-semibold text-[22px] text-black mt-1">Eduplus</h4>

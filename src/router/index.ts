@@ -5,7 +5,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            redirect: '/dashboard',
+            redirect: '/home',
         },
         {
             path: '/home',
@@ -14,7 +14,15 @@ const router = createRouter({
             meta: {
                 title: 'Home',
             },
-        }
+        },
+        {
+          path: '/space/:id',
+          name: 'space',
+          component: () => import('/@/views/SpaceView.vue'),
+          meta: {
+              title: 'Space',
+          },
+      }
     ]
 })
 router.onError((error: any, to: any) => {

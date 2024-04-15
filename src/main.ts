@@ -11,8 +11,8 @@ import 'element-plus/dist/index.css'
 import '/@/assets/styles/base.scss'
 import '/@/assets/styles/element/index.scss'
 
-import '/@/permissions'
-import { mask } from "vue-the-mask";
+// import '/@/permissions'
+// import { mask } from "vue-the-mask";
 async function start() {
     const app = createApp(App)
 
@@ -26,7 +26,7 @@ async function start() {
     })
     app.use(createPinia())
     app.mount('#app')
-    app.directive("mask", mask as any);
+    // app.directive("mask", mask as any);
     app.config.globalProperties.eventBus = mitt()
 }
 start()

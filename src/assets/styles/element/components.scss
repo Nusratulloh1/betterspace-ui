@@ -82,6 +82,7 @@
             .el-input__inner {
                 font-size: 12px !important;
             }
+
             .el-select__caret {
                 color: #FFFFFF !important;
                 font-size: 12px !important;
@@ -89,18 +90,21 @@
         }
     }
 }
-.el-select-dropdown{
-    &__item{
+
+.el-select-dropdown {
+    &__item {
         height: 20px !important;
         line-height: 20px !important;
         font-size: 10px !important;
     }
-    &__list{
+
+    &__list {
         margin: 1px 0 !important;
         margin-top: 0px !important;
         margin-bottom: 0px !important;
     }
 }
+
 // Form
 .el-form {
     .el-form-item {
@@ -147,34 +151,88 @@
     }
 }
 
+.el-input {
+
+    &.greyable {
+        .el-input__wrapper {
+            border-radius: 7px !important;
+            background: rgba(130, 130, 130, 0.75) !important;
+            box-shadow: 0px 0.98px 1.96px 0px #1018280D;
+            .el-icon {
+                color: #000;
+            }
+            &.is-focus{
+                box-shadow: 0px 0.98px 1.96px 0px  #1265E9 !important;
+            }
+
+        }
+        .el-input__inner {
+            color: rgba(235, 235, 235, 1) !important;
+            font-family: 'Inter Tight' !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 20px;
+
+            &::placeholder {
+                color: rgba(235, 235, 235, 1) !important;
+                font-family: 'Inter Tight' !important;
+                font-size: 14px !important;
+                font-weight: 500 !important;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &--large {
+
+        height: 40px !important;
+    }
+
+}
+
+// Dialog 
+
+.el-dialog {
+    border: 3px solid rgba(255, 255, 255, 0.05);
+
+    // border-image-source: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%);
+
+
+    background-color:
+        rgba(76, 76, 76, 0.6) !important;
+    backdrop-filter: blur(17px) !important;
+    border-radius: 15px !important;
+
+    .el-dialog__close {
+        color: #6D6D6D !important;
+    }
+
+}
+
+.el-overlay {
+    background: #0000008C !important;
+}
 
 // Button
 
 .el-button {
-    &--large {
-        height: 44px !important;
-
-        &.gradient {
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
-
-        }
-    }
-
-    &.gradient {
-        border-radius: 8px;
-        background: linear-gradient(91deg, #B540F6 52.01%, #F18F8C 86.64%, #FB9D79 96.11%);
-        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-        border: none;
-        color: #FFF;
-        font-family: 'Inter';
-        font-size: 14px;
-        font-weight: 600;
+    &.greyable {
+        padding: 12px 15px !important;
+        border-radius: 7px !important;
+        background: rgba(130, 130, 130, 0.75) !important;
+        border: none !important;
+        color: rgba(235, 235, 235, 1) !important;
+        font-family: 'Inter Tight' !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
         line-height: 20px;
-
-        &:hover {
-            opacity: 0.9;
+        &:hover{
+            background-color: #1265E9 !important;
         }
     }
+
+    &--large {
+        height: 40px !important;
+    }
+
 }

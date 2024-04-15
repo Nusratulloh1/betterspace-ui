@@ -5,12 +5,12 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            redirect: '/home',
+            redirect: '/dashboard',
         },
         {
-            path: '/home',
+            path: '/dashboard',
             name: 'home',
-            component: () => import('/@/views/Home.vue'),
+            component: () => import('../views/dashboard/DashboardView.vue'),
             meta: {
                 title: 'Home',
             },

@@ -1,7 +1,7 @@
 <template>
     <div class="h-[80vh]">
         <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef">
-            <div class="flex items-center h-[70vh]">
+            <div class="flex md:items-center h-[70vh]">
                 <div class="container px-4 lg:max-w-6xl xl:max-w-7xl mx-auto">
                     <h4 class="font-semibold text-[40px] text-[#F1F1F1]">Work</h4>
                     <div class="flex items-center gap-3 mt-8">

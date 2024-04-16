@@ -1,6 +1,6 @@
 <template>
     <div class=" md:px-14 mt-2">
-        <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef" height="80vh">
+        <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef" :height="isMobile ? '80vh': ''">
         <div class="flex items-center flex-wrap md:flex-nowrap gap-4 md:gap-1.5">
             <el-input v-model="search" clearable size="large" class="greyable" placeholder="Search for an application">
                 <template #prefix>
@@ -25,7 +25,7 @@
                 {{ button.title }}
             </el-button>
         </div>
-        <div class="grid grid-cols-4 sm:grid-cols-5 gap-4 sm:gap-5 md:grid-cols-8 gap-y-8 md:gap-x-10 md:gap-y-16 mt-11">
+        <div class="grid grid-cols-4 sm:grid-cols-5 gap-4 pl-3 sm:pl-0 sm:gap-5 md:grid-cols-8 gap-y-8 md:gap-x-10 md:gap-y-16 mt-11">
             <div class=" space-y-2 w-16 text-center sm:ml-5 md:ml-0" v-for="app in apps" :key="app.id">
                 <div class="bg-[#2E2E2E] flex items-center justify-center rounded-[14px] h-14 w-14 sm:h-16 sm:w-16 p-1">
                     <img class=" object-contain w-10 sm:w-12 h-9 sm:!h-11" :src="getImgPath(app.img)" alt="img" />
@@ -44,6 +44,7 @@ import apps from '../../../mock/app.json'
 import { ref } from 'vue'
 const activeButton = ref(1)
 const search = ref('')
+const isMobile = ref(window.innerWidth <= 991)
 const buttons = [
     {
         id: 1,
@@ -84,9 +85,9 @@ const buttons = [
 ]
 const getImgPath = (img: string) => {
     console.log(img);
-    console.log(`/@/assets/images/applications/${img}`);
-    console.log(new URL( `/@/assets/images/applications/${img}`, import.meta.url).href);
-    
-    return new URL( `/@/assets/images/applications/${img}`, import.meta.url).href
+    const url: string = `/@/assets/images/applications/${img}`
+    console.log(url);
+    console.log(new URL(url, import.meta.url).href);
+    return new URL(url, import.meta.url).href
 }
 </script>

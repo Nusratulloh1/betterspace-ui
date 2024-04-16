@@ -81,6 +81,9 @@ const buttons = [
     },
 ]
 const getImgPath = (img: string) => {
+    console.log(img);
+    console.log(`/@/assets/images/applications/${img}`);
+    
     return new URL( `/@/assets/images/applications/${img}`, import.meta.url).href
 }
 </script>

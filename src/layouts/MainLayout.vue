@@ -1,7 +1,7 @@
 <template>
     <el-container class="layout-container">
         <el-container class="content-wrapper !mb-10">
-            <TheHeader :menus="navigationItems[currentRoute]" />
+            <TheHeader :menus="[]" />
             <el-main class="layout-main !pb-16 lg:!p-0">
                 <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef">
                     <router-view v-slot="{ Component }">

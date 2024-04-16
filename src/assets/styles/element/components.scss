@@ -105,133 +105,139 @@
     }
 }
 
-// Form
-.el-form {
-    .el-form-item {
-        &.is-required:not(.is-no-asterisk).asterisk-right>.el-form-item__label::after {
-            margin-left: 2px;
-            color: #181c25;
-        }
+// Switch
 
-        &__label {
-            color: #344054;
-            font-family: 'Inter';
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 20px !important;
-            margin-bottom: 5px !important;
-        }
-
-        .el-input {
-            &__wrapper {
-                border-radius: 8px;
-                // border: 1px solid #D0D5DD;
-                background: #FFF;
-
-                // box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-                .el-icon {
-                    color: #000;
+.el-switch {
+    &.custom {
+        &.is-checked{
+            .el-switch__core {
+                background: #0F3B7F;
+                .el-switch__action{
+                    background: #1265E9;
+                    left: calc(100% - 33px);
+                    &::before {
+                        // width: 24px;
+                        // height: 24px;
+                        // top: 2.5px;
+                        // position: absolute;
+                        content: url('/@/assets/images/icons/target.svg');
+                        /* Active state icon */
+                    }
                 }
-
             }
-
-            &__inner {
-                color: #667085;
-                font-family: 'Inter';
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 24px;
-            }
-
-            &--large {
-
-                height: 44px !important;
+         }
+        .el-switch__core {
+            background: #444444;
+            border: none;
+            width: 63px;
+            height: 32px;
+            border-radius: 22px;
+            .el-switch__action{
+                position: relative;
+                width: 30px;
+                height: 30px;
+                background: #2C2C2C;
+                &::before {
+                    width: 24px;
+                    height: 24px;
+                    top: 2.5px;
+                    position: absolute;
+                    content: url('/@/assets/images/icons/target.svg');
+                    /* Inactive state icon */
+                }
+    
+                 
             }
         }
     }
 }
+    // Input
 
-.el-input {
+    .el-input {
 
-    &.greyable {
-        .el-input__wrapper {
-            border-radius: 7px !important;
-            background: rgba(130, 130, 130, 0.75) !important;
-            box-shadow: 0px 0.98px 1.96px 0px #1018280D;
-            .el-icon {
-                color: #000;
+        &.greyable {
+            .el-input__wrapper {
+                border-radius: 7px !important;
+                background: rgba(130, 130, 130, 0.75) !important;
+                box-shadow: 0px 0.98px 1.96px 0px #1018280D;
+
+                .el-icon {
+                    color: #000;
+                }
+
+                &.is-focus {
+                    box-shadow: 0 0 0 1px #1265E9 inset !important;
+                }
             }
-            &.is-focus{
-                box-shadow: 0 0 0 1px #1265E9 inset !important;
+
+            .el-input__inner {
+                color: rgba(235, 235, 235, 1) !important;
+                font-family: 'Inter Tight' !important;
+                font-size: 14px !important;
+                font-weight: 500 !important;
+                line-height: 20px;
+
+                &::placeholder {
+                    color: rgba(235, 235, 235, 1) !important;
+                    font-family: 'Inter Tight' !important;
+                    font-size: 14px !important;
+                    font-weight: 500 !important;
+                    line-height: 20px;
+                }
             }
         }
-        .el-input__inner {
+
+        &--large {
+
+            height: 40px !important;
+        }
+
+    }
+
+    // Dialog 
+
+    .el-dialog {
+        border: 3px solid rgba(255, 255, 255, 0.05);
+
+        // border-image-source: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%);
+
+
+        background-color:
+            rgba(76, 76, 76, 0.6) !important;
+        backdrop-filter: blur(17px) !important;
+        border-radius: 15px !important;
+
+        .el-dialog__close {
+            color: #6D6D6D !important;
+        }
+
+    }
+
+    .el-overlay {
+        background: #0000008C !important;
+    }
+
+    // Button
+
+    .el-button {
+        &.greyable {
+            padding: 12px 15px !important;
+            border-radius: 7px !important;
+            background: rgba(130, 130, 130, 0.75) !important;
+            border: none !important;
             color: rgba(235, 235, 235, 1) !important;
             font-family: 'Inter Tight' !important;
             font-size: 14px !important;
             font-weight: 500 !important;
             line-height: 20px;
 
-            &::placeholder {
-                color: rgba(235, 235, 235, 1) !important;
-                font-family: 'Inter Tight' !important;
-                font-size: 14px !important;
-                font-weight: 500 !important;
-                line-height: 20px;
+            &:hover {
+                background-color: #1265E9 !important;
             }
         }
-    }
 
-    &--large {
-
-        height: 40px !important;
-    }
-
-}
-
-// Dialog 
-
-.el-dialog {
-    border: 3px solid rgba(255, 255, 255, 0.05);
-
-    // border-image-source: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%);
-
-
-    background-color:
-        rgba(76, 76, 76, 0.6) !important;
-    backdrop-filter: blur(17px) !important;
-    border-radius: 15px !important;
-
-    .el-dialog__close {
-        color: #6D6D6D !important;
-    }
-
-}
-
-.el-overlay {
-    background: #0000008C !important;
-}
-
-// Button
-
-.el-button {
-    &.greyable {
-        padding: 12px 15px !important;
-        border-radius: 7px !important;
-        background: rgba(130, 130, 130, 0.75) !important;
-        border: none !important;
-        color: rgba(235, 235, 235, 1) !important;
-        font-family: 'Inter Tight' !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        line-height: 20px;
-        &:hover{
-            background-color: #1265E9 !important;
+        &--large {
+            height: 40px !important;
         }
-    }
 
-    &--large {
-        height: 40px !important;
     }
-
-}

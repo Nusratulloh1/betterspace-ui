@@ -1,103 +1,49 @@
 <template>
-    <el-header class="layout-header">
-        <div class="layouts-menu-horizontal px-5 md:px-12 w-full lg:w-auto border-b-2">
-            <div class="flex items-center justify-between w-full lg:w-auto gap-5 sm:gap-14">
-                <div
-                    class="menu-horizontal-logo"
-                >
-                    <Logo class="cursor-pointer" />
-                    <h4 class="font-poppins font-semibold text-[22px] text-black mt-1">Eduplus</h4>
-                </div>
-                <el-button class="!border-none lg:!hidden">
-                    <Icon color="#ffffff" name="local-burger-menu" class="cursor-pointer" @click="menuVisible = !menuVisible" size="23" />
-                </el-button>
-                <el-scrollbar class="hidden lg:block" ref="horizontalMenusRef">
-                    <el-menu
-                        class="menu-horizontal"
-                        id="menu"
-                        router
-                        mode="horizontal"
-                        :default-active="activeRoute"
-                        background-color="#fff"
-                        text-color="#333741"
-                        active-text-color="#000"
-                    >
-                        <template v-for="menu in menus">
-                            <el-menu-item
-                                :class="activeRoute === menu.path ? 'is-active' : ''"
-                                v-if="menu.type == 'tab'"
-                                :index="menu.path"
-                                :key="menu.path"
-                            >
-                                <span>{{ menu.title ? menu.title : $t('noTitle') }}</span>
-                            </el-menu-item>
-                        </template>
-                    </el-menu>
-                </el-scrollbar>
+    <el-header class="layout-header !h-12 !px-0" :class="active ? 'bg-primary active' : 'bg-[#2C2C2C]'">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center">
+                <button class="px-2.5 flex items-center h-12 text-[#2C2C2C] hover:text-primary hover:bg-primary">
+                    <div class="flex items-end gap-0.5">
+                        <svg width="22" class="fill-current" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.1108 18.1182C20.1646 17.9948 21.3483 16.5668 21.3779 14.9265C21.431 12.0963 21.4445 9.26374 21.3779 6.43484C21.331 4.58347 19.7586 3.16902 18.1158 3.3159C18.1268 2.45686 17.7988 1.62809 17.203 1.00917C16.6072 0.39025 15.7915 0.0310293 14.9327 0.00934591C12.0852 0.00934591 9.23782 -0.017808 6.39165 0.0204537C4.62173 0.0439044 3.26406 1.53981 3.29615 3.31713C1.78543 3.1394 -0.0128719 4.57236 0.00440763 6.53605C0.0278584 9.23782 -0.0128719 11.9408 0.00440763 14.6414C0.0204529 16.7087 1.21397 17.9442 3.29244 18.1195C3.31342 19.9807 4.7143 21.3594 6.64467 21.3717C9.27979 21.389 11.9161 21.3446 14.55 21.389C16.5446 21.4223 18.1182 19.9881 18.1108 18.1182Z"
+                            />
+                            <rect x="3" y="3" width="15" height="15" rx="0.245333" />
+                        </svg>
+                        <Icon color="#ECECEC" class="mb-0.5" name="el-icon-ArrowDown" size="10" />
+                    </div>
+                </button>
+                <button class="flex items-center justify-center w-12 h-12 hover:bg-primary">
+                    <Icon name="el-icon-ArrowLeft" size="22" />
+                </button>
+                <button class="flex items-center justify-center w-12 h-12 hover:bg-primary">
+                    <Icon name="el-icon-ArrowRight" size="22" />
+                </button>
+                <button class="flex items-center justify-center w-12 h-12 hover:bg-primary pl-2">
+                    <div class="flex items-center gap-0.5">
+                        <Icon name="local-selection" size="18" />
+                        <Icon class="mt-0.5 !stroke-current" name="el-icon-ArrowDown" size="10" />
+                    </div>
+                </button>
             </div>
-            <div class="flex items-center gap-5">
-                <!-- <button @click="taggleDark()">
-                        <span class="hidden dark:inline"
-                            ><svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
-                                <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
-                                    d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
-                                    class="fill-sky-400/20"
-                                ></path>
-                                <path
-                                    d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
-                                    class="fill-sky-500"
-                                ></path>
-                                <path
-                                    fill-rule="evenodd"
-                                    clip-rule="evenodd"
-                                    d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
-                                    class="fill-sky-500"
-                                ></path>
-                            </svg>
-                        </span>
-                        <span class="block dark:hidden"
-                            ><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
-                                <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="fill-sky-400/20 stroke-sky-500"></path>
-                                <path
-                                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
-                                    class="stroke-sky-500"
-                                ></path>
-                            </svg>
-                        </span>
-                    </button> -->
-                <el-button @click="logOut" round plain class="!font-medium lg:!h-11 lg:!px-8 !hidden lg:!block !text-black">
-                    <Icon color="#000000" name="local-logout" class="mr-2" size="16" />
-                    Log out
-                </el-button>
+            <el-input type="search" class="dark !w-[388px]" />
+            <div class="flex items-center pr-3 gap-2">
+                <p class="font-medium text-xs mr-3 text-[#FDFDFD]" :class="active ? ' visible' : 'invisible'">You are in Focus mode</p>
+                <button class="flex items-center justify-center w-12 h-12 hover:bg-primary">
+                    <Icon class="!fill-current" name="local-checkers" size="18" />
+                </button>
+                <button class=" p-[3px] rounded-[22px] flex items-center gap-1 mr-2.5" :class="active ? ' bg-[#0F3B7F]' : 'bg-[#383838]'">
+                    <img src="/@/assets/images/avatar.png" width="27" height="27" alt="avatar" />
+                    <Icon color="#ECECEC" class="mt-0.5" name="el-icon-ArrowDown" size="10" />
+                </button>
+                <el-switch size="large" v-model="active" class="custom"></el-switch>
             </div>
         </div>
-        <el-drawer v-model="menuVisible" :size="206" @handleClose="menuVisible = false">
-            <div class="flex flex-col gap-6">
-                <template v-for="menu in menus" :key="menu.path">
-                    <button
-                        v-if="menu.type == 'tab'"
-                        @click="goPath(menu.path)"
-                        class="text-[#8C8C8C] font-medium flex items-center gap-2 text-xl"
-                        :class="{ '!text-black': route.path.includes(menu.path) }"
-                    >
-                        <Icon :color="route.path.includes(menu.path) ? '#000' : '#8C8C8C'" size="26" :name="`${menu.icon}`" />
-                        {{ menu.title ? menu.title : $t('noTitle') }}
-                    </button>
-                </template>
-                    <el-button @click="logOut" round plain class="!font-medium lg:!px-8 !text-black">
-                        <Icon color="#000000" name="local-logout" class="mr-2" size="16" />
-                        Log out
-                    </el-button>
-            </div>
-        </el-drawer>
     </el-header>
 </template>
 
 <script lang="ts" setup>
 import { computed, reactive, ref, watch } from 'vue'
-import Logo from './TheLogo.vue'
 import { useRoute, useRouter } from 'vue-router'
 import type { ElScrollbar } from 'element-plus'
 import { useUsersStore } from '/@/stores/user'
@@ -113,6 +59,7 @@ interface Props {
         visible: boolean
     }[]
 }
+const active = ref(false)
 const props = defineProps<Props>()
 const activeRoute = computed(() => route.path)
 const horizontalMenusRef = ref<InstanceType<typeof ElScrollbar>>()
@@ -141,87 +88,38 @@ const logOut = () => {
 </script>
 
 <style scoped lang="scss">
-.layouts-menu-horizontal {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 72px;
-    // border-bottom: 1px solid #182857;
-    // background: #182857;
-    // padding: 0px 50px;
-}
-.layout-header {
-    height: auto;
-    padding: 0;
-}
-.menu-horizontal-logo {
-    width: 139px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-}
-
-.semi-circle {
-    width: 96px;
-    height: 96px;
-    border: 1px solid black;
-    border-radius: 50%;
-    /* Halve the circle */
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    /* Rotate the circle */
-    transform: rotate(-45deg);
-}
-
-.menu-horizontal {
-    border: none !important;
-    display: flex;
-    gap: 32px;
-    height: 70px;
-    padding: 0px 16px;
-}
-
-.el-menu-item {
-    height: 70px;
-    color: #333741;
-    text-align: center;
-    font-family: 'Poppins';
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 28px;
-    padding: 0px;
-
-    &:focus,
-    &:hover {
-        background-color: white !important;
-    }
-}
-
-@media (min-width: 1180px) {
-    .menu-horizontal {
-        width: 510px;
-    }
-}
-
-@media (max-width: 640px) {
-    .menu-horizontal {
-        gap: 10px;
-        width: 88px;
-        padding: 0;
-
-        .el-sub-menu.is-active {
-            padding: 0px 10px !important;
+button {
+    .el-icon,
+    svg {
+        color: #ececec !important;
+        rect {
+            fill: #2c2c2c;
         }
     }
-
-    .menu-horizontal-logo {
-        width: 120px;
-        gap: 4px;
-
-        h4 {
-            font-size: 20px;
+    &:hover {
+        svg {
+            rect {
+                fill: #1265e9;
+            }
+        }
+    }
+}
+.active {
+    button {
+        svg {
+            rect {
+                fill: #1265e9;
+            }
+        }
+        &:hover {
+            background: #f4f4f4;
+            .el-icon,
+            svg {
+                color: #0b0b0b !important;
+                rect {
+                    fill: #ececec;
+                }
+            }
         }
     }
 }

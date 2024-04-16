@@ -1,7 +1,7 @@
 <template>
     <el-header class="layout-header !h-12 !px-0" :class="active ? 'bg-primary active' : 'bg-[#2C2C2C]'">
         <div class="flex items-center justify-between">
-            <div class="flex items-center">
+            <div class="flex items-center w-[30%]">
                 <button class="px-2.5 flex items-center h-12 text-[#2C2C2C] hover:text-primary hover:bg-primary">
                     <div class="flex items-end gap-0.5">
                         <svg width="22" class="fill-current" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,8 +26,8 @@
                     </div>
                 </button>
             </div>
-            <el-input type="search" class="dark !w-[388px]" />
-            <div class="flex items-center pr-3 gap-2">
+            <el-input type="search" v-model="text" :prefix-icon="Search" round placeholder="Search through space" size="small" :class="active ? '' : 'dark'" class=" !w-[388px]" />
+            <div class="flex items-center justify-end pr-3 gap-2 w-[30%]">
                 <p class="font-medium text-xs mr-3 text-[#FDFDFD]" :class="active ? ' visible' : 'invisible'">You are in Focus mode</p>
                 <button class="flex items-center justify-center w-12 h-12 hover:bg-primary">
                     <Icon class="!fill-current" name="local-checkers" size="18" />
@@ -48,6 +48,7 @@ import { useRoute, useRouter } from 'vue-router'
 import type { ElScrollbar } from 'element-plus'
 import { useUsersStore } from '/@/stores/user'
 import { useDark, useToggle } from '@vueuse/core'
+import { Search } from '@element-plus/icons-vue'
 const isDark = useDark()
 const taggleDark = useToggle(isDark)
 interface Props {
@@ -60,6 +61,7 @@ interface Props {
     }[]
 }
 const active = ref(false)
+const text = ref('')
 const props = defineProps<Props>()
 const activeRoute = computed(() => route.path)
 const horizontalMenusRef = ref<InstanceType<typeof ElScrollbar>>()

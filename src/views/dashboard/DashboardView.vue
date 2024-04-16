@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 pb-5 container min-h-screen lg:max-w-6xl xl:max-w-7xl mx-auto flex items-center">
+    <div class="px-4 pb-5 container pt-10 sm:pt-0 min-h-screen lg:max-w-6xl xl:max-w-7xl mx-auto flex items-center">
         <div class="w-full pb-16">
             <div>
                 <h4 class="text-[#F1F1F1] font-bold text-4xl">Welcome, Russel</h4>
@@ -82,7 +82,7 @@
             </div>
         </div>
     </div>
-    <el-dialog v-model="spaceVisible" tabindex="34234" width="1010" >
+    <el-dialog v-model="spaceVisible" tabindex="34234" :width="isMobile ? '90%' : 1010">
         <addSpace />
     </el-dialog>
     <el-dialog v-model="spaceVisible2" custom-class="custom" tabindex="34234" width="90%">
@@ -95,6 +95,7 @@ import { useRouter } from 'vue-router'
 import addSpace from './components/addSpace.vue'
 import spaceView from './components/SpaceView.vue'
 const router = useRouter()
+const isMobile = ref(window.innerWidth <= 991)
 const selected1 = ref('High 4hr/day')
 const selected2 = ref('Medium 2hr/day')
 const selected3 = ref('Low 1hr/day')

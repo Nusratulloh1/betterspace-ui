@@ -1,6 +1,7 @@
 <template>
-    <div class="px-14 mt-2">
-        <div class="flex items-center gap-1.5">
+    <div class=" md:px-14 mt-2">
+        <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef" height="80vh">
+        <div class="flex items-center flex-wrap md:flex-nowrap gap-4 md:gap-1.5">
             <el-input v-model="search" clearable size="large" class="greyable" placeholder="Search for an application">
                 <template #prefix>
                     <Icon color="#ffffff" name="el-icon-Search" size="17" />
@@ -13,7 +14,7 @@
                 </div>
             </el-button>
         </div>
-        <div class="flex items-center gap-5 mt-9 !transition-all">
+        <div class="flex items-center flex-wrap md:flex-nowrap gap-2 md:gap-5 mt-9 !transition-all">
             <el-button
                 v-for="button in buttons"
                 class="!rounded-[4px] !text-xs"
@@ -24,16 +25,17 @@
                 {{ button.title }}
             </el-button>
         </div>
-        <div class="grid grid-cols-8 gap-x-10 gap-y-16 mt-11">
-            <div class=" space-y-2 w-16 text-center" v-for="app in apps" :key="app.id">
-                <div class="bg-[#2E2E2E] flex items-center justify-center rounded-[14px] h-16 w-16 p-1">
-                    <img class=" object-contain w-12 !h-11" :src="getImgPath(app.img)" alt="img" />
+        <div class="grid grid-cols-4 sm:grid-cols-5 gap-4 sm:gap-5 md:grid-cols-8 gap-y-8 md:gap-x-10 md:gap-y-16 mt-11">
+            <div class=" space-y-2 w-16 text-center sm:ml-5 md:ml-0" v-for="app in apps" :key="app.id">
+                <div class="bg-[#2E2E2E] flex items-center justify-center rounded-[14px] h-14 w-14 sm:h-16 sm:w-16 p-1">
+                    <img class=" object-contain w-10 sm:w-12 h-9 sm:!h-11" :src="getImgPath(app.img)" alt="img" />
                 </div>
                 <p class=" text-[#E2E2E2] font-medium">
                     {{ app.title }}
                 </p>
             </div>
         </div>
+        </el-scrollbar>
     </div>
 </template>
 <script lang="ts" setup>
@@ -83,6 +85,7 @@ const buttons = [
 const getImgPath = (img: string) => {
     console.log(img);
     console.log(`/@/assets/images/applications/${img}`);
+    console.log(new URL( `/@/assets/images/applications/${img}`, import.meta.url).href);
     
     return new URL( `/@/assets/images/applications/${img}`, import.meta.url).href
 }

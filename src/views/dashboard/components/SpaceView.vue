@@ -1,40 +1,44 @@
 <template>
-    <div class="min-h-screen pb-5 bg-[#8B494554]">
-        <div class=" container px-4 lg:max-w-6xl xl:max-w-7xl mx-auto pt-16">
-            <h4 class="font-semibold text-[40px] text-[#F1F1F1]">Work</h4>
-            <div class="flex items-center gap-3 mt-8">
-                <p class="font-medium text-[21px] text-[#F1F1F1]">Priority:</p>
-                <el-select v-model="selected1" class="w-40 danger">
-                    <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
-                </el-select>
-            </div>
-            <div
-                class="mt-11 bg-[#58585899] flex items-center justify-between border border-[#7C7C7C4D] rounded-[10px] w-full max-w-[605px] px-3 py-[14px]"
-            >
-                <div>
-                    <h1 class="text-lg font-semibold text-[#F1F1F1E5]">Islam Akramov</h1>
-                    <p class="font-semibold text-[10px] text-[#F1F1F1E5] mt-[9px]">i.akramov@ai-lab.uz</p>
-                    <p class="text-[9px] text-[#F1F1F1E5]">Lead engineer at Figma, Pitch, and Protocol Labs.</p>
-                </div>
-                <button class="mt-2">
-                    <Icon color="#ffffff" name="el-icon-Edit" size="24" />
-                </button>
-            </div>
-            <div class="mt-9">
-                <h4 class="font-semibold text-[22px] text-[#F1F1F1]">Applications</h4>
-                <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-7 mt-6">
-                    <div class="card" v-for="item in applications" :key="item.id">
-                        <img :class="{' !w-9 !object-cover': item.id == 1}" :src="item.img" alt="figma" />
-                        <h6>
-                            {{ item.title }}
-                        </h6>
-                        <p>
-                            {{ item.desc }}
-                        </p>
+    <div class="h-[80vh]">
+        <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef">
+            <div class="flex items-center h-[70vh]">
+                <div class="container px-4 lg:max-w-6xl xl:max-w-7xl mx-auto">
+                    <h4 class="font-semibold text-[40px] text-[#F1F1F1]">Work</h4>
+                    <div class="flex items-center gap-3 mt-8">
+                        <p class="font-medium text-[21px] text-[#F1F1F1]">Priority:</p>
+                        <el-select v-model="selected1" class="w-40 danger">
+                            <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
+                        </el-select>
+                    </div>
+                    <div
+                        class="mt-11 bg-[#58585899] flex items-center justify-between border border-[#7C7C7C4D] rounded-[10px] w-full max-w-[605px] px-3 py-[14px]"
+                    >
+                        <div>
+                            <h1 class="text-lg font-semibold text-[#F1F1F1E5]">Islam Akramov</h1>
+                            <p class="font-semibold text-[10px] text-[#F1F1F1E5] mt-[9px]">i.akramov@ai-lab.uz</p>
+                            <p class="text-[9px] text-[#F1F1F1E5]">Lead engineer at Figma, Pitch, and Protocol Labs.</p>
+                        </div>
+                        <button class="mt-2">
+                            <Icon color="#ffffff" name="el-icon-Edit" size="24" />
+                        </button>
+                    </div>
+                    <div class="mt-9">
+                        <h4 class="font-semibold text-[22px] text-[#F1F1F1]">Applications</h4>
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-7 mt-6">
+                            <div class="card transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]" @click="$router.push('/web-view')" v-for="item in applications" :key="item.id">
+                                <img :class="{ ' !w-9 !object-cover': item.id == 1 }" :src="item.img" alt="figma" />
+                                <h6>
+                                    {{ item.title }}
+                                </h6>
+                                <p>
+                                    {{ item.desc }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </el-scrollbar>
         <!-- <iframe class="w-full h-screen" src="https://e.notionhero.io/e1/p/3e5960c-241ebc5b1ebd86k3c3t3h6208ed5b0" style="border: none;"></iframe> -->
     </div>
 </template>
@@ -105,13 +109,13 @@ const applications = ref([
     border-radius: 9.3px;
     padding: 9.3px, 13.03px, 9.3px, 13.03px;
     background: rgba(88, 88, 88, 0.5);
+    cursor: pointer;
     padding: 16px;
     img {
         width: 42px;
         height: 42px;
         object-fit: contain;
         border-radius: 9.3px;
-        
     }
     h6 {
         color: #f1f1f1;

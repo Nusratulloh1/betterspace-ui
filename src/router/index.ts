@@ -17,14 +17,6 @@ const router = createRouter({
       },
     },
     {
-      path: '/space/:id',
-      name: 'space',
-      component: () => import('/@/views/SpaceView.vue'),
-      meta: {
-        title: 'Space',
-      },
-    },
-    {
       path: "/web-view",
       component: MainLayout,
       name: "view",

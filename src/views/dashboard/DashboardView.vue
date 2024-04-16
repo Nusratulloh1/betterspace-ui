@@ -12,7 +12,7 @@
             <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-9 mt-16">
                 <div
                     @click="spaceVisible = true"
-                    class="rounded-[14px] h-[305px] bg-[#1265E9] flex items-center cursor-pointer justify-center transition-all hover:shadow-md !shadow-white"
+                    class="rounded-[14px] h-[305px] bg-[#1265E9] flex items-center cursor-pointer justify-center transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
                 >
                     <div class="space-y-4">
                         <Icon color="#ffffff" name="el-icon-Plus" class="ml-1" size="64" />
@@ -20,8 +20,8 @@
                     </div>
                 </div>
                 <div
-                    @click="router.push('/space/dsjfhisdjbfisdbfigd')"
-                    class="rounded-[14px] h-[305px] bg-[#C1757054] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-md !shadow-white"
+                    @click="spaceVisible2 = true"
+                    class="rounded-[14px] h-[305px] bg-[#C1757054] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
                 >
                     <h3 class="font-semibold text-3xl text-white">Work</h3>
                     <div class="space-y-2">
@@ -40,8 +40,8 @@
                     </div>
                 </div>
                 <div
-                    @click="router.push('/space/dsjfhisdjbfisdbfigd')"
-                    class="rounded-[14px] h-[305px] bg-[#A97F4154] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-md !shadow-white"
+                    @click="spaceVisible2 = true"
+                    class="rounded-[14px] h-[305px] bg-[#A97F4154] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
                 >
                     <h3 class="font-semibold text-3xl text-white">Personal</h3>
                     <div class="space-y-2">
@@ -60,8 +60,8 @@
                     </div>
                 </div>
                 <div
-                    @click="router.push('/space/dsjfhisdjbfisdbfigd')"
-                    class="rounded-[14px] h-[305px] bg-[#404040] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-md !shadow-white"
+                    @click="spaceVisible2 = true"
+                    class="rounded-[14px] h-[305px] bg-[#404040] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
                 >
                     <h3 class="font-semibold text-3xl text-white">Freelance</h3>
                     <div class="space-y-2">
@@ -82,19 +82,23 @@
             </div>
         </div>
     </div>
-    <el-dialog v-model="spaceVisible" tabindex="34234" width="1010">
+    <el-dialog v-model="spaceVisible" tabindex="34234" width="1010" >
         <addSpace />
+    </el-dialog>
+    <el-dialog v-model="spaceVisible2" custom-class="custom" tabindex="34234" width="90%">
+        <spaceView />
     </el-dialog>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import addSpace from './components/addSpace.vue'
-
+import spaceView from './components/SpaceView.vue'
 const router = useRouter()
 const selected1 = ref('High 4hr/day')
 const selected2 = ref('Medium 2hr/day')
 const selected3 = ref('Low 1hr/day')
 
 const spaceVisible = ref(false)
+const spaceVisible2 = ref(false)
 </script>

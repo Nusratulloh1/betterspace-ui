@@ -27,7 +27,7 @@
         <div class="grid grid-cols-8 gap-x-10 gap-y-16 mt-11">
             <div class=" space-y-2 w-16 text-center" v-for="app in apps" :key="app.id">
                 <div class="bg-[#2E2E2E] flex items-center justify-center rounded-[14px] h-16 w-16 p-1">
-                    <img class=" object-contain w-12 !h-11" :src="app.img" alt="img" />
+                    <img class=" object-contain w-12 !h-11" :src="getImgPath(app.img)" alt="img" />
                 </div>
                 <p class=" text-[#E2E2E2] font-medium">
                     {{ app.title }}
@@ -80,4 +80,7 @@ const buttons = [
         title: 'Added',
     },
 ]
+const getImgPath = (img: string) => {
+    return new URL( `/@/assets/images/applications/${img}`, import.meta.url).href
+}
 </script>

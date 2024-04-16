@@ -207,7 +207,8 @@
 
     // border-image-source: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%);
 
-    margin-top: 3% !important;
+    // margin-top: 3% !important;
+    margin: auto !important;
     background-color:
         rgba(76, 76, 76, 0.6) !important;
     backdrop-filter: blur(17px) !important;
@@ -224,7 +225,9 @@
     }
 
 }
-
+.el-overlay-dialog{
+    display: flex;
+}
 .el-overlay {
     background: #0000008C !important;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 pb-5 container pt-10 sm:pt-0 min-h-screen lg:max-w-6xl xl:max-w-7xl mx-auto flex items-center">
+    <div class="px-4 pb-5 container pt-10 min-h-screen lg:max-w-6xl xl:max-w-7xl mx-auto flex items-center">
         <div class="w-full pb-16">
             <div>
                 <h4 class="text-[#F1F1F1] font-bold text-4xl">Welcome, Russel</h4>
@@ -85,7 +85,7 @@
     <el-dialog v-model="spaceVisible" tabindex="34234" :width="isMobile ? '90%' : 1010">
         <addSpace />
     </el-dialog>
-    <el-dialog v-model="spaceVisible2" custom-class="custom" tabindex="34234" width="90%">
+    <el-dialog v-model="spaceVisible2" custom-class="custom" tabindex="34234" :width="isMobile ? '90%' : 1200">
         <spaceView />
     </el-dialog>
 </template>

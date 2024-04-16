@@ -28,7 +28,7 @@
         <div class="grid grid-cols-4 sm:grid-cols-5 gap-4 pl-3 sm:pl-0 sm:gap-5 md:grid-cols-8 gap-y-8 md:gap-x-10 md:gap-y-16 mt-11">
             <div class=" space-y-2 w-16 text-center sm:ml-5 md:ml-0" v-for="app in apps" :key="app.id">
                 <div class="bg-[#2E2E2E] flex items-center justify-center rounded-[14px] h-14 w-14 sm:h-16 sm:w-16 p-1">
-                    <img class=" object-contain w-10 sm:w-12 h-9 sm:!h-11" :src="getImgPath(app.img)" alt="img" />
+                    <img class=" object-contain w-10 sm:w-12 h-9 sm:!h-11" :src="app.img" alt="img" />
                 </div>
                 <p class=" text-[#E2E2E2] font-medium">
                     {{ app.title }}
@@ -40,7 +40,7 @@
 </template>
 <script lang="ts" setup>
 import { Search } from '@element-plus/icons-vue'
-import apps from '../../../mock/app.json'
+import { apps  } from '/@/mock/app.ts'
 import { ref } from 'vue'
 const activeButton = ref(1)
 const search = ref('')

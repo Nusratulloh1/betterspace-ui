@@ -192,34 +192,36 @@
             }
         }
     }
-&.dark{
-    .el-input__wrapper {
-        border-radius: 12px !important;
-        background: #3D3E40 !important;
-        border: 1px solid #6A696A;
-        box-shadow: 0px 0.55px 1.11px 0px #1018280D;
 
-        .el-icon {
-            color: #A2A0A2;
+    &.dark {
+        .el-input__wrapper {
+            border-radius: 12px !important;
+            background: #3D3E40 !important;
+            border: 1px solid #6A696A;
+            box-shadow: 0px 0.55px 1.11px 0px #1018280D;
+
+            .el-icon {
+                color: #A2A0A2;
+            }
+
+            &.is-focus {
+                box-shadow: 0 0 0 1px white inset !important;
+            }
         }
 
-        &.is-focus {
-            box-shadow: 0 0 0 1px white inset !important;
-        }
-    }
-
-    .el-input__inner {
-        color: #A2A0A2 !important;
-        font-family: 'Inter Tight' !important;
-        font-size: 12px !important;
-
-        &::placeholder {
+        .el-input__inner {
             color: #A2A0A2 !important;
             font-family: 'Inter Tight' !important;
             font-size: 12px !important;
+
+            &::placeholder {
+                color: #A2A0A2 !important;
+                font-family: 'Inter Tight' !important;
+                font-size: 12px !important;
+            }
         }
-    } 
-}
+    }
+
     &--large {
 
         height: 40px !important;
@@ -252,11 +254,35 @@
     }
 
 }
-.el-overlay-dialog{
+
+.el-overlay-dialog {
     display: flex;
 }
+
 .el-overlay {
     background: #0000008C !important;
+}
+
+// el-popper
+
+.el-popper {
+    border: 1.5px solid rgba(255, 255, 255, 0.05) !important;
+    margin: auto !important;
+    background-color:
+        rgba(76, 76, 76, 0.6) !important;
+    backdrop-filter: blur(17px) !important;
+    -webkit-backdrop-filter: blur(17px) !important;
+    border-radius: 14px !important;
+
+    .el-popper__arrow {
+        &::before {
+            background-color:
+                rgba(76, 76, 76, 0.6) !important;
+            backdrop-filter: blur(17px) !important;
+            -webkit-backdrop-filter: blur(17px) !important;
+            border: none !important;
+        }
+    }
 }
 
 // Button

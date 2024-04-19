@@ -171,7 +171,7 @@
                         </div>
                         <div class="flex items-center">
                             <p class="text-xs font-medium text-[#D9D9D9] mt-1 mr-2">30m 0s</p>
-                            <button>
+                            <div class=" cursor-pointer">
                                 <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect
                                         x="4.16797"
@@ -187,7 +187,7 @@
                                         fill="#D2D2D2"
                                     />
                                 </svg>
-                            </button>
+                            </div>
 
                             <button>
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -221,7 +221,7 @@
                         </div>
                         <div class="flex items-center">
                             <p class="text-xs font-medium text-[#D9D9D9] mt-1 mr-2">30m 0s</p>
-                            <button>
+                            <div class=" cursor-pointer">
                                 <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect
                                         x="4.16797"
@@ -237,7 +237,7 @@
                                         fill="#D2D2D2"
                                     />
                                 </svg>
-                            </button>
+                            </div>
 
                             <button>
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -271,7 +271,7 @@
                         </div>
                         <div class="flex items-center">
                             <p class="text-xs font-medium text-[#D9D9D9] mt-1 mr-2">30m 0s</p>
-                            <button>
+                            <div class=" cursor-pointer">
                                 <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect
                                         x="4.16797"
@@ -287,7 +287,7 @@
                                         fill="#D2D2D2"
                                     />
                                 </svg>
-                            </button>
+                            </div>
 
                             <button>
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">

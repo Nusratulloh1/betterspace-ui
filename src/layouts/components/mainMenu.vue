@@ -37,7 +37,7 @@
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/applications/figma.png" alt="jira" />
+                            <img class="w-[22px] h-[18px]" src="/@/assets/images/applications/figma.png" alt="jira" />
                             Figma
                         </div>
                         <span> ⌘F </span>
@@ -93,7 +93,7 @@
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/applications/figma.png" alt="jira" />
+                            <img class="w-[22px] h-[18px]" src="/@/assets/images/applications/figma.png" alt="jira" />
                             Figma
                         </div>
                         <span> ⌘F </span>
@@ -149,7 +149,7 @@
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/applications/figma.png" alt="jira" />
+                            <img class="w-[22px] h-[18px]" src="/@/assets/images/applications/figma.png" alt="jira" />
                             Figma
                         </div>
                         <span> ⌘F </span>

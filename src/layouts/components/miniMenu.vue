@@ -149,4 +149,23 @@ const props = defineProps(['active'])
             }
         }
     }
+    .active {
+    button {
+        svg {
+            rect {
+                fill: #1265e9;
+            }
+        }
+        &:hover {
+            background: #f4f4f4 !important;
+            .el-icon,
+            svg {
+                color: #0b0b0b !important;
+                rect {
+                    fill: #ececec;
+                }
+            }
+        }
+    }
+}
 </style>

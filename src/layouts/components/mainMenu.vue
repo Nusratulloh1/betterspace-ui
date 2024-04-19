@@ -30,21 +30,21 @@
                 <div class="w-full flex flex-col overflow-hidden rounded-[14px]">
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/jira-2.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/jira-2.png" alt="jira" />
                             Jira
                         </div>
                         <span> ⌘J </span>
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/figma.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/figma.png" alt="jira" />
                             Figma
                         </div>
                         <span> ⌘F </span>
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/notion.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/notion.png" alt="jira" />
                             Notion
                         </div>
                         <span> ⌘N </span>
@@ -86,21 +86,21 @@
                 <div class="w-full flex flex-col overflow-hidden rounded-[14px]">
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/jira-2.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/jira-2.png" alt="jira" />
                             Jira
                         </div>
                         <span> ⌘J </span>
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/figma.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/figma.png" alt="jira" />
                             Figma
                         </div>
                         <span> ⌘F </span>
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/notion.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/notion.png" alt="jira" />
                             Notion
                         </div>
                         <span> ⌘N </span>
@@ -142,21 +142,21 @@
                 <div class="w-full flex flex-col overflow-hidden rounded-[14px]">
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/jira-2.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/jira-2.png" alt="jira" />
                             Jira
                         </div>
                         <span> ⌘J </span>
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/figma.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/figma.png" alt="jira" />
                             Figma
                         </div>
                         <span> ⌘F </span>
                     </button>
                     <button class="item">
                         <div class="flex items-center gap-2">
-                            <img class="w-5 h-5" src="/@/assets/images/icons/notion.svg" alt="jira" />
+                            <img class="w-5 h-5" src="/@/assets/images/applications/notion.png" alt="jira" />
                             Notion
                         </div>
                         <span> ⌘N </span>
@@ -273,6 +273,25 @@ button {
         svg {
             rect {
                 fill: #1265e9;
+            }
+        }
+    }
+}
+.active {
+    button {
+        svg {
+            rect {
+                fill: #1265e9;
+            }
+        }
+        &:hover {
+            background: #f4f4f4 !important;
+            .el-icon,
+            svg {
+                color: #0b0b0b !important;
+                rect {
+                    fill: #ececec;
+                }
             }
         }
     }

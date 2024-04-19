@@ -266,14 +266,22 @@
 // el-popper
 
 .el-popper {
-    border: 1.5px solid rgba(255, 255, 255, 0.05) !important;
+    border: 1.5px solid #8D8D8D99 !important;
     margin: auto !important;
     background-color:
         rgba(76, 76, 76, 0.6) !important;
     backdrop-filter: blur(17px) !important;
     -webkit-backdrop-filter: blur(17px) !important;
     border-radius: 14px !important;
-
+    padding: 0px !important;
+    &.noned{
+        .el-popper__arrow {
+            &::before {
+                display: none !important;
+            }
+        }   
+    }
+// overflow: hidden;
     .el-popper__arrow {
         &::before {
             background-color:

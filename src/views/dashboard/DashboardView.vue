@@ -116,40 +116,40 @@ const spaceVisible = ref(false)
 const spaceVisible2 = ref(false)
 </script>
 <style lang="scss" scoped>
-.animeCard {
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 309px;
-    background-color: transparent;
-    &:hover {
-        &::before {
-            content: '';
-            position: absolute;
-            height: 409px;
-            width: 50%;
-            background-image: conic-gradient(transparent, transparent, transparent, #1265e9);
-            animation: rotate 4s linear infinite;
-        }
-    }
-    .inner {
-        width: 100%;
-        position: absolute;
-        width: 99%;
-        height: 305px;
-        border-radius: 14px;
-        background: #191919;
-    }
-}
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
+// .animeCard {
+//     position: relative;
+//     border-radius: 14px;
+//     overflow: hidden;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 309px;
+//     background-color: transparent;
+//     &:hover {
+//             &::before {
+//                 content: '';
+//                 position: absolute;
+//                 height: 409px;
+//                 width: 50%;
+//                 background-image: conic-gradient(transparent, transparent, transparent, #b7615b71);
+//                 animation: rotate 4s linear infinite;
+//             }
+//         }
+//     .inner {
+//         width: 100%;
+//         position: absolute;
+//         width: 99%;
+//         height: 305px;
+//         border-radius: 14px;
+//         background: #191919;
+//     }
+// }
+// @keyframes rotate {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
 </style>

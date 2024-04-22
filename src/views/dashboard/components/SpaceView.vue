@@ -25,7 +25,7 @@
                     <div class="mt-9">
                         <h4 class="font-semibold text-[22px] text-[#F1F1F1]">Applications</h4>
                         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-7 mt-6">
-                            <div class="card transition-all hover:shadow-md !shadow-black hover:translate-y-[-4px]" @click="$router.push('/web-view')" v-for="item in applications" :key="item.id">
+                            <div class="card transition-all hover:shadow-lg !shadow-[#00000048] hover:translate-y-[-4px]" @click="$router.push('/web-view')" v-for="item in applications" :key="item.id">
                                 <img :class="{ ' !w-9 !object-cover': item.id == 1 }" :src="item.img" alt="figma" />
                                 <h6>
                                     {{ item.title }}

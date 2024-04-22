@@ -21,7 +21,7 @@
                 class="!w-[388px] !h-9"
             />
             <div class="flex items-center justify-end pr-3 gap-2 w-[30%]">
-                <p class="font-medium text-xs mr-3 text-[#FDFDFD]" :class="active ? ' visible' : 'invisible'">You are in Focus mode</p>
+                <p class="font-medium text-sm mr-3 text-[#FDFDFD]" :class="active ? ' visible' : 'invisible'">You are in Focus mode</p>
                 <checkersMenu :active="active" />
                 <button class="p-[3px] rounded-[22px] flex items-center gap-1 mr-2.5" :class="active ? ' bg-[#0F3B7F]' : 'bg-[#383838]'">
                     <img src="/@/assets/images/avatar.png" width="27" height="27" alt="avatar" />

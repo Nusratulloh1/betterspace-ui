@@ -9,7 +9,7 @@
                 <button class="flex items-center justify-center w-12 h-12 hover:bg-primary">
                     <Icon name="el-icon-ArrowRight" size="22" />
                 </button>
-                <miniMenu :active="active" />
+                <miniMenu  :active="active" />
             </div>
             <el-input
                 type="search"
@@ -17,9 +17,8 @@
                 :prefix-icon="Search"
                 round
                 placeholder="Search through space"
-                size="small"
                 :class="active ? '' : 'dark'"
-                class="!w-[388px]"
+                class="!w-[388px] !h-9"
             />
             <div class="flex items-center justify-end pr-3 gap-2 w-[30%]">
                 <p class="font-medium text-xs mr-3 text-[#FDFDFD]" :class="active ? ' visible' : 'invisible'">You are in Focus mode</p>
@@ -45,6 +44,7 @@ import { useUsersStore } from '/@/stores/user'
 import { useDark, useToggle } from '@vueuse/core'
 import { Search } from '@element-plus/icons-vue'
 const isDark = useDark()
+const uiSplit = ref(false)
 const taggleDark = useToggle(isDark)
 interface Props {
     menus: {

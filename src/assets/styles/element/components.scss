@@ -293,7 +293,15 @@
         }
     }
 }
-
+.el-dropdown-menu{
+    background-color:
+    rgba(76, 76, 76, 0.6) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    .el-dropdown-menu__item{
+        color: white;
+    }
+}
 // Button
 
 .el-button {

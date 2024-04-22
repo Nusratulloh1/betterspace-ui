@@ -13,11 +13,23 @@
                         />
                         <rect x="3" y="3" width="15" height="15" rx="0.245333" />
                     </svg>
-                    <Icon color="#ECECEC" class="mb-0.5" name="el-icon-ArrowDown" size="10" />
+                    <Icon color="#ECECEC" class="mb-1" name="el-icon-ArrowDown" size="10" />
                 </div>
             </button>
         </template>
         <div class="w-full flex flex-col overflow-hidden rounded-[14px]">
+            <button class="item" @click="$router.push('/')">
+                <div class="flex items-center gap-2">
+                    <svg width="14" height="14" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M10.2511 4.62115L6.19113 0.788694L6.18301 0.781076C5.99642 0.610326 5.75267 0.515625 5.49975 0.515625C5.24682 0.515625 5.00307 0.610326 4.81648 0.781076L4.80785 0.788694L0.748906 4.62115C0.645973 4.71639 0.5638 4.83184 0.507529 4.96029C0.451257 5.08873 0.422098 5.22741 0.421875 5.36764V10.0624C0.421875 10.3317 0.528878 10.5901 0.719345 10.7805C0.909811 10.971 1.16814 11.078 1.4375 11.078H9.5625C9.83186 11.078 10.0902 10.971 10.2807 10.7805C10.4711 10.5901 10.5781 10.3317 10.5781 10.0624V5.36764C10.5779 5.22741 10.5487 5.08873 10.4925 4.96029C10.4362 4.83184 10.354 4.71639 10.2511 4.62115ZM9.35938 9.85924H1.64062V5.45549L5.5 1.81194L9.35938 5.45549V9.85924Z"
+                            fill="#D9D9D9"
+                        />
+                    </svg>
+                    Home page
+                </div>
+                <div></div>
+            </button>
             <el-popover transition="none" placement="right-start" :offset="5" :show-arrow="false" class="noned" :width="240" trigger="hover">
                 <template #reference>
                     <button class="item">

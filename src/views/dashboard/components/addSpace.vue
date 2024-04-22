@@ -1,5 +1,5 @@
 <template>
-    <div class=" md:px-14 mt-2">
+    <div class=" md:px-14 md:pb-9 mt-2">
         <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef" :height="isMobile ? '80vh': ''">
         <div class="flex items-center flex-wrap md:flex-nowrap gap-4 md:gap-1.5">
             <el-input v-model="search" clearable size="large" class="greyable" placeholder="Search for an application">

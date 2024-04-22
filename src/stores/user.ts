@@ -5,13 +5,15 @@ import request from '../utils/request'
 
 interface UserState {
     token?: string
-    user: IUser | null
+    user: IUser | null,
+    screenSplit: boolean
 }
 
 export const useUsersStore = defineStore('users', {
     state: (): UserState => ({
         token: getAccessToken(),
         user: null,
+        screenSplit: false
     }),
     actions: {
         async login(loginInfo: ILoginInfo) {

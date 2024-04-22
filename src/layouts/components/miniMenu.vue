@@ -82,7 +82,7 @@
                 </div>
                 <span> ⌘SC </span>
             </button>
-            <button class="item" :class="{'disabled': !props.active}">
+            <button class="item" @click="userStore.screenSplit = !userStore.screenSplit" :class="{'disabled': !props.active}">
                 <div class="flex items-center gap-2">
                     <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -130,7 +130,11 @@
     </el-popover>
 </template>
 <script lang="ts" setup>
+import { useUsersStore } from "/@/stores/user"
+
 const props = defineProps(['active'])
+
+const userStore = useUsersStore()
 </script>
 <style lang="scss" scoped>
     button {

@@ -19,63 +19,69 @@
                         <p class="font-bold text-lg text-white">Add space</p>
                     </div>
                 </div>
-                <div
-                    @click="spaceVisible2 = true"
-                    class="rounded-[14px] h-[305px] bg-[#C1757054] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
-                >
-                    <h3 class="font-semibold text-3xl text-white">Work</h3>
-                    <div class="space-y-2">
-                        <p class="font-medium text-sm text-[#F1F1F1]">Priority:</p>
-                        <el-select v-model="selected1" class="w-36 danger" size="small">
-                            <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
-                        </el-select>
-                        <p class="font-medium text-sm text-[#F1F1F1]">Applications:</p>
-                        <div class="flex items-center gap-3">
-                            <img src="/@/assets/images/applications/gmail.png" class="w-5 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/figma.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/slack.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/jira.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
+                <div class="animeCard">
+                    <div
+                        @click="spaceVisible2 = true"
+                        class="rounded-[14px] inner h-[305px] bg-[#C1757054] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
+                    >
+                        <h3 class="font-semibold text-3xl text-white">Work</h3>
+                        <div class="space-y-2">
+                            <p class="font-medium text-sm text-[#F1F1F1]">Priority:</p>
+                            <el-select v-model="selected1" class="w-36 danger" size="small">
+                                <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
+                            </el-select>
+                            <p class="font-medium text-sm text-[#F1F1F1]">Applications:</p>
+                            <div class="flex items-center gap-3">
+                                <img src="/@/assets/images/applications/gmail.png" class="w-5 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/figma.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/slack.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/jira.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div
-                    @click="spaceVisible2 = true"
-                    class="rounded-[14px] h-[305px] bg-[#A97F4154] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
-                >
-                    <h3 class="font-semibold text-3xl text-white">Personal</h3>
-                    <div class="space-y-2">
-                        <p class="font-medium text-sm text-[#F1F1F1]">Priority:</p>
-                        <el-select v-model="selected2" class="w-40 warning" size="small">
-                            <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
-                        </el-select>
-                        <p class="font-medium text-sm text-[#F1F1F1]">Applications:</p>
-                        <div class="flex items-center gap-3">
-                            <img src="/@/assets/images/applications/gmail.png" class="w-5 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/figma.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/slack.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/jira.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
+                <div class="animeCard">
+                    <div
+                        @click="spaceVisible2 = true"
+                        class="rounded-[14px] inner h-[305px] bg-[#A97F4154] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
+                    >
+                        <h3 class="font-semibold text-3xl text-white">Personal</h3>
+                        <div class="space-y-2">
+                            <p class="font-medium text-sm text-[#F1F1F1]">Priority:</p>
+                            <el-select v-model="selected2" class="w-40 warning" size="small">
+                                <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
+                            </el-select>
+                            <p class="font-medium text-sm text-[#F1F1F1]">Applications:</p>
+                            <div class="flex items-center gap-3">
+                                <img src="/@/assets/images/applications/gmail.png" class="w-5 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/figma.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/slack.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/jira.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div
-                    @click="spaceVisible2 = true"
-                    class="rounded-[14px] h-[305px] bg-[#404040] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
-                >
-                    <h3 class="font-semibold text-3xl text-white">Freelance</h3>
-                    <div class="space-y-2">
-                        <p class="font-medium text-sm text-[#F1F1F1]">Priority:</p>
-                        <el-select v-model="selected3" class="w-32" size="small">
-                            <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
-                        </el-select>
-                        <p class="font-medium text-sm text-[#F1F1F1]">Applications:</p>
-                        <div class="flex items-center gap-3">
-                            <img src="/@/assets/images/applications/gmail.png" class="w-5 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/figma.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/slack.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <img src="/@/assets/images/applications/jira.png" class="w-6 h-5 object-contain" alt="gmail" />
-                            <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
+                <div class="animeCard">
+                    <div
+                        @click="spaceVisible2 = true"
+                        class="rounded-[14px] h-[305px] inner bg-[#404040] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
+                    >
+                        <h3 class="font-semibold text-3xl text-white">Freelance</h3>
+                        <div class="space-y-2">
+                            <p class="font-medium text-sm text-[#F1F1F1]">Priority:</p>
+                            <el-select v-model="selected3" class="w-32" size="small">
+                                <el-option aria-selected v-for="item in ['High 4hr/day']" :key="item" :label="item" :value="item"></el-option>
+                            </el-select>
+                            <p class="font-medium text-sm text-[#F1F1F1]">Applications:</p>
+                            <div class="flex items-center gap-3">
+                                <img src="/@/assets/images/applications/gmail.png" class="w-5 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/figma.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/slack.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <img src="/@/assets/images/applications/jira.png" class="w-6 h-5 object-contain" alt="gmail" />
+                                <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,3 +109,37 @@ const selected3 = ref('Low 1hr/day')
 const spaceVisible = ref(false)
 const spaceVisible2 = ref(false)
 </script>
+<style lang="scss" scoped>
+// .animeCard {
+//     position: relative;
+//     border-radius: 14px;
+//     overflow: hidden;
+//     display: flex;
+//         justify-content: center;
+//         align-items: center;
+//     height: 309px;
+//     background-color: transparent;
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         height: 309px;
+//         width: 100%;
+//         background-image: conic-gradient(transparent, transparent, transparent, #fff);
+//         animation: rotate 4s linear infinite;
+//     }
+//     .inner {
+//         width: 100%;
+//         position: absolute;
+//         width: 99%;
+//         background: blue;
+//     }
+// }
+// @keyframes rotate {
+//     0% {
+//         transform: rotate(0deg);
+//     }
+//     100% {
+//         transform: rotate(360deg);
+//     }
+// }
+</style>

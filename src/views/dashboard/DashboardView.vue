@@ -19,10 +19,11 @@
                         <p class="font-bold text-lg text-white">Add space</p>
                     </div>
                 </div>
-                <div class="animeCard">
+                <div class="animeCard transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]">
+                    <div class="inner ">
                     <div
                         @click="spaceVisible2 = true"
-                        class="rounded-[14px] inner h-[305px] bg-[#C1757054] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
+                        class="rounded-[14px] h-[305px] bg-[#C1757054] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between "
                     >
                         <h3 class="font-semibold text-3xl text-white">Work</h3>
                         <div class="space-y-2">
@@ -41,10 +42,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="animeCard">
-                    <div
+                </div>
+                <div class="animeCard transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]">
+                    <div class="inner">
+                        <div
                         @click="spaceVisible2 = true"
-                        class="rounded-[14px] inner h-[305px] bg-[#A97F4154] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
+                        class="rounded-[14px] h-[305px] bg-[#A97F4154] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between "
                     >
                         <h3 class="font-semibold text-3xl text-white">Personal</h3>
                         <div class="space-y-2">
@@ -62,11 +65,13 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div class="animeCard">
-                    <div
+                <div class="animeCard transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]">
+                    <div class="inner">
+                        <div
                         @click="spaceVisible2 = true"
-                        class="rounded-[14px] h-[305px] inner bg-[#404040] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between transition-all hover:shadow-lg !shadow-black hover:translate-y-[-4px]"
+                        class="rounded-[14px] h-[305px] bg-[#404040] border border-[#EAECF033] flex flex-col items-start pt-[22px] pb-8 px-6 cursor-pointer justify-between"
                     >
                         <h3 class="font-semibold text-3xl text-white">Freelance</h3>
                         <div class="space-y-2">
@@ -83,6 +88,7 @@
                                 <span class="font-semibold text-[10px] text-[#F1F1F1]"> +5 </span>
                             </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -110,36 +116,38 @@ const spaceVisible = ref(false)
 const spaceVisible2 = ref(false)
 </script>
 <style lang="scss" scoped>
-// .animeCard {
-//     position: relative;
-//     border-radius: 14px;
-//     overflow: hidden;
-//     display: flex;
-//         justify-content: center;
-//         align-items: center;
-//     height: 309px;
-//     background-color: transparent;
-//     &::before {
-//         content: '';
-//         position: absolute;
-//         height: 309px;
-//         width: 100%;
-//         background-image: conic-gradient(transparent, transparent, transparent, #fff);
-//         animation: rotate 4s linear infinite;
-//     }
-//     .inner {
-//         width: 100%;
-//         position: absolute;
-//         width: 99%;
-//         background: blue;
-//     }
-// }
-// @keyframes rotate {
-//     0% {
-//         transform: rotate(0deg);
-//     }
-//     100% {
-//         transform: rotate(360deg);
-//     }
-// }
+.animeCard {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 309px;
+    background-color: transparent;
+    &::before {
+        content: '';
+        position: absolute;
+        height: 409px;
+        width: 50%;
+        background-image: conic-gradient(transparent, transparent, transparent, #1265E9);
+        animation: rotate 4s linear infinite;
+    }
+    .inner {
+        width: 100%;
+        position: absolute;
+        width: 99%;
+        height: 305px;
+        border-radius: 14px;
+        background: #191919;
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 </style>

@@ -7,7 +7,7 @@ import { useUsersStore } from './stores/user'
 import { loading } from '/@/utils/loading'
 import { i18n } from '/@/i18n'
 
-const title = 'Dealme'
+const title = 'Opus'
 const getPageTitle = (key: string) => {
     const { t, te } = i18n.global as any
     const hasKey = te(`app.${key}`) as any
@@ -21,7 +21,7 @@ const getPageTitle = (key: string) => {
 
 NProgress.configure({ showSpinner: false })
 
-const whiteList = ['/login', '/register', '/reset-password', '/onboarding']
+const whiteList = ['/signin', '/signup']
 
 router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized, next: any) => {
     const store = useUsersStore()
@@ -34,31 +34,31 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
     }
     // Determine whether the user has logged in
     if (store.token) {
-        if (to.path === '/login') {
+        if (to.path === '/signin') {
             // If is logged in, redirect to the home page
             next({ path: '/dashboard' })
             NProgress.done()
         } 
         else {
             // Check whether the user has obtained his permission roles
-            // if (!store.getUser) {
-            //     try {
-            //         await store.getUserInfo()
-            //         next({ ...to, replace: true })
-            //     } catch (err: any) {
-            //         store.resetToken()
-            //         ElMessage({
-            //             message: err?.message || 'Has Error',
-            //             type: 'error',
-            //             duration: 5 * 1000,
-            //         })
-            //         next(`/login?redirect=${to.path}`)
-            //         NProgress.done()
-            //     }
-            // } 
-            // else {
+            if (!store.getUser) {
+                try {
+                    await store.getUserInfo()
+                    next({ ...to, replace: true })
+                } catch (err: any) {
+                    store.resetToken()
+                    ElMessage({
+                        message: err?.message || 'Has Error',
+                        type: 'error',
+                        duration: 5 * 1000,
+                    })
+                    next(`/signin?redirect=${to.path}`)
+                    NProgress.done()
+                }
+            } 
+            else {
                 next()
-            // }
+            }
         }
     } else {
         // Has no token
@@ -66,7 +66,7 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
             // In the free login whitelist, go directly
             next()
         } else {
-            next(`/login`)
+            next(`/signin`)
             NProgress.done()
         }
     }

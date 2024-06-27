@@ -11,7 +11,7 @@ import 'element-plus/dist/index.css'
 import '/@/assets/styles/base.scss'
 import '/@/assets/styles/element/index.scss'
 
-// import '/@/permissions'
+import '/@/permissions'
 // import { mask } from "vue-the-mask";
 async function start() {
     const app = createApp(App)

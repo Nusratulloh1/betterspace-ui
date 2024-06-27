@@ -9,29 +9,22 @@ const router = createRouter({
       redirect: '/dashboard',
     },
     {
-      path: '/dashboard',
-      name: 'home',
-      component: () => import('../views/dashboard/DashboardView.vue'),
+      path: '/signin',
+      name: 'signin',
+      component: () => import('../views/auth/SignInView.vue'),
       meta: {
-        title: 'Home',
+        title: 'Sign in',
       },
     },
     {
-      path: "/web-view",
-      component: MainLayout,
-      name: "view",
-      meta: { name: "view" },
-      children: [
-        {
-          path: '',
-          name: 'web-view',
-          component: () => import('/@/views/WebView.vue'),
-          meta: {
-            title: 'Web view',
-          },
-        }
-      ]
-    }
+      path: '/signup',
+      name: 'signup',
+      component: () => import('../views/auth/SignUpView.vue'),
+      meta: {
+        title: 'Sign up',
+      },
+    },
+
   ]
 })
 router.onError((error: any, to: any) => {

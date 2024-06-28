@@ -4,11 +4,8 @@
             <div class="text-center w-full max-w-[340px]">
                 <LogoIcon class="mx-auto" />
                 <h5 class="font-inter font-medium text-[19px] mt-6 mb-5">Sign in to Opus</h5>
-                <el-button class="!w-full" round size="large">
-                    <img class="mr-1.5" src="/@/assets/images/applications/google.svg" alt="google" />
-                    Sign in with Google
-                </el-button>
-                <div class="flex items-center gap-5 my-8">
+                <googleButton />
+                <div class="flex items-center gap-5 my-5">
                     <hr class="!w-full" />
                     <span class="text-[#A9AEB8] text-xs uppercase"> or </span>
                     <hr class="!w-full" />
@@ -35,8 +32,8 @@
                             placeholder="Password"
                         />
                     </el-form-item>
-                    <div class="mb-3 text-end">
-                        <RouterLink to="/forgot-password" class="text-xs text-end text-primary hover:underline">Forgot password</RouterLink>
+                    <div class="mb-3 text-end mt-[-4px] pr-3">
+                        <RouterLink to="/forgot-password" class="text-xs font-inter text-end text-primary hover:underline">Forgot password</RouterLink>
                     </div>
                     <div class="flex flex-col space-y-4 py-1">
                         <el-button class="w-full " size="large" round type="primary" @click="submitForm(ruleFormRef)" :loading="loading">
@@ -44,8 +41,8 @@
                         </el-button>
                     </div>
                     <div class="newTo mt-6">
-                        <p class="text-[#AAAAAA] text-xs">New to Opus?</p>
-                        <router-link to="/signup" class="text-xs text-primary hover:underline"> Create an account </router-link>
+                        <p class="text-[#AAAAAA] font-inter text-xs">New to Opus?</p>
+                        <router-link to="/signup" class="text-xs font-inter text-primary hover:underline"> Create an account </router-link>
                     </div>
                 </el-form>
             </div>
@@ -65,6 +62,7 @@
 </template>
 <script lang="ts" setup>
 import { LogoIcon } from '/@/components/icons'
+import googleButton from '/@/components/common/googleButton.vue'
 import { onMounted, onUnmounted, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useUsersStore } from '/@/stores'
@@ -132,8 +130,4 @@ const submitForm = async (formEl: FormInstance | undefined) => {
         }
     })
 }
-
-onMounted(() => {})
-
-onUnmounted(() => {})
 </script>

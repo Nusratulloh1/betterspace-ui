@@ -13,9 +13,22 @@
             'border': #EEEEEE,
             'bg-color': #ffffff,
             'text-color': rgba(24, 28, 37, 0.75),
+            'placeholder-color': '#C1C1C1',
+            'border-radius': '1000px',
+            'font-size': '12px'
         ),
     $input-padding-horizontal: (
         'large': 12px,
+    ),
+    $button: 
+    (
+     'height': '37px',
+     'height-small': '26px',
+     'height-large': '40px',
+     'font-size': '12px',
+     'text-color': '#333333',
+     'font-weight': '400',
+     'font-size-large': '12px'
     )
 );
 

@@ -10,7 +10,7 @@ import { i18n } from './i18n'
 import 'element-plus/dist/index.css'
 import '/@/assets/styles/base.scss'
 import '/@/assets/styles/element/index.scss'
-
+import vue3GoogleLogin from 'vue3-google-login'
 import '/@/permissions'
 // import { mask } from "vue-the-mask";
 async function start() {
@@ -24,6 +24,9 @@ async function start() {
     app.use(ElementPlus, {
         // locale: elementEnLocale,
     })
+    app.use(vue3GoogleLogin, {
+        clientId: '1006123200595-mpadesgaspg0dhdi17teaaehj79ht45h.apps.googleusercontent.com'
+      })
     app.use(createPinia())
     app.mount('#app')
     // app.directive("mask", mask as any);

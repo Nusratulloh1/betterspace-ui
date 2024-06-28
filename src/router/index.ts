@@ -24,6 +24,22 @@ const router = createRouter({
         title: 'Sign up',
       },
     },
+    {
+      path: '/verify',
+      name: 'verify',
+      component: () => import('../views/auth/VerifyView.vue'),
+      meta: {
+        title: 'Email verify',
+      },
+    },
+    {
+      path: '/setup',
+      name: 'setup',
+      component: () => import('../views/auth/SetupView.vue'),
+      meta: {
+        title: 'Account setup',
+      },
+    },
 
   ]
 })

@@ -6,7 +6,7 @@
         :rules="rules"
         :hide-required-asterisk="true"
         label-position="top"
-        class="!text-xs"
+        class="!text-xs "
     >
         <el-form-item prop="email">
             <el-input v-model.trim="ruleForm.email" type="text" autocomplete="off" class="!h-10 !text-xs" placeholder="Login" />

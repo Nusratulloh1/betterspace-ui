@@ -9,12 +9,12 @@ const router = createRouter({
       redirect: '/dashboard',
     },
     {
-      path: '',
+      path: '/dashboard',
       name: 'main',
       component: () => MainLayout,
       children: [
         {
-          path: '/dashboard',
+          path: '',
           name: 'dashboard',
           component: () => import('../views/dashboard/DashboardView.vue'),
           meta: {

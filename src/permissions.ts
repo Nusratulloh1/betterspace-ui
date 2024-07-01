@@ -25,7 +25,6 @@ const whiteList = ['/signin', '/signup', '/verify', '/setup']
 
 router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized, next: any) => {
     const store = useUsersStore()
-
     // Start progress bar
     NProgress.start()
     if (!window.existLoading) {
@@ -62,7 +61,6 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
             }
         }
     } else {
-        
         // Has no token
         if (whiteList.indexOf(to.path) !== -1) {
             // In the free login whitelist, go directly

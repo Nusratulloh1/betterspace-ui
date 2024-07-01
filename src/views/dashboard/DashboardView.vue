@@ -1,12 +1,12 @@
 <template>
     <div class="pt-8 px-8">
-        <h4 class="text-[#0A1217] font-medium text-[28px]">Hello, {{ user.name }}</h4>
-        <p class="text-[#0A121740] font-medium text-2xl">How can I help you today?</p>
-        <el-scrollbar height="100%" class="w-screen">
-            <div class="flex items-center gap-6 mt-9">
+        <h4 class="text-[#0A1217] font-medium text-[28px] leading-7">Hello, {{ user.name }}</h4>
+        <p class="text-[#0A121740] font-medium text-[25px]">How can I help you today?</p>
+        <!-- <el-scrollbar height="100%" class="w-[80vw]"> -->
+            <div class="flex items-center flex-wrap gap-6 mt-9">
                 <IssueCreationCard v-for="(data, i) in issues" :key="i" :data="data" />
             </div>
-        </el-scrollbar>
+        <!-- </el-scrollbar> -->
     </div>
 </template>
 <script setup lang="ts">
@@ -36,11 +36,6 @@ const issues = [
         command: 'Create milestone',
         title: 'Create new milestone for better productivity of your team',
         co: 'c',
-    },
-    {
-        command: 'Create issue',
-        title: 'Create a new issue for any team and project',
-        co: 'i',
     },
 ]
 </script>

@@ -10,7 +10,7 @@ export const getSize = () => Cookies.get(sizeKey);
 export const setSize = (size: string) => Cookies.set(sizeKey, size);
 
 // User
-const accessTokenKey = "access_token";
+const accessTokenKey = "opus_access_token";
 
 export const getAccessToken = () => Cookies.get(accessTokenKey);
 export const setAccessToken = (token: string) =>

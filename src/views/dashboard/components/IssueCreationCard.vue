@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col items-start pt-4 pr-16 pb-7 pl-7 bg-white border border-solid border-neutral-200 w-[331px] rounded-[58px]">
+    <div class="flex flex-col items-start pt-4 pr-16 pb-[30px] pl-7 bg-white border border-solid border-neutral-200 w-[331px] h-[431px] rounded-[58px]">
         <div class="justify-center px-3 py-1 text-xs leading-5 text-white bg-blue-800 bg-opacity-30 rounded-[100px]">Command: {{ data.command }}</div>
         <h2 class="mt-5 text-xl tracking-normal leading-6 text-neutral-900">{{ data.title }}</h2>
         <img

@@ -40,10 +40,9 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
             NProgress.done()
         } 
         else {
-            // Check whether the user has obtained his permission roles
             if (!store.getUser) {
                 try {
-                    await store.getUserInfo()
+                    // await store.getUserInfo()
                     next({ ...to, replace: true })
                 } catch (err: any) {
                     store.resetToken()
@@ -57,10 +56,13 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
                 }
             } 
             else {
+                console.log('next');
+                
                 next()
             }
         }
     } else {
+        
         // Has no token
         if (whiteList.indexOf(to.path) !== -1) {
             // In the free login whitelist, go directly

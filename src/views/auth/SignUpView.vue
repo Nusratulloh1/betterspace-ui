@@ -19,7 +19,6 @@
                             v-model.trim="ruleForm.email"
                             type="text"
                             autocomplete="off"
-                            class="!h-10 !text-xs"
                             placeholder="Enter your email"
                         />
                     </el-form-item>

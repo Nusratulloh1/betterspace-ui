@@ -17,6 +17,15 @@ export const setAccessToken = (token: string) =>
   Cookies.set(accessTokenKey, token);
 export const removeAccessToken = () => Cookies.remove(accessTokenKey);
 
+// User info
+
+const user_info = "user_info";
+
+export const getUserInfo = () => Cookies.get(user_info);
+export const setUserInfo = (data: any) =>
+  Cookies.set(user_info, data);
+export const removeUserInfo = () => Cookies.remove(user_info);
+
 // User
 const refreshTokenKey = "refresh_token";
 export const getRefreshToken = () => Cookies.get(refreshTokenKey);

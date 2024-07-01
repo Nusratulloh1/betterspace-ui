@@ -20,7 +20,7 @@
                     class="!text-xs"
                 >
                     <el-form-item prop="email">
-                        <el-input v-model.trim="ruleForm.email" type="text" autocomplete="off" class="!h-10 !text-xs" placeholder="Login" />
+                        <el-input v-model.trim="ruleForm.email" type="text" autocomplete="off"  placeholder="Login" />
                     </el-form-item>
                     <el-form-item prop="password">
                         <el-input
@@ -28,7 +28,6 @@
                             type="password"
                             :show-password="true"
                             autocomplete="off"
-                            class="!h-10 !text-xs"
                             placeholder="Password"
                         />
                     </el-form-item>

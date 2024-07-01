@@ -9,6 +9,21 @@ const router = createRouter({
       redirect: '/dashboard',
     },
     {
+      path: '',
+      name: 'main',
+      component: () => MainLayout,
+      children: [
+        {
+          path: '/dashboard',
+          name: 'dashboard',
+          component: () => import('../views/dashboard/DashboardView.vue'),
+          meta: {
+            title: 'Dashboard',
+          },
+        },
+      ]
+    },
+    {
       path: '/signin',
       name: 'signin',
       component: () => import('../views/auth/SignInView.vue'),

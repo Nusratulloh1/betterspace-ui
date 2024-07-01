@@ -1,12 +1,12 @@
 <template>
-    <div class="min-h-screen">
-        <div class="h-[95vh] flex items-center justify-center">
+    <div class="min-h-screen py-9 xl:py-0">
+        <div class="min-h-[95vh] flex py-10 xl:py-0 items-center justify-center">
             <template v-for="step in formSteps" :key="step.id">
                 <div class="text-center w-full max-w-[370px]" v-if="currentStep == step.query">
                     <p class="text-primary font-semibold text-xs">{{ step.sub_title }}</p>
                     <h5 class="font-medium text-[19px] mt-4">{{ step.title }}</h5>
                     <hr class="!w-full mt-3 mb-6" />
-                     <component :is="step.component" />
+                    <component :is="step.component" @on-submit="submitForm" />
                 </div>
             </template>
         </div>
@@ -80,17 +80,16 @@ const formSteps = ref([
 ])
 
 const loading = ref(false)
-const submitForm = async () => {
+const submitForm = async (data: any) => {
     try {
-        loading.value = true
-        const data = {
-            ...ruleForm,
-            password: sha1(ruleForm.password),
-        }
-        await store.login(data as any)
-        await store.getUserInfo()
-        loading.value = false
-        router.push('/dashboard')
+        const id = formSteps.value.filter((x: any) => x.query == currentStep.value)[0].id
+        const step = formSteps.value.filter((x: any) => x.id == id + 1)[0]
+        router.replace({
+            query: {
+                step: step.query,
+            },
+        })
+        currentStep.value = step.query
     } catch (error: any) {
         console.log('error', error.message)
         loading.value = false

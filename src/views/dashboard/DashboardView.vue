@@ -3,7 +3,7 @@
         <h4 class="text-[#0A1217] font-medium text-[28px] leading-7">Hello, {{ user.name }}</h4>
         <p class="text-[#0A121740] font-medium text-[25px]">How can I help you today?</p>
         <!-- <el-scrollbar height="100%" class="w-[80vw]"> -->
-            <div class="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 mt-9">
+            <div class="grid grid-cols-3 xl:grid-cols-4 gap-6 mt-9">
                 <IssueCreationCard v-for="(data, i) in issues" :key="i" :data="data" />
             </div>
         <!-- </el-scrollbar> -->

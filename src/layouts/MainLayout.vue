@@ -45,7 +45,7 @@ const currentRoute = computed(() => router.currentRoute.value.fullPath.split('/'
     width: 100%;
     position: relative;
     height: 100vh;
-    overflow: hidden;
+    overflow: scroll;
 }
 .layout-container {
     height: 100%;

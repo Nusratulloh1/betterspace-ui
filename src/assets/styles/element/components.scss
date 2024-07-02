@@ -34,9 +34,10 @@
 
 
 }
-.el-form{
-    .el-form-item{
-        &__label{
+
+.el-form {
+    .el-form-item {
+        &__label {
             margin-bottom: 7px !important;
             font-family: 'Roboto';
             font-size: 12px;
@@ -44,29 +45,33 @@
             line-height: 14.06px !important;
             color: #444444 !important;
 
-        
+
         }
     }
 }
+
 .el-form-item__error {
     margin-top: 2px !important;
     font-family: 'Inter';
     font-size: 8px !important;
 }
+
 .el-checkbox {
     .el-checkbox__input {
-        &.is-checked{
+        &.is-checked {
             .el-checkbox__inner {
                 background-color: transparent;
                 border-color: #676C76;
-                &::after{
-                    border-color: #676C76;  
+
+                &::after {
+                    border-color: #676C76;
                     height: 7px;
                     left: 4.5px;
                     top: 1px;
                 }
             }
-            &.is-disabled{
+
+            &.is-disabled {
                 .el-checkbox__inner {
                     background-color: transparent !important;
                     border-color: #676C76 !important;
@@ -88,7 +93,7 @@
         font-weight: 400;
         line-height: 16px;
         text-align: left;
-        
+
         /* 142.857% */
     }
 }
@@ -111,7 +116,7 @@
                         // height: 24px;
                         // top: 2.5px;
                         // position: absolute;
-                        content: url('/@/assets/images/icons/target.svg');
+                        // content: url('/@/assets/images/icons/target.svg');
                         /* Active state icon */
                     }
                 }
@@ -136,7 +141,7 @@
                     height: 24px;
                     top: 2.5px;
                     position: absolute;
-                    content: url('/@/assets/images/icons/target.svg');
+                    // content: url('/@/assets/images/icons/target.svg');
                     /* Inactive state icon */
                 }
 
@@ -184,6 +189,40 @@
 
 }
 
+.el-popper {
+    box-shadow: 0px 0px 10px 0px #0F0F0F33;
+    border: 1px solid #0F0F0F0D;
+    padding: 0px !important;
+
+    &__arrow {
+        display: none;
+    }
+
+    .route {
+        font-family: 'Inter';
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14.52px;
+        text-align: left;
+        color: #666666;
+        padding: 12px 12px 12px 14px;
+        cursor: pointer;
+        &:hover{
+            background-color: #F3F3F3;
+        }
+
+
+    }
+}
+
+.el-dropdown-menu__item {
+    font-family: 'Inter';
+    font-size: 12px !important;
+    font-weight: 400;
+    line-height: 14.52px;
+    color: #666666;
+
+}
 
 // Button
 
@@ -194,7 +233,8 @@
         font-size: 12px !important;
         line-height: 14.52px !important;
     }
-    &.is-disabled{
+
+    &.is-disabled {
         background-color: #E7EAF1 !important;
         border: none !important;
         color: #9DA6B6 !important;

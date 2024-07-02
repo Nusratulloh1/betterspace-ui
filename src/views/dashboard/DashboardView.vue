@@ -3,7 +3,7 @@
         <h4 class="text-[#0A1217] font-medium text-[28px] leading-7">Hello, {{ user.name }}</h4>
         <p class="text-[#0A121740] font-medium text-[25px]">How can I help you today?</p>
         <!-- <el-scrollbar height="100%" class="w-[80vw]"> -->
-            <div class="flex items-center flex-wrap gap-6 mt-9">
+            <div class="grid grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 mt-9">
                 <IssueCreationCard v-for="(data, i) in issues" :key="i" :data="data" />
             </div>
         <!-- </el-scrollbar> -->
@@ -21,21 +21,25 @@ const issues = [
         command: 'Create issue',
         title: 'Create a new issue for any team and project',
         co: 'i',
+        icon: 'scan'
     },
     {
         command: 'Create team',
         title: 'Create new team for collaboration work',
         co: 't',
+        icon: 'cross'
     },
     {
         command: 'Create project',
         title: 'Create new projects for teams',
         co: 'p',
+        icon: 'teams'
     },
     {
         command: 'Create milestone',
-        title: 'Create new milestone for better productivity of your team',
+        title: 'Create new milestone for better productivity of team',
         co: 'c',
+        icon: 'scan'
     },
 ]
 </script>

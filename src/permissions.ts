@@ -35,7 +35,7 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
     if (store.token) {
         if (to.path === '/signin') {
             // If is logged in, redirect to the home page
-            next({ path: '/dashboard' })
+            next({ path: '/home' })
             NProgress.done()
         } 
         else {
@@ -54,9 +54,7 @@ router.beforeEach(async (to: RouteLocationNormalized, _: RouteLocationNormalized
                     NProgress.done()
                 }
             } 
-            else {
-                console.log('next');
-                
+            else {;
                 next()
             }
         }

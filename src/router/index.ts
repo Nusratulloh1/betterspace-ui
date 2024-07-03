@@ -1,27 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainLayout from "../layouts/MainLayout.vue";
+import { mainRoutes } from './modules'
 import 'nprogress/nprogress.css'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      redirect: '/dashboard',
-    },
-    {
-      path: '/dashboard',
-      name: 'main',
-      component: () => MainLayout,
-      children: [
-        {
-          path: '',
-          name: 'dashboard',
-          component: () => import('../views/dashboard/DashboardView.vue'),
-          meta: {
-            title: 'Dashboard',
-          },
-        },
-      ]
+      redirect: '/home',
     },
     {
       path: '/signin',
@@ -55,6 +40,7 @@ const router = createRouter({
         title: 'Account setup',
       },
     },
+    mainRoutes
 
   ]
 })

@@ -48,7 +48,7 @@ const fetchUserInfo = async (accessToken: string) => {
         usersStore.login(accessToken, response.data)
         setTimeout(() => {
             // loading.value = false
-            router.push('/dashboard')
+            router.push('/home')
         }, 1000)
     } catch (error) {
         console.error('Failed to fetch user info:', error)

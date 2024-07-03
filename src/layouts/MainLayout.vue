@@ -24,7 +24,6 @@ import Header from './components/Header.vue'
 import { navigationItems } from '/@/utils/constants'
 import { computed, onMounted, ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import dayjs from 'dayjs'
 import { useUsersStore } from '../stores/user'
 const router = useRouter()
 const userStore = useUsersStore()

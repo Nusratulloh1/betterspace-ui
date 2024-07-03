@@ -121,7 +121,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 await store.login(data as any)
                 await store.getUserInfo()
                 loading.value = false
-                router.push('/dashboard')
+                router.push('/home')
             } catch (error: any) {
                 console.log('error', error.message)
                 loading.value = false

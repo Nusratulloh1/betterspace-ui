@@ -2,38 +2,6 @@
 
 
 
-.el-select {
-
-
-    // .el-input__wrapper {
-    //     box-shadow: 0 0 0 1px #959595 inset !important;
-    //     padding: 2px 10px 2px 10px !important;
-    //     border-radius: 6px !important;
-    //     background-color: #807D7C !important;
-
-    //     .el-input__inner {
-    //         font-family: 'Inter' !important;
-    //         font-weight: 500 !important;
-    //         font-size: 14px !important;
-    //         color: #FFFFFF !important;
-    //         line-height: 14.52px;
-
-    //         &::placeholder {
-    //             font-family: "Inter" !important;
-    //             font-weight: 500 !important;
-    //             font-size: 12px !important;
-    //             color: #FFFFFF !important;
-    //         }
-    //     }
-
-    //     .el-select__caret {
-    //         color: #FFFFFF !important;
-    //         font-size: 14px !important;
-    //     }
-    // }
-
-
-}
 
 .el-form {
     .el-form-item {
@@ -56,109 +24,22 @@
     font-size: 8px !important;
 }
 
-.el-checkbox {
-    .el-checkbox__input {
-        &.is-checked {
-            .el-checkbox__inner {
-                background-color: transparent;
-                border-color: #676C76;
-
-                &::after {
-                    border-color: #676C76;
-                    height: 7px;
-                    left: 4.5px;
-                    top: 1px;
-                }
-            }
-
-            &.is-disabled {
-                .el-checkbox__inner {
-                    background-color: transparent !important;
-                    border-color: #676C76 !important;
-                }
-            }
-        }
-
-        .el-checkbox__inner {
-            border-color: #676C76;
-            border-radius: 2px;
-            border-width: 1px;
-        }
-    }
-
-    .el-checkbox__label {
-        color: #676C76 !important;
-        font-family: 'Roboto' !important;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 16px;
-        text-align: left;
-
-        /* 142.857% */
-    }
-}
 
 
-// Switch
 
-.el-switch {
-    &.custom {
-        &.is-checked {
-            .el-switch__core {
-                background: #0F3B7F;
-
-                .el-switch__action {
-                    background: #1265E9;
-                    left: calc(100% - 33px);
-
-                    &::before {
-                        // width: 24px;
-                        // height: 24px;
-                        // top: 2.5px;
-                        // position: absolute;
-                        // content: url('/@/assets/images/icons/target.svg');
-                        /* Active state icon */
-                    }
-                }
-            }
-        }
-
-        .el-switch__core {
-            background: #444444;
-            border: none;
-            width: 63px;
-            height: 32px;
-            border-radius: 22px;
-
-            .el-switch__action {
-                position: relative;
-                width: 30px;
-                height: 30px;
-                background: #2C2C2C;
-
-                &::before {
-                    width: 24px;
-                    height: 24px;
-                    top: 2.5px;
-                    position: absolute;
-                    // content: url('/@/assets/images/icons/target.svg');
-                    /* Inactive state icon */
-                }
-
-
-            }
-        }
-    }
-}
 
 // Input
 
 .el-input {
+    height: 37px;
     &__inner {
         font-family: Roboto;
         font-weight: 400;
         font-size: 12px !important;
-        height: 37px !important;
+        // height: 37px !important;
+    }
+    &--small{
+        height: 24px;
     }
 
 }
@@ -208,7 +89,8 @@
         color: #666666;
         padding: 12px 12px 12px 14px;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             background-color: #F3F3F3;
         }
 

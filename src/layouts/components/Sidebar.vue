@@ -88,7 +88,6 @@
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import userSettings from './userSettings.vue'
-import type { Action } from 'element-plus'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useUsersStore } from '/@/stores'
 const router = useRouter()
@@ -100,7 +99,7 @@ const mainMenus = ref([
         id: 1,
         title: 'Home',
         icon: 'home',
-        path: '/dashboard',
+        path: '/home',
     },
     {
         id: 2,

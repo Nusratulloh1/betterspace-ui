@@ -51,7 +51,7 @@
       <el-form-item>
         <el-checkbox v-model="check">
           I agree to Opus
-          <a href="http://" class="text-primary font-inter text-xs" target="_blank" rel="noopener noreferrer"> terms and conditions</a>
+          <a href="http://" class="text-primary  text-xs" target="_blank" rel="noopener noreferrer"> terms and conditions</a>
         </el-checkbox>
       </el-form-item>
       <hr class="mt-[-8px] mb-7" />

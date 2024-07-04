@@ -1,49 +1,51 @@
 <template>
     <div class="min-h-screen">
         <div class="h-[95vh] flex items-center justify-center">
-            <div class="text-center w-full max-w-[340px]">
-                <LogoIcon class="mx-auto" />
-                <h5 class="font-inter font-medium text-[19px] mt-6 mb-5">Sign in to Opus</h5>
-                <googleButton />
-                <div class="flex items-center gap-5 my-5">
-                    <hr class="!w-full" />
-                    <span class="text-[#A9AEB8] text-xs uppercase"> or </span>
-                    <hr class="!w-full" />
+            <div class="box ">
+                <div class="text-center w-full max-w-[340px]">
+                    <LogoIcon class="mx-auto" />
+                    <h5 class="font-medium text-[19px] mt-6 mb-5">Sign in to Opus</h5>
+                    <googleButton />
+                    <div class="flex items-center gap-5 my-5">
+                        <hr class="!w-full" />
+                        <span class="text-[#A9AEB8] text-xs uppercase"> or </span>
+                        <hr class="!w-full" />
+                    </div>
+                    <el-form
+                        @keyup.enter="submitForm(ruleFormRef)"
+                        ref="ruleFormRef"
+                        :model="ruleForm"
+                        :rules="rules"
+                        :hide-required-asterisk="true"
+                        label-position="top"
+                        class="!text-xs"
+                    >
+                        <el-form-item prop="email">
+                            <el-input v-model.trim="ruleForm.email" type="text" autocomplete="off" placeholder="Login" />
+                        </el-form-item>
+                        <el-form-item prop="password">
+                            <el-input
+                                v-model.trim="ruleForm.password"
+                                type="password"
+                                :show-password="true"
+                                autocomplete="off"
+                                placeholder="Password"
+                            />
+                        </el-form-item>
+                        <div class="mb-3 text-end mt-[-4px] pr-3">
+                            <RouterLink to="/forgot-password" class="text-xs text-end text-primary hover:underline">Forgot password</RouterLink>
+                        </div>
+                        <div class="flex flex-col space-y-4 py-1">
+                            <el-button class="w-full" size="large" round type="primary" @click="submitForm(ruleFormRef)" :loading="loading">
+                                Sign in with email
+                            </el-button>
+                        </div>
+                        <div class="newTo mt-6">
+                            <p class="text-[#AAAAAA] text-xs">New to Opus?</p>
+                            <router-link to="/signup" class="text-xs text-primary hover:underline"> Create an account </router-link>
+                        </div>
+                    </el-form>
                 </div>
-                <el-form
-                    @keyup.enter="submitForm(ruleFormRef)"
-                    ref="ruleFormRef"
-                    :model="ruleForm"
-                    :rules="rules"
-                    :hide-required-asterisk="true"
-                    label-position="top"
-                    class="!text-xs"
-                >
-                    <el-form-item prop="email">
-                        <el-input v-model.trim="ruleForm.email" type="text" autocomplete="off"  placeholder="Login" />
-                    </el-form-item>
-                    <el-form-item prop="password">
-                        <el-input
-                            v-model.trim="ruleForm.password"
-                            type="password"
-                            :show-password="true"
-                            autocomplete="off"
-                            placeholder="Password"
-                        />
-                    </el-form-item>
-                    <div class="mb-3 text-end mt-[-4px] pr-3">
-                        <RouterLink to="/forgot-password" class="text-xs font-inter text-end text-primary hover:underline">Forgot password</RouterLink>
-                    </div>
-                    <div class="flex flex-col space-y-4 py-1">
-                        <el-button class="w-full " size="large" round type="primary" @click="submitForm(ruleFormRef)" :loading="loading">
-                            Sign in with email
-                        </el-button>
-                    </div>
-                    <div class="newTo mt-6">
-                        <p class="text-[#AAAAAA] font-inter text-xs">New to Opus?</p>
-                        <router-link to="/signup" class="text-xs font-inter text-primary hover:underline"> Create an account </router-link>
-                    </div>
-                </el-form>
             </div>
         </div>
         <ul class="flex items-center justify-center gap-5">
@@ -130,3 +132,13 @@ const submitForm = async (formEl: FormInstance | undefined) => {
     })
 }
 </script>
+<style lang="scss" scoped>
+.box {
+    box-shadow: 0px 16px 32px 0px #9da6b63d;
+    border-radius: 70px;
+    width: 100%;
+    max-width: 500px;
+    padding: 32px 80px 28px 80px;
+    background: #FBFBFB;
+}
+</style>

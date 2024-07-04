@@ -13,7 +13,7 @@
                     <div class="flex items-center justify-between route">
                         <div class="flex items-center gap-1.5">
                             <div
-                                class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] font-inter pt-0.5 text-white"
+                                class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px]  pt-0.5 text-white"
                             >
                                 IA
                             </div>
@@ -24,7 +24,7 @@
                 </template>
                 <div class="flex items-center gap-1.5 route">
                     <div
-                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px] font-inter text-white pt-0.5"
+                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px]  text-white pt-0.5"
                     >
                         IA
                     </div>
@@ -33,7 +33,7 @@
                 <hr />
                 <div class="flex items-center gap-1.5 route">
                     <div
-                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px] font-inter text-white pt-0.5"
+                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px]  text-white pt-0.5"
                     >
                         IA
                     </div>
@@ -42,7 +42,7 @@
                 <hr />
                 <div class="flex items-center gap-1.5 route">
                     <div
-                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px] font-inter text-white pt-0.5"
+                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px]  text-white pt-0.5"
                     >
                         IA
                     </div>
@@ -70,7 +70,7 @@
                 </template>
                 <div class="flex items-center gap-1.5 route !py-2.5 !text-[#444444]">
                     <div
-                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px] font-inter text-white"
+                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px]  text-white"
                     >
                         AI
                     </div>
@@ -79,7 +79,7 @@
                 <hr />
                 <div class="flex items-center gap-1.5 !py-2.5 route !text-[#444444]">
                     <div
-                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px] font-inter text-white"
+                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px]  text-white"
                     >
                         P
                     </div>

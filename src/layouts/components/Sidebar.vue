@@ -78,8 +78,8 @@
         >
             <Icon size="12" class="self-end aspect-square mt-1 mr-1" name="el-icon-Close" />
             <Icon size="24" class="self-center aspect-square" name="local-chrome" />
-            <p class="mt-3 text-sm font-inter text-center text-stone-950 text-opacity-50">Start capturing issues on live websites!</p>
-            <a href="#" class="mt-2 text-xs font-semibold text-center font-inter leading-5 text-primary"> Download extension </a>
+            <p class="mt-3 text-sm  text-center text-stone-950 text-opacity-50">Start capturing issues on live websites!</p>
+            <a href="#" class="mt-2 text-xs font-semibold text-center  leading-5 text-primary"> Download extension </a>
         </div>
     </aside>
 </template>

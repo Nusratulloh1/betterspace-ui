@@ -1,12 +1,12 @@
 <template>
-    <div class="pt-8 px-8">
-        <h4 class="text-[#0A1217] font-medium text-[28px] leading-7">Hello, {{ user.name }}</h4>
-        <p class="text-[#0A121740] font-medium text-[25px]">How can I help you today?</p>
-        <!-- <el-scrollbar height="100%" class="w-[80vw]"> -->
-        <div class="grid grid-cols-3 xl:grid-cols-4 gap-6 mt-9">
-            <IssueCreationCard v-for="(data, i) in issues" :key="i" :data="data" />
+    <div class="pt-8 px-8 flex h-[80vh] items-center justify-center container mx-auto">
+        <div class="text-center">
+            <h4 class="text-[#343330] font-bold text-[30px] leading-9">Hello, {{ user.name }}</h4>
+            <p class="text-[#0A121740] text-[25px] mt-1">From which command you want to start today?</p>
+            <div class="grid grid-cols-2 gap-x-12 gap-y-8 mt-11">
+                <IssueCreationCard v-for="(data, i) in issues" :key="i" :data="data" />
+            </div>
         </div>
-        <!-- </el-scrollbar> -->
     </div>
 </template>
 <script setup lang="ts">

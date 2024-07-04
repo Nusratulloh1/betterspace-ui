@@ -14,7 +14,7 @@
         <el-form-item prop="team" label="Team">
             <div class="relative w-full">
                 <el-input v-model.trim="ruleForm.team" type="text" autocomplete="off" class="!text-xs !w-full" placeholder="Enter your team name" />
-                <button class="text-primary text-xs font-inter absolute right-3 top-4 hover:underline">No company, I’m solo</button>
+                <button class="text-primary text-xs  absolute right-3 top-4 hover:underline">No company, I’m solo</button>
             </div>
         </el-form-item>
         <el-form-item prop="company_size" label="How big is the company?">

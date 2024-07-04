@@ -8,7 +8,7 @@
                 :class="{ active: $route.name == item.name }"
                 @click="getPath(item)"
             >
-                <div class="flex gap-2 items-center text-[#292929] text-[13px] font-medium font-inter">
+                <div class="flex gap-2 items-center text-[#292929] text-[13px] font-medium ">
                     <Icon size="16" class="shrink-0 aspect-square" :name="item.icon" />
                     {{ getTitle(item) }}
                 </div>

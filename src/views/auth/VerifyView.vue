@@ -3,14 +3,14 @@
         <div class="h-[95vh] flex items-center justify-center">
             <div class="text-center w-full max-w-[340px]">
                 <LogoIcon class="mx-auto" />
-                <h5 class="font-inter font-medium text-xl mt-9">Please verify your email</h5>
-                <p class="text-black font-inter text-[15px] mt-9">
+                <h5 class=" font-medium text-xl mt-9">Please verify your email</h5>
+                <p class="text-black  text-[15px] mt-9">
                     Once you verify your email address, you and your team can get started in Iteration X.
                 </p>
 
                 <div class="flex items-center justify-between mx-auto mt-14 w-full max-w-[260px]">
-                    <p class="text-[#686A6E] font-inter text-xs !leading-[14.5px]">Didn't receive an email?</p>
-                    <button to="/signin" class="text-xs font-inter text-primary !leading-[14.5px] hover:underline">Resend email.</button>
+                    <p class="text-[#686A6E]  text-xs !leading-[14.5px]">Didn't receive an email?</p>
+                    <button to="/signin" class="text-xs  text-primary !leading-[14.5px] hover:underline">Resend email.</button>
                 </div>
             </div>
         </div>

@@ -2,11 +2,13 @@
     <div class="min-h-screen py-9 xl:py-0">
         <div class="min-h-[95vh] flex py-10 xl:py-0 items-center justify-center">
             <template v-for="step in formSteps" :key="step.id">
-                <div class="text-center w-full max-w-[370px]" v-if="currentStep == step.query">
-                    <p class="text-primary font-semibold text-xs">{{ step.sub_title }}</p>
-                    <h5 class="font-medium text-[19px] mt-4">{{ step.title }}</h5>
-                    <hr class="!w-full mt-3 mb-6" />
-                    <component :is="step.component" @on-submit="submitForm" />
+                <div :class="{'box': step.id !== 4}" v-if="currentStep == step.query">
+                    <div class="text-center w-full max-w-[370px]">
+                        <p class="text-primary font-semibold text-xs">{{ step.sub_title }}</p>
+                        <h5 class="font-medium text-[19px] mt-4">{{ step.title }}</h5>
+                        <hr class="!w-full mt-3 mb-6" />
+                        <component :is="step.component" @on-submit="submitForm" />
+                    </div>
                 </div>
             </template>
         </div>
@@ -96,3 +98,13 @@ const submitForm = async (data: any) => {
     }
 }
 </script>
+<style lang="scss" scoped>
+.box {
+    box-shadow: 0px 16px 32px 0px #9da6b63d;
+    border-radius: 70px;
+    width: 100%;
+    max-width: 464px;
+    padding: 31px 47px;
+    background: #fbfbfb;
+}
+</style>

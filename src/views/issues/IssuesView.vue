@@ -103,10 +103,10 @@
                 </div>
             </div>
         </div>
-        <el-drawer v-model="visible" :show-close="false" :width="634">
+        <el-drawer v-model="visible" :show-close="false" :size="`${currentWidth}%`">
             <template #header="{}">
                 <div class="flex items-center gap-3">
-                    <button>
+                    <button @click="visible = false">
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 fill-rule="evenodd"
@@ -116,7 +116,7 @@
                             />
                         </svg>
                     </button>
-                    <button>
+                    <button @click="currentWidth == 100 ? (currentWidth = 50) : (currentWidth = 100)">
                         <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M10 0.454545V3.18182C10 3.30237 9.95211 3.41799 9.86687 3.50323C9.78162 3.58847 9.66601 3.63636 9.54545 3.63636C9.4249 3.63636 9.30929 3.58847 9.22404 3.50323C9.1388 3.41799 9.09091 3.30237 9.09091 3.18182V1.5517L6.23068 4.4125C6.14539 4.49779 6.02971 4.54571 5.90909 4.54571C5.78847 4.54571 5.67279 4.49779 5.5875 4.4125C5.50221 4.32721 5.45429 4.21153 5.45429 4.09091C5.45429 3.97029 5.50221 3.85461 5.5875 3.76932L8.4483 0.909091H6.81818C6.69763 0.909091 6.58201 0.861201 6.49677 0.775958C6.41153 0.690714 6.36364 0.575098 6.36364 0.454545C6.36364 0.333993 6.41153 0.218377 6.49677 0.133133C6.58201 0.0478896 6.69763 0 6.81818 0H9.54545C9.66601 0 9.78162 0.0478896 9.86687 0.133133C9.95211 0.218377 10 0.333993 10 0.454545ZM3.76932 5.5875L0.909091 8.4483V6.81818C0.909091 6.69763 0.861201 6.58201 0.775958 6.49677C0.690714 6.41153 0.575098 6.36364 0.454545 6.36364C0.333993 6.36364 0.218377 6.41153 0.133133 6.49677C0.0478896 6.58201 0 6.69763 0 6.81818V9.54545C0 9.66601 0.0478896 9.78162 0.133133 9.86687C0.218377 9.95211 0.333993 10 0.454545 10H3.18182C3.30237 10 3.41799 9.95211 3.50323 9.86687C3.58847 9.78162 3.63636 9.66601 3.63636 9.54545C3.63636 9.4249 3.58847 9.30929 3.50323 9.22404C3.41799 9.1388 3.30237 9.09091 3.18182 9.09091H1.5517L4.4125 6.23068C4.49779 6.14539 4.54571 6.02971 4.54571 5.90909C4.54571 5.78847 4.49779 5.67279 4.4125 5.5875C4.32721 5.50221 4.21153 5.45429 4.09091 5.45429C3.97029 5.45429 3.85461 5.50221 3.76932 5.5875Z"
@@ -124,25 +124,57 @@
                             />
                         </svg>
                     </button>
-                    <button>
-                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0.340909" y="0.340909" width="11.1364" height="9.31818" rx="0.568182" stroke="#9E9E9E" stroke-width="0.681818" />
-                            <rect x="5.90918" y="1.36383" width="4.54545" height="7.27273" rx="0.454545" fill="#9E9E9E" />
-                        </svg>
-                    </button>
+                    <el-dropdown popper-class=" !rounded-[40px] !overflow-hidden">
+                        <button>
+                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect
+                                    x="0.340909"
+                                    y="0.340909"
+                                    width="11.1364"
+                                    height="9.31818"
+                                    rx="0.568182"
+                                    stroke="#9E9E9E"
+                                    stroke-width="0.681818"
+                                />
+                                <rect x="5.90918" y="1.36383" width="4.54545" height="7.27273" rx="0.454545" fill="#9E9E9E" />
+                            </svg>
+                        </button>
+                        <template #dropdown>
+                            <el-dropdown-menu class="w-[208px]">
+                                <el-dropdown-item
+                                    @click="activeType = item.id"
+                                    class="!flex !items-center !justify-between !w-full !text-[#2E2E2E] !pr-1"
+                                    v-for="item in formTypes"
+                                    :key="item.id"
+                                >
+                                    <div class="flex items-center gap-2.5">
+                                        <img :src="item.icon" class="w-4" :alt="item.title" />
+                                        {{ item.title }}
+                                    </div>
+                                    <div class="flex items-center gap-2" v-if="activeType == item.id">
+                                        <span class="text-[9px] underline"> Mark as default </span>
+                                        <Icon size="12" color="#5C5C5E" name="el-icon-Check" />
+                                    </div>
+                                </el-dropdown-item>
+                            </el-dropdown-menu>
+                        </template>
+                    </el-dropdown>
                 </div>
             </template>
-           <IssueSidebarForm />
+            <IssueSidebarForm />
         </el-drawer>
     </div>
 </template>
 <script lang="ts" setup>
 import { Search } from '@element-plus/icons-vue'
+import sidePeek from '/@/assets/images/icons/side-peek.svg'
+import centerPeek from '/@/assets/images/icons/center-peek.svg'
+import fullPage from '/@/assets/images/icons/full-page.svg'
 import IssueSidebarForm from './components/IssueSidebarForm.vue'
 import { ref } from 'vue'
 
 const visible = ref(false)
-
+const currentWidth = ref<number>(50)
 const inputSearch = ref('')
 
 const tags = [
@@ -237,4 +269,25 @@ const tags = [
         hasBottomBorder: false,
     },
 ]
+const activeType = ref(1)
+const formTypes = ref([
+    {
+        id: 1,
+        title: 'Side peek',
+        icon: sidePeek,
+        active: true,
+    },
+    {
+        id: 2,
+        title: 'Center peek',
+        icon: centerPeek,
+        active: false,
+    },
+    {
+        id: 3,
+        title: 'Full page',
+        icon: fullPage,
+        active: false,
+    },
+])
 </script>

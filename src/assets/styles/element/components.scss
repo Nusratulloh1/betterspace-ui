@@ -32,13 +32,15 @@
 
 .el-input {
     height: 37px;
+
     &__inner {
         font-family: Roboto;
         font-weight: 400;
         font-size: 12px !important;
         // height: 37px !important;
     }
-    &--small{
+
+    &--small {
         height: 24px;
     }
 
@@ -47,27 +49,15 @@
 // Dialog 
 
 .el-dialog {
-    border: 3px solid rgba(255, 255, 255, 0.05);
-
-    // border-image-source: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%);
-
-    // margin-top: 3% !important;
-    margin: auto !important;
-    background-color:
-        rgba(76, 76, 76, 0.6) !important;
-    backdrop-filter: blur(17px) !important;
-    -webkit-backdrop-filter: blur(17px) !important;
-    border-radius: 15px !important;
+    border: 2px solid #FFFFFF80 !important;
+    background: #F1F1F1 !important;
+    border-radius: 32px !important;
 
     .el-dialog__close {
-        color: #6D6D6D !important;
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        color: #000000 !important;
     }
-
-    &.custom {
-        background-color:
-            #8B494554 !important;
-    }
-
 }
 
 .el-popper {

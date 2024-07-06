@@ -28,7 +28,7 @@
                     <hr v-if="tag.hasBottomBorder" />
                 </div>
             </el-popover>
-            <el-button size="small" round @click="visible = true">
+            <el-button size="small" round @click="openForm">
                 <Icon size="10" color="fillCurrent" class="mr-1.5" name="local-plus-bold" />
                 Add issues
             </el-button>
@@ -126,18 +126,7 @@
                     </button>
                     <el-dropdown popper-class=" !rounded-[40px] !overflow-hidden">
                         <button>
-                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect
-                                    x="0.340909"
-                                    y="0.340909"
-                                    width="11.1364"
-                                    height="9.31818"
-                                    rx="0.568182"
-                                    stroke="#9E9E9E"
-                                    stroke-width="0.681818"
-                                />
-                                <rect x="5.90918" y="1.36383" width="4.54545" height="7.27273" rx="0.454545" fill="#9E9E9E" />
-                            </svg>
+                            <img class="w-3.5" :src="sidePeek" alt="sidePeek" />
                         </button>
                         <template #dropdown>
                             <el-dropdown-menu class="w-[208px]">
@@ -163,6 +152,22 @@
             </template>
             <IssueSidebarForm />
         </el-drawer>
+        <el-dialog v-model="visibleDialog" width="912px">
+            <template #header="{}">
+                <div class="flex items-center text-[#303031] gap-1.5 text-[13px]">
+                    <p>Commands</p>
+                    <Icon size="6" color="#5E5E5F" name="el-icon-ArrowRightBold" />
+                    <Icon size="12" color="#5E5E5F" name="local-scan" />
+                    <p>New issue</p>
+                    <Icon size="6" color="#5E5E5F" name="el-icon-ArrowRightBold" />
+                    <el-button size="small" round>
+                        <Icon size="16" class="mr-1" color="#5D85FF" name="local-terminal" />
+                        Digital
+                    </el-button>
+                </div>
+            </template>
+            <IssueDialogForm />
+        </el-dialog>
     </div>
 </template>
 <script lang="ts" setup>
@@ -171,12 +176,13 @@ import sidePeek from '/@/assets/images/icons/side-peek.svg'
 import centerPeek from '/@/assets/images/icons/center-peek.svg'
 import fullPage from '/@/assets/images/icons/full-page.svg'
 import IssueSidebarForm from './components/IssueSidebarForm.vue'
+import IssueDialogForm from './components/IssueDialogForm.vue'
 import { ref } from 'vue'
 
 const visible = ref(false)
 const currentWidth = ref<number>(50)
 const inputSearch = ref('')
-
+const visibleDialog = ref(false)
 const tags = [
     {
         id: 1,
@@ -269,7 +275,7 @@ const tags = [
         hasBottomBorder: false,
     },
 ]
-const activeType = ref(1)
+const activeType = ref(2)
 const formTypes = ref([
     {
         id: 1,
@@ -290,4 +296,12 @@ const formTypes = ref([
         active: false,
     },
 ])
+
+const openForm = () => {
+    if (activeType.value == 1) {
+        visible.value = true
+    } else {
+        visibleDialog.value = true
+    }
+}
 </script>

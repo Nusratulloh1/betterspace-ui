@@ -1,82 +1,250 @@
 <template>
-    <h1 class="mt-6 text-xl font-bold leading-6 text-neutral-700 max-md:max-w-full">Issue title</h1>
-    <p class="mt-7 text-base font-medium text-neutral-400 max-md:max-w-full">Add description...</p>
-    <div class="flex gap-1.5 items-start mt-7 text-center max-md:flex-wrap max-md:pr-5 max-md:max-w-full">
-        <div class="flex flex-col self-stretch">
-            <div class="flex gap-1 text-base whitespace-nowrap text-stone-500">
-                <div class="flex flex-1 gap-3 px-4 py-3 border border-solid bg-neutral-100 bg-opacity-80 border-zinc-100 rounded-[1321.429px]">
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/ccb7d6d32f0b787e83597e890085a9fe5bd18a1173f4ee7f6a7b0a330f08769f?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-                        class="shrink-0 self-start aspect-square w-[15px]"
-                        alt=""
+    <div>
+        <input type="text" class="text-black font-bold text-lg placeholder:text-black w-full bg-transparent" placeholder="Issue title" />
+
+        <textarea
+            class="mt-5 w-full text-[#A4A6AA] placeholder:text-[#A4A6AA] font-medium text-sm bg-transparent"
+            name="dfdsf"
+            id="s"
+            placeholder="Add description..."
+        ></textarea>
+        <div class="flex items-center">
+            <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                <svg class="mr-2" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5.53125 0.28125H1.59375C1.24565 0.28125 0.911814 0.419531 0.665672 0.665672C0.419531 0.911814 0.28125 1.24565 0.28125 1.59375V5.53125C0.28125 5.87935 0.419531 6.21319 0.665672 6.45933C0.911814 6.70547 1.24565 6.84375 1.59375 6.84375H5.53125C5.87935 6.84375 6.21319 6.70547 6.45933 6.45933C6.70547 6.21319 6.84375 5.87935 6.84375 5.53125V1.59375C6.84375 1.24565 6.70547 0.911814 6.45933 0.665672C6.21319 0.419531 5.87935 0.28125 5.53125 0.28125ZM5.53125 5.53125H1.59375V1.59375H5.53125V5.53125ZM13.4062 0.28125H9.46875C9.12065 0.28125 8.78681 0.419531 8.54067 0.665672C8.29453 0.911814 8.15625 1.24565 8.15625 1.59375V5.53125C8.15625 5.87935 8.29453 6.21319 8.54067 6.45933C8.78681 6.70547 9.12065 6.84375 9.46875 6.84375H13.4062C13.7543 6.84375 14.0882 6.70547 14.3343 6.45933C14.5805 6.21319 14.7188 5.87935 14.7188 5.53125V1.59375C14.7188 1.24565 14.5805 0.911814 14.3343 0.665672C14.0882 0.419531 13.7543 0.28125 13.4062 0.28125ZM13.4062 5.53125H9.46875V1.59375H13.4062V5.53125ZM5.53125 8.15625H1.59375C1.24565 8.15625 0.911814 8.29453 0.665672 8.54067C0.419531 8.78681 0.28125 9.12065 0.28125 9.46875V13.4062C0.28125 13.7543 0.419531 14.0882 0.665672 14.3343C0.911814 14.5805 1.24565 14.7188 1.59375 14.7188H5.53125C5.87935 14.7188 6.21319 14.5805 6.45933 14.3343C6.70547 14.0882 6.84375 13.7543 6.84375 13.4062V9.46875C6.84375 9.12065 6.70547 8.78681 6.45933 8.54067C6.21319 8.29453 5.87935 8.15625 5.53125 8.15625ZM5.53125 13.4062H1.59375V9.46875H5.53125V13.4062ZM13.4062 8.15625H9.46875C9.12065 8.15625 8.78681 8.29453 8.54067 8.54067C8.29453 8.78681 8.15625 9.12065 8.15625 9.46875V13.4062C8.15625 13.7543 8.29453 14.0882 8.54067 14.3343C8.78681 14.5805 9.12065 14.7188 9.46875 14.7188H13.4062C13.7543 14.7188 14.0882 14.5805 14.3343 14.3343C14.5805 14.0882 14.7188 13.7543 14.7188 13.4062V9.46875C14.7188 9.12065 14.5805 8.78681 14.3343 8.54067C14.0882 8.29453 13.7543 8.15625 13.4062 8.15625ZM13.4062 13.4062H9.46875V9.46875H13.4062V13.4062Z"
+                        fill="black"
                     />
-                    <span>Project</span>
+                </svg>
+                Project
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                <svg class="mr-2.5" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M14.4101 8.50054C14.4101 5.21644 11.7478 2.55414 8.4637 2.55414C5.17961 2.55414 2.5173 5.21644 2.5173 8.50054C2.5173 11.7847 5.17961 14.447 8.4637 14.447C11.7478 14.447 14.4101 11.7847 14.4101 8.50054ZM8.4637 0.571991C12.8426 0.571991 16.3923 4.12173 16.3923 8.50054C16.3923 12.8794 12.8426 16.4291 8.4637 16.4291C4.0849 16.4291 0.535156 12.8794 0.535156 8.50054C0.535156 4.12173 4.0849 0.571991 8.4637 0.571991Z"
+                        fill="black"
+                    />
+                </svg>
+
+                Todo
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                <svg class="mr-2" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_605_30348)">
+                        <path
+                            d="M4.13123 11.1436C4.13123 10.1706 3.3424 9.38174 2.36933 9.38174C1.39625 9.38174 0.607422 10.1706 0.607422 11.1436V13.7865C0.607422 14.7596 1.39625 15.5484 2.36933 15.5484C3.3424 15.5484 4.13123 14.7596 4.13123 13.7865V11.1436Z"
+                            fill="black"
+                        />
+                        <path
+                            d="M10.2982 6.73902C10.2982 5.76594 9.50939 4.97711 8.53632 4.97711C7.56325 4.97711 6.77441 5.76594 6.77441 6.73902V13.7866C6.77441 14.7597 7.56325 15.5485 8.53632 15.5485C9.50939 15.5485 10.2982 14.7597 10.2982 13.7866V6.73902Z"
+                            fill="black"
+                        />
+                        <path
+                            d="M16.4652 3.21509C16.4652 2.24202 15.6764 1.45319 14.7033 1.45319C13.7302 1.45319 12.9414 2.24202 12.9414 3.21509V13.7865C12.9414 14.7596 13.7302 15.5484 14.7033 15.5484C15.6764 15.5484 16.4652 14.7596 16.4652 13.7865V3.21509Z"
+                            fill="black"
+                        />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_605_30348">
+                            <rect width="15.8571" height="15.8571" fill="white" transform="translate(0.607422 0.572266)" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                Prior
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                <Icon size="20" class="mr-1" color="#000000" name="local-user-circle" />
+                Assignee
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] !px-1.5 hover:!text-primary">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.5489 10.3682L10.9779 2.79713C10.8651 2.68337 10.7307 2.59318 10.5827 2.5318C10.4347 2.47041 10.2759 2.43907 10.1157 2.43958H3.04935C2.8876 2.43958 2.73247 2.50384 2.61809 2.61821C2.50372 2.73259 2.43946 2.88772 2.43946 3.04947V10.1158C2.43895 10.2761 2.47029 10.4348 2.53167 10.5828C2.59306 10.7308 2.68325 10.8652 2.79701 10.978L10.368 18.5491C10.4813 18.6624 10.6158 18.7522 10.7638 18.8136C10.9118 18.8749 11.0704 18.9064 11.2306 18.9064C11.3909 18.9064 11.5495 18.8749 11.6975 18.8136C11.8455 18.7522 11.98 18.6624 12.0933 18.5491L18.5489 12.0934C18.6622 11.9801 18.7521 11.8456 18.8134 11.6976C18.8747 11.5496 18.9063 11.391 18.9063 11.2308C18.9063 11.0706 18.8747 10.9119 18.8134 10.7639C18.7521 10.6159 18.6622 10.4814 18.5489 10.3682ZM11.2303 17.6868L3.65924 10.1158V3.65936H10.1157L17.6867 11.2304L11.2303 17.6868ZM7.31858 6.40387C7.31858 6.5848 7.26493 6.76168 7.1644 6.91212C7.06388 7.06257 6.921 7.17982 6.75384 7.24906C6.58667 7.31831 6.40273 7.33642 6.22527 7.30112C6.04781 7.26582 5.8848 7.1787 5.75686 7.05075C5.62892 6.92281 5.54179 6.7598 5.50649 6.58234C5.47119 6.40488 5.48931 6.22094 5.55855 6.05377C5.62779 5.88661 5.74505 5.74373 5.89549 5.64321C6.04593 5.54269 6.22281 5.48903 6.40374 5.48903C6.64637 5.48903 6.87907 5.58542 7.05063 5.75698C7.2222 5.92855 7.31858 6.16124 7.31858 6.40387Z"
+                        fill="black"
+                    />
+                </svg>
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                <svg class="mr-1.5" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-dasharray="2.09 2.09"
+                    />
+                    <path
+                        d="M6.65625 6.05927L9.92369 7.94574C10.2154 8.11413 10.2154 8.53511 9.92369 8.70351L6.65625 10.5899C6.36459 10.7584 6 10.5478 6 10.2111V6.43816C6 6.10137 6.36459 5.89087 6.65625 6.05927Z"
+                        fill="black"
+                    />
+                    <path
+                        d="M9.67365 8.27052C9.67366 8.27051 9.67368 8.2705 9.6737 8.27049M9.67365 8.27052L9.67373 8.27047L9.6737 8.27049M9.67365 8.27052L9.6737 8.27049M9.67365 8.27052L9.6737 8.27049M6.5 10.1028V6.54641L9.57994 8.32462L6.5 10.1028ZM9.67373 8.37877C9.67368 8.37875 9.67364 8.37872 9.67359 8.37869L9.67369 8.37875L9.67373 8.37877Z"
+                        stroke="black"
+                        stroke-opacity="0.623529"
+                    />
+                </svg>
+
+                Sprint
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                <svg class="mr-2" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M5.77466 1.34667C6.15615 0.884444 6.84385 0.884444 7.22534 1.34667L11.7693 6.85216C12.0769 7.22479 12.0769 7.77519 11.7693 8.14782L7.22534 13.6533C6.84385 14.1156 6.15615 14.1156 5.77466 13.6533L1.23067 8.14782C0.92311 7.77519 0.92311 7.22479 1.23067 6.85216L5.77466 1.34667Z"
+                        stroke="black"
+                        stroke-width="2"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+
+                Milestone
+            </el-button>
+            <el-button round class="!bg-transparent !text-[#666666] !px-2 hover:!text-primary">
+                <Icon size="15" color="#000000" name="el-icon-MoreFilled" />
+            </el-button>
+        </div>
+        <el-button @click="subIssue = true" size="large" round class="!bg-transparent !text-[#666666] hover:!text-primary mt-5">
+            Add sub-issues
+        </el-button>
+        <div class="flex items-center justify-between mt-8">
+            <button class="flex items-center gap-2.5 text-xs text-[#575757] mt-2">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M14.25 0.5H1.75C1.41848 0.5 1.10054 0.631696 0.866116 0.866116C0.631696 1.10054 0.5 1.41848 0.5 1.75V14.25C0.5 14.5815 0.631696 14.8995 0.866116 15.1339C1.10054 15.3683 1.41848 15.5 1.75 15.5H14.25C14.5815 15.5 14.8995 15.3683 15.1339 15.1339C15.3683 14.8995 15.5 14.5815 15.5 14.25V1.75C15.5 1.41848 15.3683 1.10054 15.1339 0.866116C14.8995 0.631696 14.5815 0.5 14.25 0.5ZM1.75 1.75H14.25V7.79531L12.3211 5.86562C12.0867 5.63138 11.7689 5.4998 11.4375 5.4998C11.1061 5.4998 10.7883 5.63138 10.5539 5.86562L2.16953 14.25H1.75V1.75ZM14.25 14.25H3.9375L11.4375 6.75L14.25 9.5625V14.25ZM5.5 7.375C5.87084 7.375 6.23335 7.26503 6.54169 7.05901C6.85004 6.85298 7.09036 6.56014 7.23227 6.21753C7.37419 5.87492 7.41132 5.49792 7.33897 5.13421C7.26663 4.77049 7.08805 4.4364 6.82583 4.17417C6.5636 3.91195 6.22951 3.73337 5.86579 3.66103C5.50208 3.58868 5.12508 3.62581 4.78247 3.76773C4.43986 3.90964 4.14702 4.14996 3.94099 4.45831C3.73497 4.76665 3.625 5.12916 3.625 5.5C3.625 5.99728 3.82254 6.47419 4.17417 6.82583C4.52581 7.17746 5.00272 7.375 5.5 7.375ZM5.5 4.875C5.62361 4.875 5.74445 4.91166 5.84723 4.98033C5.95001 5.04901 6.03012 5.14662 6.07743 5.26082C6.12473 5.37503 6.13711 5.50069 6.11299 5.62193C6.08888 5.74317 6.02935 5.85453 5.94194 5.94194C5.85453 6.02935 5.74317 6.08888 5.62193 6.11299C5.50069 6.13711 5.37503 6.12473 5.26082 6.07743C5.14662 6.03012 5.04901 5.95001 4.98033 5.84723C4.91166 5.74445 4.875 5.62361 4.875 5.5C4.875 5.33424 4.94085 5.17527 5.05806 5.05806C5.17527 4.94085 5.33424 4.875 5.5 4.875Z"
+                        fill="#343330"
+                    />
+                </svg>
+                Add preview
+            </button>
+            <el-button v-if="!subIssue" size="large" round type="primary">
+                <span class="!text-lg"> Create issue </span>
+            </el-button>
+        </div>
+        <div v-if="subIssue" class=" rounded-[46px] mt-9" style="background-color: rgb(234 234 234);">
+            <div class="px-8 pt-4 pb-3"><h6 class="text-[#3A3A3A] font-medium">Create sub-issue</h6></div>
+            <hr class="border-[#B7B7B780] bg-[#B7B7B780]" />
+            <div class="pt-3 py-6 px-8">
+                <input
+                    type="text"
+                    class="text-black font-medium text-sm placeholder:text-black w-full bg-transparent"
+                    placeholder="Sun-issue title"
+                />
+
+                <textarea
+                    class="mt-5 w-full text-[#A4A6AA] placeholder:text-[#A4A6AA] text-xs bg-transparent"
+                    name="dfdsf"
+                    id="s"
+                    placeholder="Add description..."
+                ></textarea>
+                <div class="flex items-center mt-10">
+                    <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                        <svg class="mr-2" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.53125 0.28125H1.59375C1.24565 0.28125 0.911814 0.419531 0.665672 0.665672C0.419531 0.911814 0.28125 1.24565 0.28125 1.59375V5.53125C0.28125 5.87935 0.419531 6.21319 0.665672 6.45933C0.911814 6.70547 1.24565 6.84375 1.59375 6.84375H5.53125C5.87935 6.84375 6.21319 6.70547 6.45933 6.45933C6.70547 6.21319 6.84375 5.87935 6.84375 5.53125V1.59375C6.84375 1.24565 6.70547 0.911814 6.45933 0.665672C6.21319 0.419531 5.87935 0.28125 5.53125 0.28125ZM5.53125 5.53125H1.59375V1.59375H5.53125V5.53125ZM13.4062 0.28125H9.46875C9.12065 0.28125 8.78681 0.419531 8.54067 0.665672C8.29453 0.911814 8.15625 1.24565 8.15625 1.59375V5.53125C8.15625 5.87935 8.29453 6.21319 8.54067 6.45933C8.78681 6.70547 9.12065 6.84375 9.46875 6.84375H13.4062C13.7543 6.84375 14.0882 6.70547 14.3343 6.45933C14.5805 6.21319 14.7188 5.87935 14.7188 5.53125V1.59375C14.7188 1.24565 14.5805 0.911814 14.3343 0.665672C14.0882 0.419531 13.7543 0.28125 13.4062 0.28125ZM13.4062 5.53125H9.46875V1.59375H13.4062V5.53125ZM5.53125 8.15625H1.59375C1.24565 8.15625 0.911814 8.29453 0.665672 8.54067C0.419531 8.78681 0.28125 9.12065 0.28125 9.46875V13.4062C0.28125 13.7543 0.419531 14.0882 0.665672 14.3343C0.911814 14.5805 1.24565 14.7188 1.59375 14.7188H5.53125C5.87935 14.7188 6.21319 14.5805 6.45933 14.3343C6.70547 14.0882 6.84375 13.7543 6.84375 13.4062V9.46875C6.84375 9.12065 6.70547 8.78681 6.45933 8.54067C6.21319 8.29453 5.87935 8.15625 5.53125 8.15625ZM5.53125 13.4062H1.59375V9.46875H5.53125V13.4062ZM13.4062 8.15625H9.46875C9.12065 8.15625 8.78681 8.29453 8.54067 8.54067C8.29453 8.78681 8.15625 9.12065 8.15625 9.46875V13.4062C8.15625 13.7543 8.29453 14.0882 8.54067 14.3343C8.78681 14.5805 9.12065 14.7188 9.46875 14.7188H13.4062C13.7543 14.7188 14.0882 14.5805 14.3343 14.3343C14.5805 14.0882 14.7188 13.7543 14.7188 13.4062V9.46875C14.7188 9.12065 14.5805 8.78681 14.3343 8.54067C14.0882 8.29453 13.7543 8.15625 13.4062 8.15625ZM13.4062 13.4062H9.46875V9.46875H13.4062V13.4062Z"
+                                fill="black"
+                            />
+                        </svg>
+                        Project
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                        <svg class="mr-2.5" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M14.4101 8.50054C14.4101 5.21644 11.7478 2.55414 8.4637 2.55414C5.17961 2.55414 2.5173 5.21644 2.5173 8.50054C2.5173 11.7847 5.17961 14.447 8.4637 14.447C11.7478 14.447 14.4101 11.7847 14.4101 8.50054ZM8.4637 0.571991C12.8426 0.571991 16.3923 4.12173 16.3923 8.50054C16.3923 12.8794 12.8426 16.4291 8.4637 16.4291C4.0849 16.4291 0.535156 12.8794 0.535156 8.50054C0.535156 4.12173 4.0849 0.571991 8.4637 0.571991Z"
+                                fill="black"
+                            />
+                        </svg>
+
+                        Todo
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                        <svg class="mr-2" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_605_30348)">
+                                <path
+                                    d="M4.13123 11.1436C4.13123 10.1706 3.3424 9.38174 2.36933 9.38174C1.39625 9.38174 0.607422 10.1706 0.607422 11.1436V13.7865C0.607422 14.7596 1.39625 15.5484 2.36933 15.5484C3.3424 15.5484 4.13123 14.7596 4.13123 13.7865V11.1436Z"
+                                    fill="black"
+                                />
+                                <path
+                                    d="M10.2982 6.73902C10.2982 5.76594 9.50939 4.97711 8.53632 4.97711C7.56325 4.97711 6.77441 5.76594 6.77441 6.73902V13.7866C6.77441 14.7597 7.56325 15.5485 8.53632 15.5485C9.50939 15.5485 10.2982 14.7597 10.2982 13.7866V6.73902Z"
+                                    fill="black"
+                                />
+                                <path
+                                    d="M16.4652 3.21509C16.4652 2.24202 15.6764 1.45319 14.7033 1.45319C13.7302 1.45319 12.9414 2.24202 12.9414 3.21509V13.7865C12.9414 14.7596 13.7302 15.5484 14.7033 15.5484C15.6764 15.5484 16.4652 14.7596 16.4652 13.7865V3.21509Z"
+                                    fill="black"
+                                />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_605_30348">
+                                    <rect width="15.8571" height="15.8571" fill="white" transform="translate(0.607422 0.572266)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        Prior
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                        <Icon size="20" class="mr-1" color="#000000" name="local-user-circle" />
+                        Assignee
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] !px-1.5 hover:!text-primary">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.5489 10.3682L10.9779 2.79713C10.8651 2.68337 10.7307 2.59318 10.5827 2.5318C10.4347 2.47041 10.2759 2.43907 10.1157 2.43958H3.04935C2.8876 2.43958 2.73247 2.50384 2.61809 2.61821C2.50372 2.73259 2.43946 2.88772 2.43946 3.04947V10.1158C2.43895 10.2761 2.47029 10.4348 2.53167 10.5828C2.59306 10.7308 2.68325 10.8652 2.79701 10.978L10.368 18.5491C10.4813 18.6624 10.6158 18.7522 10.7638 18.8136C10.9118 18.8749 11.0704 18.9064 11.2306 18.9064C11.3909 18.9064 11.5495 18.8749 11.6975 18.8136C11.8455 18.7522 11.98 18.6624 12.0933 18.5491L18.5489 12.0934C18.6622 11.9801 18.7521 11.8456 18.8134 11.6976C18.8747 11.5496 18.9063 11.391 18.9063 11.2308C18.9063 11.0706 18.8747 10.9119 18.8134 10.7639C18.7521 10.6159 18.6622 10.4814 18.5489 10.3682ZM11.2303 17.6868L3.65924 10.1158V3.65936H10.1157L17.6867 11.2304L11.2303 17.6868ZM7.31858 6.40387C7.31858 6.5848 7.26493 6.76168 7.1644 6.91212C7.06388 7.06257 6.921 7.17982 6.75384 7.24906C6.58667 7.31831 6.40273 7.33642 6.22527 7.30112C6.04781 7.26582 5.8848 7.1787 5.75686 7.05075C5.62892 6.92281 5.54179 6.7598 5.50649 6.58234C5.47119 6.40488 5.48931 6.22094 5.55855 6.05377C5.62779 5.88661 5.74505 5.74373 5.89549 5.64321C6.04593 5.54269 6.22281 5.48903 6.40374 5.48903C6.64637 5.48903 6.87907 5.58542 7.05063 5.75698C7.2222 5.92855 7.31858 6.16124 7.31858 6.40387Z"
+                                fill="black"
+                            />
+                        </svg>
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                        <svg class="mr-1.5" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15Z"
+                                stroke="black"
+                                stroke-width="2"
+                                stroke-dasharray="2.09 2.09"
+                            />
+                            <path
+                                d="M6.65625 6.05927L9.92369 7.94574C10.2154 8.11413 10.2154 8.53511 9.92369 8.70351L6.65625 10.5899C6.36459 10.7584 6 10.5478 6 10.2111V6.43816C6 6.10137 6.36459 5.89087 6.65625 6.05927Z"
+                                fill="black"
+                            />
+                            <path
+                                d="M9.67365 8.27052C9.67366 8.27051 9.67368 8.2705 9.6737 8.27049M9.67365 8.27052L9.67373 8.27047L9.6737 8.27049M9.67365 8.27052L9.6737 8.27049M9.67365 8.27052L9.6737 8.27049M6.5 10.1028V6.54641L9.57994 8.32462L6.5 10.1028ZM9.67373 8.37877C9.67368 8.37875 9.67364 8.37872 9.67359 8.37869L9.67369 8.37875L9.67373 8.37877Z"
+                                stroke="black"
+                                stroke-opacity="0.623529"
+                            />
+                        </svg>
+
+                        Sprint
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] hover:!text-primary">
+                        <svg class="mr-2" width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.77466 1.34667C6.15615 0.884444 6.84385 0.884444 7.22534 1.34667L11.7693 6.85216C12.0769 7.22479 12.0769 7.77519 11.7693 8.14782L7.22534 13.6533C6.84385 14.1156 6.15615 14.1156 5.77466 13.6533L1.23067 8.14782C0.92311 7.77519 0.92311 7.22479 1.23067 6.85216L5.77466 1.34667Z"
+                                stroke="black"
+                                stroke-width="2"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+
+                        Milestone
+                    </el-button>
+                    <el-button round class="!bg-transparent !text-[#666666] !px-2 hover:!text-primary">
+                        <Icon size="15" color="#000000" name="el-icon-MoreFilled" />
+                    </el-button>
                 </div>
-                <div class="flex flex-1 gap-3 px-4 py-3 border border-solid bg-neutral-100 bg-opacity-80 border-zinc-100 rounded-[1321.429px]">
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/53bc8f379d5caa59b30d1f29188eb0184f7bb0a210562dab28cd0c9a825b1756?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-                        class="shrink-0 aspect-square w-[15px]"
-                        alt=""
-                    />
-                    <span class="my-auto">Todo</span>
-                </div>
-                <div class="flex flex-1 gap-3.5 px-4 py-3 border border-solid bg-neutral-100 bg-opacity-80 border-zinc-100 rounded-[1321.429px]">
-                    <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/1c56a80d9d889250513e6b8957a2425abf47c97f3068741db5f1ae84e7053633?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-                        class="shrink-0 aspect-square w-[15px]"
-                        alt=""
-                    />
-                    <span>Prior</span>
+                <div class="flex items-center gap-3 justify-end mt-10">
+                    <button @click="subIssue = false" class="text-lg font-medium text-[#858585] hover:text-primary">
+                        Cancel
+                    </button>
+                    <el-button size="large" round type="primary">
+                        <span class="text-lg"> Create sub-issue </span>
+                    </el-button>
                 </div>
             </div>
-            <button
-                class="justify-center p-3.5 mt-5 text-xs border border-solid bg-neutral-100 bg-opacity-80 border-zinc-100 rounded-[1000px] text-zinc-600"
-            >
-                Add sub-issues
-            </button>
         </div>
-        <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/50c662c42be61b0c64e902c6a53c425f21ed07de4578d331d4abb59cff809ff6?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-            class="shrink-0 max-w-full border border-solid aspect-[3.23] border-zinc-100 rounded-[1321.429px] w-[118px]"
-            alt=""
-        />
-        <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/7eec09a903e72b2afd2aa3fbfca3ab0ed3f3fe6e61e907d20c85f75b5e700bd5?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-            class="shrink-0 aspect-square w-[38px]"
-            alt=""
-        />
-        <button
-            class="flex gap-2.5 px-3.5 py-2.5 text-base whitespace-nowrap border border-solid bg-neutral-100 bg-opacity-80 border-zinc-100 rounded-[1321.429px] text-stone-500"
-        >
-            <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/5d53421e6cd872a0a4fa2e9b4e82f80997e2324f19852fe6bd200827ec1b5bc7?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-                class="shrink-0 self-start w-4 border-2 border-black border-dashed aspect-square stroke-[2px] stroke-black"
-                alt=""
-            />
-            <span>Sprint</span>
-        </button>
-        <button
-            class="justify-center items-start px-10 py-3.5 text-base whitespace-nowrap border border-solid bg-neutral-100 bg-opacity-80 border-zinc-100 rounded-[1321.429px] text-stone-500 max-md:pl-5"
-        >
-            Milestone
-        </button>
-    </div>
-    <div class="flex gap-5 justify-between mt-6 ml-3 w-full text-center max-md:flex-wrap max-md:max-w-full">
-        <button class="flex gap-2.5 my-auto text-xs text-zinc-600">
-            <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b79410c941b8fcd97430aa3698d4a441d04916c2b85db8f259a620a5bbfb8104?apiKey=6df31c50aa5a49cdb4a3bff6c462ecd6&"
-                class="shrink-0 w-5 aspect-square"
-                alt=""
-            />
-            <span class="my-auto">Add preview</span>
-        </button>
-        <button class="justify-center px-6 py-3.5 text-lg font-medium text-white bg-blue-700 rounded-[1424.242px] max-md:px-5">Create issue</button>
     </div>
 </template>
+<script  lang="ts" setup>
+import { ref } from 'vue'
+
+const subIssue = ref(false)
+</script>

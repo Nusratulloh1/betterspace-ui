@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class=" flex items-center justify-center h-[80vh]">
         <div class="text-center">
             <svg class="mx-auto" width="437" height="336" viewBox="0 0 437 336" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_107_18204)">

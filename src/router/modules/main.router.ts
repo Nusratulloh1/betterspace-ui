@@ -70,21 +70,5 @@ export const mainRoutes = {
                 ]
             },
         },
-        {
-            path: '/notes',
-            name: 'notes',
-            component: () => import('/@/views/notes/NotesView.vue'),
-            meta: {
-                title: 'Notes',
-                breadcrumb: [
-                    {
-                        title: 'Notes',
-                        disabled: false,
-                        name: 'notes',
-                        icon: 'local-note'
-                    }
-                ]
-            },
-        },
     ],
 };

@@ -275,7 +275,7 @@ const tags = [
         hasBottomBorder: false,
     },
 ]
-const activeType = ref(2)
+const activeType = ref(1)
 const formTypes = ref([
     {
         id: 1,

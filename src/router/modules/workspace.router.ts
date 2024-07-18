@@ -23,6 +23,28 @@ export const workspaceRoutes = {
             },
         },
         {
+            path: 'goals/:id',
+            name: 'goals-detail',
+            component: () => import('/@/views/workspace/goals/GoalView.vue'),
+            meta: {
+                title: 'Goals',
+                breadcrumb: [
+                    {
+                        title: 'Goals',
+                        disabled: false,
+                        name: 'goals',
+                        icon: 'local-strike'
+                    },
+                    {
+                        title: 'GOAL1',
+                        disabled: false,
+                        name: 'goals-detail',
+                        icon: 'local-stars'
+                    }
+                ]
+            },
+        },
+        {
             path: 'teams',
             name: 'teams',
             component: () => import('/@/views/workspace/teams/TeamsView.vue'),

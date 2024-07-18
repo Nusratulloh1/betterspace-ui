@@ -48,7 +48,7 @@
         </div>
         <hr />
         <el-table :data="tableData" style="width: 100%">
-            <el-table-column prop="date" label="Team name" min-width="120">
+            <el-table-column prop="date" label="Team name" min-width="160">
                 <template #default="{ row }">
                     <div class="flex items-center gap-5">
                         <div class="flex items-center gap-2.5 font-medium">
@@ -89,7 +89,7 @@
                     </div>
                 </template>
             </el-table-column>
-            <el-table-column prop="sprint" label="Sprints" min-width="80" />
+            <el-table-column prop="sprint" label="Sprints" min-width="120" />
             <el-table-column prop="issue" label="Issues" min-width="80" />
             <el-table-column prop="" label="" min-width="80">
                 <button >

@@ -43,6 +43,7 @@
                     <router-link
                         v-if="!child.childrens.length"
                         :to="child.path"
+                        :class="{ '!bg-zinc-100': currentRoute.includes(child.path) }"
                         class="flex items-center gap-2.5 py-1 pr-0.5 pl-1.5 text-sm whitespace-nowrap rounded-[55px] text-zinc-800 hover:bg-zinc-200"
                     >
                         <Icon size="15" color="#292929" :name="child.icon" />
@@ -78,8 +79,8 @@
         >
             <Icon size="12" class="self-end aspect-square mt-1 mr-1" name="el-icon-Close" />
             <Icon size="24" class="self-center aspect-square" name="local-chrome" />
-            <p class="mt-3 text-sm  text-center text-stone-950 text-opacity-50">Start capturing issues on live websites!</p>
-            <a href="#" class="mt-2 text-xs font-semibold text-center  leading-5 text-primary"> Download extension </a>
+            <p class="mt-3 text-sm text-center text-stone-950 text-opacity-50">Start capturing issues on live websites!</p>
+            <a href="#" class="mt-2 text-xs font-semibold text-center leading-5 text-primary"> Download extension </a>
         </div>
     </aside>
 </template>
@@ -197,14 +198,14 @@ const subMenus: any = ref([
                 icon: 'el-icon-Plus',
                 title: 'Invite people',
                 isOpen: true,
-                path: '/',
+                path: '/try/invite',
                 childrens: [],
             },
             {
                 icon: 'local-cicle',
                 title: 'Cycles (sprints)',
                 isOpen: true,
-                path: '/',
+                path: '/try/cycles',
                 childrens: [],
             },
             {

@@ -1,7 +1,6 @@
 <template>
     <div>
         <input type="text" class="text-black font-bold text-lg placeholder:text-black w-full bg-transparent" placeholder="Issue title" />
-
         <textarea
             class="mt-5 w-full text-[#A4A6AA] placeholder:text-[#A4A6AA] font-medium text-sm bg-transparent"
             name="dfdsf"

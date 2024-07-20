@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { mainRoutes, workspaceRoutes, tryRoutes } from './modules'
+import { mainRoutes, workspaceRoutes, tryRoutes, settingsRoutes } from './modules'
 import 'nprogress/nprogress.css'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,7 +42,8 @@ const router = createRouter({
     },
     mainRoutes,
     workspaceRoutes,
-    tryRoutes
+    tryRoutes,
+    settingsRoutes
 
   ]
 })

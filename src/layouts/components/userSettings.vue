@@ -12,9 +12,7 @@
                 <template #reference>
                     <div class="flex items-center justify-between route">
                         <div class="flex items-center gap-1.5">
-                            <div
-                                class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px]  pt-0.5 text-white"
-                            >
+                            <div class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] pt-0.5 text-white">
                                 IA
                             </div>
                             {{ user.name }}
@@ -23,27 +21,21 @@
                     </div>
                 </template>
                 <div class="flex items-center gap-1.5 route">
-                    <div
-                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px]  text-white pt-0.5"
-                    >
+                    <div class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px] text-white pt-0.5">
                         IA
                     </div>
                     {{ user.email }}
                 </div>
                 <hr />
                 <div class="flex items-center gap-1.5 route">
-                    <div
-                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px]  text-white pt-0.5"
-                    >
+                    <div class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px] text-white pt-0.5">
                         IA
                     </div>
                     i.akramov@ai-lab.uz
                 </div>
                 <hr />
                 <div class="flex items-center gap-1.5 route">
-                    <div
-                        class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px]  text-white pt-0.5"
-                    >
+                    <div class="w-[14px] h-[14px] bg-black rounded-full flex items-center justify-center text-[6px] leading-[0px] text-white pt-0.5">
                         IA
                     </div>
                     i.akramov@centralasian.uz
@@ -70,7 +62,7 @@
                 </template>
                 <div class="flex items-center gap-1.5 route !py-2.5 !text-[#444444]">
                     <div
-                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px]  text-white"
+                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px] text-white"
                     >
                         AI
                     </div>
@@ -79,7 +71,7 @@
                 <hr />
                 <div class="flex items-center gap-1.5 !py-2.5 route !text-[#444444]">
                     <div
-                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px]  text-white"
+                        class="w-[24px] h-[24px] border bg-[#2F3640] rounded-full flex items-center justify-center text-[9px] leading-[0px] text-white"
                     >
                         P
                     </div>
@@ -92,18 +84,18 @@
                 </div>
             </el-popover>
             <hr />
-            <div class="flex items-center gap-1.5 route">
+            <router-link to="/settings/workspace" class="flex items-center gap-1.5 route">
                 <Icon size="14" color="#343330" name="local-setting" />
                 Workspace settings
-            </div>
-            <div class="flex items-center gap-1.5 route">
+            </router-link>
+            <router-link to="/settings/workspace/members" class="flex items-center gap-1.5 route">
                 <Icon size="14" color="#343330" name="local-users" />
                 Manage members
-            </div>
-            <div class="flex items-center gap-1.5 route">
+            </router-link>
+            <router-link to="/settings/workspace/billing" class="flex items-center gap-1.5 route">
                 <Icon size="14" color="#343330" name="local-credit" />
                 Billing
-            </div>
+            </router-link>
             <hr />
             <div class="flex items-center gap-1.5 route">
                 <Icon size="14" color="#343330" name="local-help" />

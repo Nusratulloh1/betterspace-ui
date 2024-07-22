@@ -11,7 +11,7 @@
             </router-link>
             <h3 class="text-black text-lg">Settings</h3>
         </div>
-        <el-scrollbar height="610px">
+        <el-scrollbar height="95vh">
             <div class="px-5 pb-6">
                 <div class="mt-4" v-for="sub in subMenus" :key="sub.id">
                     <h4 class="flex cursor-pointer items-center gap-0 py-1 pr-1 text-[13px] font-medium whitespace-nowrap rounded text-[#313131]">

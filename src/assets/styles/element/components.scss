@@ -33,6 +33,12 @@
 .el-input {
     height: 37px;
 
+    &.transparent {
+        .el-input__wrapper {
+            background-color: transparent !important;
+        }
+    }
+
     &__inner {
         font-family: Roboto;
         font-weight: 400;

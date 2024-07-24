@@ -7,7 +7,7 @@
                     <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef">
                         <router-view v-slot="{ Component }">
                             <transition name="slide-right" mode="out-in">
-                                <component :is="Component" />
+                                <component class=" pl-[115px]" :is="Component" />
                             </transition>
                         </router-view>
                     </el-scrollbar>
@@ -32,7 +32,7 @@ const currentRoute = computed(() => router.currentRoute.value.fullPath.split('/'
 
 <style scoped lang="scss">
 .layout-container .layout-main {
-    padding-left: 115px !important;
+    padding-left: 0px !important;
     padding-right: 0 !important;
     padding-top: 40px !important;
     overflow: hidden;

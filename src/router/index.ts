@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { mainRoutes, workspaceRoutes, tryRoutes, settingsRoutes } from './modules'
+import { adminRoutes } from './modules'
 import 'nprogress/nprogress.css'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      redirect: '/home',
+      redirect: '/admin/home',
     },
     {
       path: '/signin',
@@ -40,10 +40,7 @@ const router = createRouter({
         title: 'Account setup',
       },
     },
-    mainRoutes,
-    workspaceRoutes,
-    tryRoutes,
-    settingsRoutes
+    adminRoutes
 
   ]
 })

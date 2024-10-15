@@ -4,7 +4,7 @@
             <div class="box">
                 <div class="text-center w-full max-w-[340px]">
                     <LogoIcon class="mx-auto" />
-                    <h5 class="font-medium text-[19px] mt-8 mb-3">Create your Opus account</h5>
+                    <h5 class="font-medium text-[19px] mt-8 mb-3">Create your Betterplace account</h5>
                     <p class="text-[#676C76] text-xs">Start to collaborate in context with your teammates now.</p>
                     <el-form
                         @keyup.enter="submitForm(ruleFormRef)"

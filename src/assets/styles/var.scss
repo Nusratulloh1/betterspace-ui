@@ -1,5 +1,5 @@
 $--color-white: #ffffff !default;
-$--color-primary: #1265E9 !default;
+$--color-primary: #000000 !default;
 $--color-primary-sub-1: mix($--color-white, $--color-primary, 10%) !default;
 $--color-primary-sub-2: mix($--color-white, $--color-primary, 20%) !default;
 $--color-primary-sub-3: mix($--color-white, $--color-primary, 30%) !default;
@@ -21,7 +21,7 @@ $--color-primary-sub-9: mix($--color-white, $--color-primary, 90%) !default;
     --color-info: #909399; // Info
 
     /* 无彩色 */
-    --color-text-primary: #303133; // 主要文本
+    --color-text-primary: #000000; // 主要文本
     --color-regular: #606266; // 普通文本
     --color-secondary: #909399; // 次要文本
     --color-placeholder: #c0c4cc; // 占位文本

@@ -4,7 +4,7 @@
             <div class="box ">
                 <div class="text-center w-full max-w-[340px]">
                     <LogoIcon class="mx-auto" />
-                    <h5 class="font-medium text-[19px] mt-6 mb-5">Sign in to Opus</h5>
+                    <h5 class="font-medium text-[19px] mt-6 mb-5">Sign in to Betterplace</h5>
                     <googleButton />
                     <div class="flex items-center gap-5 my-5">
                         <hr class="!w-full" />
@@ -40,10 +40,10 @@
                                 Sign in with email
                             </el-button>
                         </div>
-                        <div class="newTo mt-6">
+                        <!-- <div class="newTo mt-6">
                             <p class="text-[#AAAAAA] text-xs">New to Opus?</p>
                             <router-link to="/signup" class="text-xs text-primary hover:underline"> Create an account </router-link>
-                        </div>
+                        </div> -->
                     </el-form>
                 </div>
             </div>
@@ -134,8 +134,8 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 </script>
 <style lang="scss" scoped>
 .box {
-    box-shadow: 0px 16px 32px 0px #9da6b63d;
-    border-radius: 70px;
+    box-shadow: 0px 8px 22px 0px #9da6b63d;
+    border-radius: 33px;
     width: 100%;
     max-width: 500px;
     padding: 32px 80px 28px 80px;

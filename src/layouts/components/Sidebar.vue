@@ -1,86 +1,54 @@
 <template>
-    <aside class="flex relative flex-col px-4 py-8 mx-auto w-full bg-white drop-shadow-lg rounded-[32px] max-md:pr-5">
-        <header
-            class="flex items-center relative h-5 gap-5 justify-between w-full text-base font-medium tracking-tighter text-black whitespace-nowrap"
-        >
-            <userSettings :user="user" @logut="logOut" />
-            <button>
-                <Icon size="21" color="#343330" name="local-sidebar-simple" />
-            </button>
-        </header>
-        <button class="flex gap-5 justify-between px-3 py-1 mt-6 text-white bg-blue-700 rounded-[1000px]">
-            <span class="my-auto text-[13px] font-medium text-center">New command</span>
-            <span
-                class="justify-center px-1.5 py-0.5 text-sm leading-5 whitespace-nowrap rounded-[9px] border border-solid border-indigo-50 border-opacity-30"
+    <aside class="flex relative flex-col justify-between px-4 py-9 mx-auto w-full bg-white border-r border-[#EAECF0]">
+        <div>
+            <header
+                class="flex items-center relative h-5 gap-5 justify-between w-full text-base font-medium tracking-tighter text-black whitespace-nowrap pl-2 mt-2"
             >
-                ⌘+
-            </span>
-        </button>
-        <nav class="mt-7">
-            <ul class="space-y-1">
-                <li v-for="menu in mainMenus" :key="menu.id">
-                    <router-link
-                        :to="menu.path"
-                        class="flex items-center gap-2.5 py-1 pr-0.5 pl-1.5 text-sm whitespace-nowrap rounded-[55px] text-zinc-800 transition-all hover:bg-zinc-200"
-                        :class="{ '!bg-zinc-100': currentRoute.includes(menu.path) }"
-                    >
-                        <Icon size="14" class="shrink-0 aspect-square" :name="`local-${menu.icon}`" />
-                        <span class="flex-1">{{ menu.title }}</span>
-                    </router-link>
-                </li>
-            </ul>
-        </nav>
-        <div class="mt-6" v-for="sub in subMenus" :key="sub.id">
-            <button
-                @click="sub.isOpen = !sub.isOpen"
-                class="flex cursor-pointer items-center gap-0 py-1 pr-1 text-xs font-medium whitespace-nowrap rounded text-[#939496] max-md:pr-5"
-            >
-                {{ sub.title }}
-                <Icon size="16" color="#939496" :class="{ ' rotate-[30deg]': !sub.isOpen }" name="local-arrow-down" />
-            </button>
-            <ul v-if="sub.isOpen">
-                <li v-for="child in sub.childrens" :key="child.icon">
-                    <router-link
-                        v-if="!child.childrens.length"
-                        :to="child.path"
-                        :class="{ '!bg-zinc-100': currentRoute.includes(child.path) }"
-                        class="flex items-center gap-2.5 py-1 pr-0.5 pl-1.5 text-sm whitespace-nowrap rounded-[55px] text-zinc-800 hover:bg-zinc-200"
-                    >
-                        <Icon size="15" color="#292929" :name="child.icon" />
-                        <span class="flex-1">{{ child.title }}</span>
-                    </router-link>
-                    <button
-                        v-else
-                        @click="child.isOpen = !child.isOpen"
-                        class="flex items-center gap-2.5 py-1 pr-0.5 pl-1.5 text-sm whitespace-nowrap rounded text-zinc-800"
-                    >
-                        <Icon size="15" :color="child?.iconColor" :name="child.icon" />
-                        <div class="flex items-center">
-                            {{ child.title }}
-                            <Icon size="16" color="#939496" :class="{ ' rotate-[30deg]': !child.isOpen }" name="local-arrow-down" />
-                        </div>
-                    </button>
-                    <ul v-if="child.isOpen">
-                        <li v-for="subChild in child.childrens" :key="subChild.icon">
-                            <router-link
-                                to="/"
-                                class="flex items-center gap-2.5 py-1 hover:bg-zinc-200 pr-0.5 pl-1.5 text-sm whitespace-nowrap rounded-[55px] text-zinc-800"
-                            >
-                                <Icon size="15" color="#292929" :name="subChild.icon" />
-                                <span class="flex-1">{{ subChild.title }}</span>
-                            </router-link>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                <LogoIcon class="max-w-[167px]" />
+                <button>
+                    <Icon size="15" color="#343330" name="local-burger-menu" />
+                </button>
+            </header>
+            <nav class="mt-11">
+                <ul class="space-y-1">
+                    <li v-for="menu in mainMenus" :key="menu.id">
+                        <router-link
+                            :to="menu.path"
+                            class="flex items-center gap-3 py-2 px-3 font-medium whitespace-nowrap rounded-[3px] text-[#616161] transition-all hover:bg-zinc-100"
+                            :class="{ '!bg-black !text-white': currentRoute.includes(menu.path) }"
+                        >
+                            <Icon
+                                size="20"
+                                class=" !fill-current"
+                                :color="currentRoute.includes(menu.path) ? '#FFFFFF' : '#616161'"
+                                :name="`local-${menu.icon}`"
+                            />
+                            <span class="flex-1">{{ menu.title }}</span>
+                        </router-link>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div
-            class="flex absolute bottom-7 flex-col p-3 mt-6 mr-3.5 bg-white border border-solid border-stone-950 border-opacity-10 rounded-[40px] max-md:px-5 max-md:mx-2.5"
-        >
-            <Icon size="12" class="self-end aspect-square mt-1 mr-1" name="el-icon-Close" />
-            <Icon size="24" class="self-center aspect-square" name="local-chrome" />
-            <p class="mt-3 text-sm text-center text-stone-950 text-opacity-50">Start capturing issues on live websites!</p>
-            <a href="#" class="mt-2 text-xs font-semibold text-center leading-5 text-primary"> Download extension </a>
+
+        <div class="w-full border-t flex justify-between items-start pt-5">
+            <div class="flex items-center gap-3">
+                <img width="40" height="40" src="/@/assets/images/avatars/default.png" alt="default" />
+                <div>
+                    <p class="text-[#344054] text-sm font-semibold">Азиз</p>
+                    <span class="text-[#475467] text-sm"> aziz@company.uz </span>
+                </div>
+            </div>
+            <button class="mt-2" @click="logOut">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M13.3333 14.1667L17.5 10M17.5 10L13.3333 5.83333M17.5 10H7.5M7.5 2.5H6.5C5.09987 2.5 4.3998 2.5 3.86502 2.77248C3.39462 3.01217 3.01217 3.39462 2.77248 3.86502C2.5 4.3998 2.5 5.09987 2.5 6.5V13.5C2.5 14.9001 2.5 15.6002 2.77248 16.135C3.01217 16.6054 3.39462 16.9878 3.86502 17.2275C4.3998 17.5 5.09987 17.5 6.5 17.5H7.5"
+                        stroke="#667085"
+                        stroke-width="1.66667"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </button>
         </div>
     </aside>
 </template>
@@ -88,7 +56,7 @@
   <script lang="ts" setup>
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import userSettings from './userSettings.vue'
+import LogoIcon from '/@/components/icons/LogoIcon.vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { useUsersStore } from '/@/stores'
 const router = useRouter()
@@ -98,124 +66,27 @@ const currentRoute = computed(() => router.currentRoute.value.fullPath || 'defau
 const mainMenus = ref([
     {
         id: 1,
-        title: 'Home',
-        icon: 'home',
-        path: '/home',
+        title: 'Главная',
+        icon: 'house',
+        path: '/admin/home',
     },
     {
         id: 2,
-        title: 'Inbox',
-        icon: 'inbox',
-        path: '/inbox',
+        title: 'Клиентская база',
+        icon: 'customers',
+        path: '/admin/customer-base',
     },
     {
         id: 3,
-        title: 'My issues',
-        icon: 'issue',
-        path: '/issues',
+        title: 'Каталог',
+        icon: 'catalog',
+        path: '/admin/catalog',
     },
     {
         id: 4,
-        title: 'Focus',
-        icon: 'focus',
-        path: '/focus',
-    },
-])
-const nestedDropdownVisible = ref(false)
-const subMenus: any = ref([
-    {
-        id: 1,
-        title: 'Workspace',
-        isOpen: true,
-        childrens: [
-            {
-                icon: 'local-strike',
-                title: 'Goals',
-                isOpen: true,
-                path: '/workspace/goals',
-                childrens: [],
-            },
-            {
-                icon: 'local-cross',
-                title: 'Teams',
-                isOpen: true,
-                path: '/workspace/teams',
-                childrens: [],
-            },
-        ],
-    },
-    {
-        id: 2,
-        title: 'Your teams',
-        isOpen: true,
-        childrens: [
-            {
-                icon: 'local-book-pink',
-                iconColor: '#ED46E7',
-                title: 'Marketing',
-                isOpen: false,
-                path: '/',
-                childrens: [
-                    {
-                        icon: 'local-strike',
-                        title: 'Something',
-                        path: '',
-                    },
-                    {
-                        icon: 'local-cicle',
-                        title: 'Something',
-                        path: '',
-                    },
-                ],
-            },
-            {
-                icon: 'local-terminal',
-                title: 'Digital',
-                isOpen: false,
-                iconColor: '#5D85FF',
-                path: '/',
-                childrens: [
-                    {
-                        icon: 'local-cicle',
-                        title: 'Something',
-                        path: '',
-                    },
-                    {
-                        icon: 'local-strike',
-                        title: 'Something',
-                        path: '',
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        id: 3,
-        title: 'Try',
-        isOpen: true,
-        childrens: [
-            {
-                icon: 'el-icon-Plus',
-                title: 'Invite people',
-                isOpen: true,
-                path: '/try/invite',
-                childrens: [],
-            },
-            {
-                icon: 'local-cicle',
-                title: 'Cycles (sprints)',
-                isOpen: true,
-                path: '/try/cycles',
-                childrens: [],
-            },
-            {
-                icon: 'local-note',
-                title: 'Notes',
-                isOpen: true,
-                path: '/try/notes',
-                childrens: [],
-            },
-        ],
+        title: 'Тимбилдинги',
+        icon: 'team-building',
+        path: '/admin/team-building',
     },
 ])
 const logOut = async () => {

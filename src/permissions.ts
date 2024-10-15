@@ -7,7 +7,7 @@ import { useUsersStore } from './stores/user'
 import { loading } from '/@/utils/loading'
 import { i18n } from '/@/i18n'
 
-const title = 'Opus'
+const title = 'Betterplace'
 const getPageTitle = (key: string) => {
     const { t, te } = i18n.global as any
     const hasKey = te(`app.${key}`) as any

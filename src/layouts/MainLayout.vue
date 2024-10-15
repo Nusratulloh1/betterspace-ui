@@ -1,8 +1,8 @@
 <template>
     <el-container class="layout-container">
-        <Sidebar class="w-full max-w-[268px]" />
+        <Sidebar class="w-full max-w-[280px]" />
         <el-container class="content-wrapper">
-            <div class="w-full">
+            <div class="w-full p-8">
                 <Header class="h-14 w-full" />
                 <el-main class="layout-main !pb-16 lg:!p-0">
                     <el-scrollbar class="layout-main-scrollbar" ref="mainScrollbarRef">
@@ -50,7 +50,6 @@ const currentRoute = computed(() => router.currentRoute.value.fullPath.split('/'
     height: 100%;
     width: 100%;
     display: flex;
-    padding: 6px 0px 6px 15px;
 }
 .content-wrapper {
     width: 100%;

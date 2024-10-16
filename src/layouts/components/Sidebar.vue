@@ -1,11 +1,11 @@
 <template>
-    <aside class="flex relative flex-col justify-between px-4 py-9 mx-auto w-full bg-white transition-all border-r">
+    <aside class="flex relative flex-col justify-between px-4 py-9 mx-auto w-full bg-white border-r">
         <div>
             <header
                 class="flex items-center relative h-5 gap-5 justify-between w-full text-base font-medium tracking-tighter text-black whitespace-nowrap mt-2"
             >
-                <div :class="!props.isCallapse ? 'pl-2' : 'pl-0 transition-all'">
-                    <LogoIcon class="transition-all" :class="!props.isCallapse ? 'max-w-[167px]' : 'max-w-[147px]'" />
+                <div :class="!props.isCallapse ? 'pl-2' : 'pl-0 '">
+                    <LogoIcon :class="!props.isCallapse ? 'max-w-[167px]' : 'max-w-[147px]'" />
                 </div>
                 <button @click="emit('toggle')">
                     <Icon size="15" color="#343330" name="local-burger-menu" />

@@ -15,10 +15,11 @@ $--color-primary-sub-9: mix($--color-white, $--color-primary, 90%) !default;
     --color-basic-white: #ffffff;
 
     /* 辅助色 */
-    --color-success: #67c23a; // Success
+    --el-color-success: #067647;
+    --color-success: #067647; // Success
     --color-warning: #e6a23c; // Warning
     --color-danger: #f56c6c; // Danger
-    --color-info: #909399; // Info
+    --color-info: #344054; // Info
 
     /* 无彩色 */
     --color-text-primary: #000000; // 主要文本

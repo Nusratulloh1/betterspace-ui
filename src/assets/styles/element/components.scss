@@ -3,30 +3,48 @@
 
 
 
+
 .el-form {
     .el-form-item {
+        margin-bottom: 24px !important;
+
         &__label {
-            margin-bottom: 7px !important;
-            font-family: 'Roboto';
-            font-size: 12px;
+            font-family: Onest;
+            font-size: 14px;
             font-weight: 400;
-            line-height: 14.06px !important;
-            color: #444444 !important;
+            line-height: 24px;
+            color: #A4A4A4 !important;
+        }
+    }
+
+    .el-input__inner::placeholder {
+        font-family: Onest;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+
+        color: #A4A4A4 !important;
+    }
+
+    .el-input__wrapper {
+        box-shadow: 0 0 0 1px #C3C3C3 inset;
+    }
+
+}
 
 
+
+.el-popper {
+    border-radius: 12px !important;
+}
+
+.el-dialog {
+    &__close {
+        svg {
+            fill: #101828 !important;
         }
     }
 }
-
-.el-form-item__error {
-    margin-top: 2px !important;
-    // font-family: 'Inter';
-    font-size: 8px !important;
-}
-
-
-
-
 
 // Input
 
@@ -41,7 +59,7 @@
     }
 
     .el-input__inner::placeholder {
-        color: #667085 !important;
+        color: #667085;
     }
 
     &__inner {
@@ -60,56 +78,6 @@
 
 }
 
-// Dialog 
-
-.el-dialog {
-    border: 2px solid #FFFFFF80 !important;
-    background: #F1F1F1 !important;
-    border-radius: 32px !important;
-
-    .el-dialog__close {
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        color: #000000 !important;
-    }
-}
-
-.el-popper {
-    box-shadow: 0px 0px 10px 0px #0F0F0F33;
-    border: 1px solid #0F0F0F0D;
-    padding: 0px !important;
-    border-radius: 8px;
-
-    &__arrow {
-        display: none;
-    }
-
-    .route {
-        // font-family: 'Inter';
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14.52px;
-        text-align: left;
-        color: #666666;
-        padding: 12px 12px 12px 14px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: #F3F3F3;
-        }
-
-
-    }
-}
-
-.el-dropdown-menu__item {
-    // font-family: 'Inter';
-    font-size: 12px !important;
-    font-weight: 400;
-    line-height: 14.52px;
-    color: #666666;
-
-}
 
 // Button
 
@@ -142,13 +110,14 @@
 
     thead {
         th {
-            background-color: transparent !important;
-            padding: 8px 24px !important;
-            font-family: 'Roboto' !important;
+            background-color: #F9FAFB !important;
+            padding: 12px 24px !important;
+            border-bottom: 1px solid #EAECF0 !important;
+            font-family: 'Inter' !important;
             font-size: 12px !important;
-            font-weight: 400 !important;
+            font-weight: 500 !important;
             line-height: 14.06px !important;
-            color: #5C5C5E !important;
+            color: #475467 !important;
 
         }
     }
@@ -156,14 +125,71 @@
     tbody {
         tr {
             td {
-                padding: 8px 24px !important;
-                font-family: 'Roboto';
-                font-size: 13px;
+                padding: 14px 24px !important;
+                font-family: 'Inter';
+                font-size: 14px;
                 font-weight: 400;
                 line-height: 15.73px;
-                color: #343330;
+                color: #101828;
 
             }
+        }
+    }
+}
+
+
+// tag
+
+.el-tag {
+
+    &--info {
+        background: #F9FAFB !important;
+        border: 1px solid #EAECF0;
+
+        .el-tag__content {
+            color: #344054;
+        }
+    }
+
+    &--success {
+        background: #ECFDF3 !important;
+        border: 1px solid #ABEFC6;
+
+        .el-tag__content {
+            color: #067647 !important;
+        }
+    }
+
+    font-family: Inter;
+    font-size: 12px !important;
+    font-weight: 500;
+    line-height: 18px;
+    // background: #F9FAFB ;
+}
+
+// Pagination
+
+.el-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        background-color: #FFFFFF !important;
+        border: 1px solid #D0D5DD !important;
+        box-shadow: 0px 1px 2px 0px #1018280D;
+        padding: 8px 12px 8px 12px !important;
+        border-radius: 8px !important;
+        font-family: Inter;
+        font-size: 14px !important;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+    .el-pager {
+        .number {
+            border-radius: 17px !important;
+            height: 28px !important;
         }
     }
 }

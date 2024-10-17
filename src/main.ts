@@ -12,7 +12,7 @@ import '/@/assets/styles/base.scss'
 import '/@/assets/styles/element/index.scss'
 import vue3GoogleLogin from 'vue3-google-login'
 import '/@/permissions'
-// import { mask } from "vue-the-mask";
+import VueTheMask from 'vue-the-mask';
 async function start() {
     const app = createApp(App)
 
@@ -26,10 +26,10 @@ async function start() {
     })
     app.use(vue3GoogleLogin, {
         clientId: '1006123200595-mpadesgaspg0dhdi17teaaehj79ht45h.apps.googleusercontent.com'
-      })
+    })
     app.use(createPinia())
     app.mount('#app')
-    // app.directive("mask", mask as any);
+    app.use(VueTheMask);
     app.config.globalProperties.eventBus = mitt()
 }
 start()

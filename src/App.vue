@@ -15,17 +15,21 @@ onMounted(() => {
 </script>
 <style lang="scss">
 .el-dialog {
-    background-color: #f4f5f7 !important;
-    border-radius: 16px;
+    background-color: #ffffff !important;
+    border-radius: 16px !important;
 
     &__title {
+        font-family: Onest;
+        font-size: 16px !important;
         font-weight: 700;
-        font-size: 22px;
-        color: #181c25;
+        line-height: 24px;
+        color: #000000;
     }
 
     &__close {
-        font-size: 22px !important;
+        font-size: 16px !important;
+        color: black !important;
+        font-weight: 700;
     }
 
     &__body {

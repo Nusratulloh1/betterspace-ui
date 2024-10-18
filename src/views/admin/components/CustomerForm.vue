@@ -54,8 +54,18 @@
     </el-form>
 </template>
   
-  <script setup>
+  <script setup lang="ts">
 import { ref } from 'vue'
+
+const props: any = defineProps({
+   category: {
+    required: false,
+    default: null,
+    type: Object
+   }
+})
+
+const emits = defineEmits(['onSubmit'])
 
 const form = ref({
     organizationName: '',
@@ -67,7 +77,7 @@ const form = ref({
     organizationLocation: '',
 })
 
-const formRef = ref(null)
+const formRef: any = ref(null)
 
 const rules = {
     organizationName: [{ required: true, message: 'Название организации обязательно', trigger: 'blur' }],
@@ -98,9 +108,9 @@ const rules = {
 }
 
 const submitForm = () => {
-    formRef.value.validate((valid) => {
+    formRef.value.validate((valid: any) => {
         if (valid) {
-            alert('Форма отправлена!')
+            emits('onSubmit', form)
         } else {
             console.log('Ошибка валидации формы')
             return false

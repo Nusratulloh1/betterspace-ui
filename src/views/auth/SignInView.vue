@@ -5,10 +5,10 @@
                 <div class="text-center w-full max-w-[340px]">
                     <LogoIcon class="mx-auto" />
                     <h5 class="font-medium text-[19px] mt-6 mb-5">Sign in to Betterplace</h5>
-                    <googleButton />
+                    <!-- <googleButton /> -->
                     <div class="flex items-center gap-5 my-5">
                         <hr class="!w-full" />
-                        <span class="text-[#A9AEB8] text-xs uppercase"> or </span>
+                        <!-- <span class="text-[#A9AEB8] text-xs uppercase"> or </span> -->
                         <hr class="!w-full" />
                     </div>
                     <el-form
@@ -102,7 +102,7 @@ const rules = reactive<FormRules>({
             trigger: 'blur',
         },
         {
-            min: 8,
+            min: 2,
             message: i18n.t('validation.minimumLength', { value: 8 }),
             trigger: 'blur',
         },
@@ -118,12 +118,21 @@ const submitForm = async (formEl: FormInstance | undefined) => {
                 loading.value = true
                 const data = {
                     ...ruleForm,
-                    password: sha1(ruleForm.password),
+                    // password: sha1(ruleForm.password),
+                    password: ruleForm.password
                 }
                 await store.login(data as any)
                 await store.getUserInfo()
                 loading.value = false
-                router.push('/home')
+                if(store.user?.role === 'merchant'){
+                    router.push('/merchant')
+                }
+                else if(store.user?.role === 'hr'){
+                    router.push('/hr')
+                }
+                else{
+                    router.push('/')
+                }
             } catch (error: any) {
                 console.log('error', error.message)
                 loading.value = false

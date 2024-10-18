@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { adminRoutes } from './modules'
+import { adminRoutes, hrRoutes, merchantRoutes } from './modules'
 import 'nprogress/nprogress.css'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,7 +40,9 @@ const router = createRouter({
         title: 'Account setup',
       },
     },
-    adminRoutes
+    adminRoutes,
+    hrRoutes,
+    merchantRoutes
 
   ]
 })

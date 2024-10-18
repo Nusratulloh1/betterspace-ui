@@ -47,7 +47,7 @@ const submitForm = async () => {
         // await store.login(route.query.email as any)
         // await store.getUserInfo()
         loading.value = false
-        router.push('/home')
+        router.push('/')
     } catch (error: any) {
         console.log('error', error.message)
         loading.value = false

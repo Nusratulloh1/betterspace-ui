@@ -80,7 +80,7 @@
             </div>
         </div>
         <teleport to="#modal" v-if="showModal">
-            <CustomerForm />
+            <CustomerForm @onSubmit="submitForm" />
         </teleport>
     </div>
 </template>
@@ -123,5 +123,8 @@ const openForm = () => {
     modal.showModal()
     modal.setWidth('792px')
     modal.setTitle('Добавление новой организации')
+}
+const submitForm = (data: any) => {
+    alert(data)
 }
 </script>

@@ -43,6 +43,6 @@ export interface ILoginInfo {
     avatar?: string;
     student_id: string,
     country: { code: string };
-    role: "user" | "admin" | "moderator" | "super_admin";
+    role: "hr" | "admin" | "merchant";
     is_verified: boolean;
   }
